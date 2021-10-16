@@ -2,11 +2,12 @@
   "name": "typescript-template",
   "version": "1.0.0",
   "description": "Node template with typescript and Eslint",
-  "main": "./src/app.ts",
+  "main": "./dist/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.production.js",
-    "start": "webpack serve --open --config webpack.development.js"
+    "build": "tsc",
+    "start": "nodemon --config nodemon.json src/index.ts",
+    "debug": "nodemon --config nodemon.json --inspect-brk src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,9 @@
   "devDependencies": {
     "@typescript-eslint/parser": "latest",
     "eslint": "latest",
+    "nodemon": "latest",
     "ts-loader": "latest",
-    "typescript": "latest",
-    "webpack": "latest",
-    "webpack-cli": "latest",
-    "webpack-dev-server": "latest"
+    "ts-node": "latest",
+    "typescript": "latest"
   }
 }
