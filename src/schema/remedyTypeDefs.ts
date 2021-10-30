@@ -25,16 +25,22 @@ export default gql`
     updateRemedy(input: UpdateRemedyInput!): UpdateRemedyPayload!
     removeRemedy(input: RemoveRemedyInput!): RemoveRemedyPayload!
     addPriceHistory(input: AddPriceHistoryInput!): AddPriceHistoryPayload!
+    addPriceStampToHistory(input: AddPriceStampToHistoryInput!): AddPriceStampToHistoryPayload!
   }
 
   input AddRemedyInput {
     name: String!
-    category: ID!
+    category: String
+    categoryId: ID
     dose: String
-    activePrinciple: ID!
-    laboratory: ID!
+    activePrinciple: String
+    activePrincipleId: ID
+    laboratory: String
+    laboratoryId: ID
     netContent: Int!
-    netContentUnit: ID!
+    netContentUnit: String
+    netContentUnitId: ID
+    formatId: String
     format: ID
   }
 
@@ -50,7 +56,7 @@ export default gql`
     name: String
     category: ID
     dose: String
-    activePrinciple: String
+    activePrinciple: ID
     laboratory: ID
     netContent: Int
     netContentUnit: ID
@@ -76,15 +82,29 @@ export default gql`
   }
 
   input AddPriceHistoryInput {
-    pharmacy: ID!
+    remedyId: ID!
+    pharmacyId: ID!
     url: String
   }
 
   type AddPriceHistoryPayload {
     success: Boolean!
     message: String
-    removedRemedy: Remedy
-    remedies: [Remedy]
+    updatedRemedy: Remedy
+    priceHistories: [PriceHistory]
+  }
+
+  input AddPriceStampToHistoryInput {
+    remedyId: ID!
+    pharmacyId: ID!
+    price: Int
+  }
+
+  type AddPriceStampToHistoryPayload {
+    success: Boolean!
+    message: String
+    priceHistory: PriceHistory
+    addedPriceStamp: PriceStamp
   }
 
 `;

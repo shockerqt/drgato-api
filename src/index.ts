@@ -13,10 +13,10 @@ const startApolloServer = async (typeDefs: DocumentNode[], resolvers: any) => {
   const app = express();
   const httpServer = http.createServer(app);
 
-  const store = createStore();
+  createStore();
 
   const dataSources = () => ({
-    remedyAPI: new RemedyAPI({ store }),
+    remedyAPI: new RemedyAPI(),
   });
 
   const server = new ApolloServer({

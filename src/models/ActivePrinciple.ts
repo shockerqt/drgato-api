@@ -11,15 +11,15 @@ import {
 
 import { Remedy } from '.';
 
-interface RemedyCategoryAttributes {
+interface ActivePrincipleAttributes {
   id: number;
   name: string;
 }
 
-type RemedyCategoryCreationAttributes = Optional<RemedyCategoryAttributes, 'id'>;
+type ActivePrincipleCreationAttributes = Optional<ActivePrincipleAttributes, 'id'>;
 
-export default class RemedyCategory extends Model<RemedyCategoryAttributes, RemedyCategoryCreationAttributes>
-  implements RemedyCategoryAttributes {
+export default class ActivePrinciple extends Model<ActivePrincipleAttributes, ActivePrincipleCreationAttributes>
+  implements ActivePrincipleAttributes {
   public id!: number;
   public name!: string;
 
@@ -35,6 +35,6 @@ export default class RemedyCategory extends Model<RemedyCategoryAttributes, Reme
   public readonly remedies?: Remedy[];
 
   public static associations: {
-    remedies: Association<RemedyCategory, Remedy>;
+    remedies: Association<ActivePrinciple, Remedy>;
   };
 }

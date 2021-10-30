@@ -1,4 +1,28 @@
-import { RemedyInterface, ResolverContextInterface } from './schemaInterfaces';
+import { Remedy } from '../models';
+import { ResolverContextInterface } from './schemaInterfaces';
+
+export type AddRemedyInput = {
+  name: string;
+  category?: string;
+  categoryId?: number;
+  dose?: string;
+  activePrinciple?: string;
+  activePrincipleId?: number;
+  laboratory?: string;
+  laboratoryId?: number
+  netContent: number
+  netContentUnit?: string;
+  netContentUnitId?: number;
+  formatId?: string;
+  format?: number;
+}
+
+export type AddRemedyPayload = {
+  success?: boolean
+  message: string
+  addedRemedy: Remedy
+  remedies: Remedy[]
+}
 
 export default {
   Query: {
@@ -16,7 +40,7 @@ export default {
   Mutation: {
     addRemedy: (
       _: never,
-      { input }: { input: RemedyInterface },
+      { input }: { input: AddRemedyInput },
       { dataSources }: ResolverContextInterface,
     ) => dataSources.remedyAPI.addRemedy(input),
   },

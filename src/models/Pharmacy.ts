@@ -9,36 +9,19 @@ import {
   Optional,
 } from 'sequelize';
 
-import {
-  PriceHistory,
-} from '.';
+import { PriceHistory } from '.';
 
-
-interface RemedyAttributes {
+interface PharmacyAttributes {
   id: number;
   name: string;
-  categoryId: number;
-  dose: string | null;
-  activePrincipleId: number;
-  laboratoryId: number;
-  netContent: number;
-  netContentUnitId: number;
-  formatId: number | null;
 }
 
-type RemedyCreationAttributes = Optional<RemedyAttributes, 'id'>;
+type PharmacyCreationAttributes = Optional<PharmacyAttributes, 'id'>;
 
-export default class Remedy extends Model<RemedyAttributes, RemedyCreationAttributes>
-  implements RemedyAttributes {
-  id!: number;
-  name!: string;
-  categoryId!: number;
-  dose!: string | null;
-  activePrincipleId!: number;
-  laboratoryId!: number;
-  netContent!: number;
-  netContentUnitId!: number;
-  formatId!: number | null;
+export default class Pharmacy extends Model<PharmacyAttributes, PharmacyCreationAttributes>
+  implements PharmacyAttributes {
+  public id!: number;
+  public name!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -52,6 +35,6 @@ export default class Remedy extends Model<RemedyAttributes, RemedyCreationAttrib
   public readonly priceHistories?: PriceHistory[];
 
   public static associations: {
-    priceHistories: Association<Remedy, PriceHistory>;
+    priceHistories: Association<Pharmacy, PriceHistory>;
   };
 }

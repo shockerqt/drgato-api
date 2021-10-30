@@ -1,19 +1,22 @@
-import { Model } from 'sequelize';
+import {
+  Model,
+  Optional,
+} from 'sequelize';
 
 interface PriceStampAttributes {
   id: number;
-  productId: number;
-  pharmacyId: number;
-  price: number;
+  priceHistoryId: number;
+  price: number | null;
   date: Date;
 }
 
-export default class PriceStamp extends Model<PriceStampAttributes>
+type PriceStampCreationAttributes = Optional<PriceStampAttributes, 'id'>;
+
+export default class PriceStamp extends Model<PriceStampAttributes, PriceStampCreationAttributes>
   implements PriceStampAttributes {
   public id!: number;
-  public productId!: number;
-  public pharmacyId!: number;
-  public price!: number;
+  public priceHistoryId!: number;
+  public price!: number | null;
   public date!: Date;
 
   public readonly createdAt!: Date;

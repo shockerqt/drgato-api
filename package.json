@@ -40,7 +40,7 @@
     "express": "^4.17.1",
     "graphql": "^15.6.1",
     "isemail": "^3.2.0",
-    "sequelize": "^6.7.0",
+    "sequelize": "latest",
     "sqlite3": "^5.0.2"
   }
 }

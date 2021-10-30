@@ -1,6 +1,15 @@
 import { Sequelize, DataTypes } from 'sequelize';
 
-import { PriceStamp, Remedy, RemedyCategory } from './models';
+import {
+  ActivePrinciple,
+  Laboratory,
+  PriceHistory,
+  PriceStamp,
+  Remedy,
+  RemedyCategory,
+  RemedyFormat,
+  Unit,
+} from './models';
 
 // export const paginateResults = ({
 //   after: cursor,
@@ -37,6 +46,92 @@ export const createStore = () => {
     dialect: 'sqlite',
     storage: './store.sqlite',
   });
+
+  ActivePrinciple.init(
+    {
+      id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    },
+    {
+      tableName: 'active_principles',
+      sequelize,
+    },
+  );
+
+  Laboratory.init(
+    {
+      id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    },
+    {
+      tableName: 'laboratories',
+      sequelize,
+    },
+  );
+
+  PriceHistory.init(
+    {
+      id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      remedyId: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      pharmacyId: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      url: DataTypes.STRING,
+    },
+    {
+      tableName: 'price_histories',
+      sequelize,
+    },
+  );
+
+  PriceStamp.init(
+    {
+      id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      productId: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      pharmacyId: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
+      },
+      price: DataTypes.INTEGER.UNSIGNED,
+      date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+    },
+    {
+      tableName: 'price_stamps',
+      sequelize,
+    },
+  );
 
   Remedy.init(
     {
@@ -96,37 +191,42 @@ export const createStore = () => {
     },
   );
 
-  PriceStamp.init(
+  RemedyFormat.init(
     {
       id: {
         type: DataTypes.INTEGER.UNSIGNED,
         primaryKey: true,
         autoIncrement: true,
       },
-      productId: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false,
-      },
-      pharmacyId: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false,
-      },
-      price: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false,
-      },
-      date: {
-        type: DataTypes.DATE,
+      name: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
     },
     {
-      tableName: 'historical_prices',
+      tableName: 'remedy_formats',
+      sequelize,
+    },
+  );
+
+  Unit.init(
+    {
+      id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    },
+    {
+      tableName: 'units',
       sequelize,
     },
   );
 
   sequelize.sync();
 
-  return { PriceStamp, Remedy };
 };
