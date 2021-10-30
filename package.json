@@ -4,10 +4,11 @@
   "description": "Node template with typescript and Eslint",
   "main": "./dist/app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "nodemon --config nodemon.json src/index.ts",
-    "debug": "nodemon --config nodemon.json --inspect-brk src/index.ts"
+    "debug": "nodemon --config nodemon.json --inspect-brk src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --verbose --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,26 @@
   },
   "homepage": "https://github.com/shockerqt/typescript-template#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.2",
+    "@types/validator": "^13.6.5",
+    "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "latest",
+    "jest": "^27.3.1",
     "nodemon": "latest",
+    "ts-jest": "^27.0.7",
     "ts-loader": "latest",
     "ts-node": "latest",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "apollo-server-core": "^3.4.0",
+    "apollo-server-express": "^3.4.0",
+    "express": "^4.17.1",
+    "graphql": "^15.6.1",
+    "isemail": "^3.2.0",
+    "sequelize": "^6.7.0",
+    "sqlite3": "^5.0.2"
   }
 }

@@ -44,8 +44,6 @@ module.exports = {
     'arrow-spacing': 'warn',
     'array-callback-return': 'error',
     'block-scoped-var': 'error',
-    'class-methods-use-this': 'error',
-    'consistent-return': 'error',
     'dot-location': 'error',
     'dot-notation': 'error',
     'eqeqeq': 'error',

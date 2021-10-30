@@ -3,3 +3,4 @@ dist
 lib
 coverage
 webpack.config.js
+jest.config.js
