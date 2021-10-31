@@ -11,12 +11,12 @@ import {
 
 import { Remedy } from '.';
 
-interface ActivePrincipleAttributes {
+export interface ActivePrincipleAttributes {
   id: number;
   name: string;
 }
 
-type ActivePrincipleCreationAttributes = Optional<ActivePrincipleAttributes, 'id'>;
+export type ActivePrincipleCreationAttributes = Optional<ActivePrincipleAttributes, 'id'>;
 
 export default class ActivePrinciple extends Model<ActivePrincipleAttributes, ActivePrincipleCreationAttributes>
   implements ActivePrincipleAttributes {

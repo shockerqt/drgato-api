@@ -11,12 +11,12 @@ import {
 
 import { Remedy } from '.';
 
-interface RemedyFormatAttributes {
+export interface RemedyFormatAttributes {
   id: number;
   name: string;
 }
 
-type RemedyFormatCreationAttributes = Optional<RemedyFormatAttributes, 'id'>;
+export type RemedyFormatCreationAttributes = Optional<RemedyFormatAttributes, 'id'>;
 
 export default class RemedyFormat extends Model<RemedyFormatAttributes, RemedyFormatCreationAttributes>
   implements RemedyFormatAttributes {

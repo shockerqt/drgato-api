@@ -11,12 +11,12 @@ import {
 
 import { Remedy } from '.';
 
-interface UnitAttributes {
+export interface UnitAttributes {
   id: number;
   name: string;
 }
 
-type UnitCreationAttributes = Optional<UnitAttributes, 'id'>;
+export type UnitCreationAttributes = Optional<UnitAttributes, 'id'>;
 
 export default class Unit extends Model<UnitAttributes, UnitCreationAttributes>
   implements UnitAttributes {

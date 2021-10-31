@@ -11,12 +11,12 @@ import {
 
 import { Remedy } from '.';
 
-interface LaboratoryAttributes {
+export interface LaboratoryAttributes {
   id: number;
   name: string;
 }
 
-type LaboratoryCreationAttributes = Optional<LaboratoryAttributes, 'id'>;
+export type LaboratoryCreationAttributes = Optional<LaboratoryAttributes, 'id'>;
 
 export default class Laboratory extends Model<LaboratoryAttributes, LaboratoryCreationAttributes>
   implements LaboratoryAttributes {

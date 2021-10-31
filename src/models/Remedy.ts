@@ -9,24 +9,27 @@ import {
   Optional,
 } from 'sequelize';
 
-import {
-  PriceHistory,
-} from '.';
+import { PriceHistory } from '.';
+import { ActivePrincipleCreationAttributes } from './ActivePrinciple';
+import { LaboratoryCreationAttributes } from './Laboratory';
+import { RemedyCategoryCreationAttributes } from './RemedyCategory';
+import { RemedyFormatCreationAttributes } from './RemedyFormat';
+import { UnitCreationAttributes } from './Unit';
 
 
 interface RemedyAttributes {
   id: number;
   name: string;
-  categoryId: number;
+  categoryId: number | RemedyCategoryCreationAttributes;
   dose: string | null;
-  activePrincipleId: number;
-  laboratoryId: number;
+  activePrincipleId: number | ActivePrincipleCreationAttributes;
+  laboratoryId: number | LaboratoryCreationAttributes;
   netContent: number;
-  netContentUnitId: number;
-  formatId: number | null;
+  netContentUnitId: number | UnitCreationAttributes;
+  formatId: number | null | RemedyFormatCreationAttributes;
 }
 
-type RemedyCreationAttributes = Optional<RemedyAttributes, 'id'>;
+type RemedyCreationAttributes = Optional<RemedyAttributes, 'id' | 'dose' | 'formatId'>;
 
 export default class Remedy extends Model<RemedyAttributes, RemedyCreationAttributes>
   implements RemedyAttributes {

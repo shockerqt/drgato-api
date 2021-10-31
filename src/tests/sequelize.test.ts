@@ -1,7 +1,7 @@
 import { ApolloServer, gql } from 'apollo-server-express';
 import { typeDefs } from '../schema/schema';
 import resolvers from '../schema/resolvers';
-import RemedyAPI from '../api/RemedyAPI';
+import RemedyAPI from '../apis/RemedyAPI';
 import Remedy from '../models/Remedy';
 import PriceStamp from '../models/PriceStamp';
 

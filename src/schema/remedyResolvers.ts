@@ -1,20 +1,15 @@
+import { DataSources } from '../apis';
 import { Remedy } from '../models';
-import { ResolverContextInterface } from './schemaInterfaces';
 
 export type AddRemedyInput = {
   name: string;
-  category?: string;
-  categoryId?: number;
+  category: string;
   dose?: string;
-  activePrinciple?: string;
-  activePrincipleId?: number;
-  laboratory?: string;
-  laboratoryId?: number
-  netContent: number
-  netContentUnit?: string;
-  netContentUnitId?: number;
-  formatId?: string;
-  format?: number;
+  activePrinciple: string;
+  laboratory: string;
+  netContent: number;
+  netContentUnit: string;
+  format?: string;
 }
 
 export type AddRemedyPayload = {
@@ -26,22 +21,28 @@ export type AddRemedyPayload = {
 
 export default {
   Query: {
+
     remedies: (
       _: never,
       __: never,
-      { dataSources }: ResolverContextInterface,
+      { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getAllRemedies(),
+
     remedy: (
       _: never,
       { id }: { id: number },
-      { dataSources }: ResolverContextInterface,
+      { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getRemedyById(id),
+
   },
+
   Mutation: {
+
     addRemedy: (
       _: never,
       { input }: { input: AddRemedyInput },
-      { dataSources }: ResolverContextInterface,
+      { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.addRemedy(input),
+
   },
 };

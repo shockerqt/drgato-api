@@ -10,6 +10,7 @@ import {
   RemedyFormat,
   Unit,
 } from './models';
+import Pharmacy from './models/Pharmacy';
 
 // export const paginateResults = ({
 //   after: cursor,
@@ -113,11 +114,7 @@ export const createStore = () => {
         primaryKey: true,
         autoIncrement: true,
       },
-      productId: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false,
-      },
-      pharmacyId: {
+      priceHistoryId: {
         type: DataTypes.INTEGER.UNSIGNED,
         allowNull: false,
       },
@@ -226,6 +223,54 @@ export const createStore = () => {
       sequelize,
     },
   );
+
+  ActivePrinciple.hasMany(Remedy, {
+    sourceKey: 'id',
+    foreignKey: 'activePrincipleId',
+    as: 'remedies',
+  });
+
+  Laboratory.hasMany(Remedy, {
+    sourceKey: 'id',
+    foreignKey: 'laboratoryId',
+    as: 'remedies',
+  });
+
+  RemedyCategory.hasMany(Remedy, {
+    sourceKey: 'id',
+    foreignKey: 'categoryId',
+    as: 'remedies',
+  });
+
+  RemedyFormat.hasMany(Remedy, {
+    sourceKey: 'id',
+    foreignKey: 'formatId',
+    as: 'remedies',
+  });
+
+  Unit.hasMany(Remedy, {
+    sourceKey: 'id',
+    foreignKey: 'netContentUnitId',
+    as: 'remedies',
+  });
+
+  Remedy.hasMany(PriceHistory, {
+    sourceKey: 'id',
+    foreignKey: 'remedyId',
+    as: 'priceHistories',
+  });
+
+  PriceHistory.hasMany(PriceStamp, {
+    sourceKey: 'id',
+    foreignKey: 'priceHistoryId',
+    as: 'priceStamps',
+  });
+
+  Pharmacy.hasMany(PriceHistory, {
+    sourceKey: 'id',
+    foreignKey: 'pharmacyId',
+    as: 'priceHistories',
+  });
 
   sequelize.sync();
 

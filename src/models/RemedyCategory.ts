@@ -11,12 +11,12 @@ import {
 
 import { Remedy } from '.';
 
-interface RemedyCategoryAttributes {
+export interface RemedyCategoryAttributes {
   id: number;
   name: string;
 }
 
-type RemedyCategoryCreationAttributes = Optional<RemedyCategoryAttributes, 'id'>;
+export type RemedyCategoryCreationAttributes = Optional<RemedyCategoryAttributes, 'id'>;
 
 export default class RemedyCategory extends Model<RemedyCategoryAttributes, RemedyCategoryCreationAttributes>
   implements RemedyCategoryAttributes {

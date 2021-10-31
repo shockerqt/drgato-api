@@ -30,18 +30,13 @@ export default gql`
 
   input AddRemedyInput {
     name: String!
-    category: String
-    categoryId: ID
+    category: String!
     dose: String
-    activePrinciple: String
-    activePrincipleId: ID
-    laboratory: String
-    laboratoryId: ID
+    activePrinciple: String!
+    laboratory: String!
     netContent: Int!
-    netContentUnit: String
-    netContentUnitId: ID
-    formatId: String
-    format: ID
+    netContentUnit: String!
+    format: String
   }
 
   type AddRemedyPayload {

@@ -6,7 +6,7 @@ import { DocumentNode } from 'graphql';
 
 import { typeDefs, resolvers } from './schema';
 import { createStore } from './utils';
-import RemedyAPI from './api/RemedyAPI';
+import { dataSources } from './apis';
 
 
 const startApolloServer = async (typeDefs: DocumentNode[], resolvers: any) => {
@@ -14,10 +14,6 @@ const startApolloServer = async (typeDefs: DocumentNode[], resolvers: any) => {
   const httpServer = http.createServer(app);
 
   createStore();
-
-  const dataSources = () => ({
-    remedyAPI: new RemedyAPI(),
-  });
 
   const server = new ApolloServer({
     typeDefs,
