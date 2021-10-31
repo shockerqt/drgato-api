@@ -61,7 +61,8 @@ export const createStore = () => {
       },
     },
     {
-      tableName: 'active_principles',
+      modelName: 'ActivePrinciple',
+      tableName: 'ActivePrinciples',
       sequelize,
     },
   );
@@ -79,7 +80,27 @@ export const createStore = () => {
       },
     },
     {
-      tableName: 'laboratories',
+      modelName: 'Laboratory',
+      tableName: 'Laboratories',
+      sequelize,
+    },
+  );
+
+  Pharmacy.init(
+    {
+      id: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    },
+    {
+      modelName: 'Pharmacy',
+      tableName: 'Pharmacies',
       sequelize,
     },
   );
@@ -102,7 +123,8 @@ export const createStore = () => {
       url: DataTypes.STRING,
     },
     {
-      tableName: 'price_histories',
+      modelName: 'PriceHistory',
+      tableName: 'PriceHistories',
       sequelize,
     },
   );
@@ -125,7 +147,8 @@ export const createStore = () => {
       },
     },
     {
-      tableName: 'price_stamps',
+      modelName: 'PriceStamp',
+      tableName: 'PriceStamps',
       sequelize,
     },
   );
@@ -165,7 +188,8 @@ export const createStore = () => {
       formatId: DataTypes.INTEGER.UNSIGNED,
     },
     {
-      tableName: 'remedies',
+      modelName: 'Remedy',
+      tableName: 'Remedies',
       sequelize,
     },
   );
@@ -183,7 +207,8 @@ export const createStore = () => {
       },
     },
     {
-      tableName: 'remedy_categories',
+      modelName: 'RemedyCategory',
+      tableName: 'RemedyCategories',
       sequelize,
     },
   );
@@ -201,7 +226,8 @@ export const createStore = () => {
       },
     },
     {
-      tableName: 'remedy_formats',
+      modelName: 'RemedyFormat',
+      tableName: 'RemedyFormats',
       sequelize,
     },
   );
@@ -219,7 +245,8 @@ export const createStore = () => {
       },
     },
     {
-      tableName: 'units',
+      modelName: 'Unit',
+      tableName: 'Units',
       sequelize,
     },
   );
@@ -272,6 +299,6 @@ export const createStore = () => {
     as: 'priceHistories',
   });
 
-  sequelize.sync();
+  sequelize.sync({ force: true });
 
 };

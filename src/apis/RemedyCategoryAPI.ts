@@ -1,16 +1,11 @@
 import { DataSource } from 'apollo-datasource';
 import { RemedyCategory } from '../models';
-import { RemedyCategoryInterface } from '../schema/schemaInterfaces';
+import { AddRemedyCategoryInput } from '../schema/remedyCategoryResolvers';
 
 export default class RemedyCategoryAPI extends DataSource {
 
   async getAllRemedyCategories() {
-    const response = await RemedyCategory.findAll({
-      attributes: [
-        'id',
-        'name',
-      ],
-    });
+    const response = await RemedyCategory.findAll();
 
     return response;
   }
@@ -27,7 +22,7 @@ export default class RemedyCategoryAPI extends DataSource {
     return response;
   }
 
-  async addRemedyCategory(input: RemedyCategoryInterface) {
+  async addRemedyCategory(input: AddRemedyCategoryInput) {
     const response = await RemedyCategory.create(input);
 
     return response;

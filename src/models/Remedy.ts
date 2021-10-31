@@ -17,7 +17,7 @@ import { RemedyFormatCreationAttributes } from './RemedyFormat';
 import { UnitCreationAttributes } from './Unit';
 
 
-interface RemedyAttributes {
+export interface RemedyAttributes {
   id: number;
   name: string;
   categoryId: number | RemedyCategoryCreationAttributes;
@@ -29,7 +29,7 @@ interface RemedyAttributes {
   formatId: number | null | RemedyFormatCreationAttributes;
 }
 
-type RemedyCreationAttributes = Optional<RemedyAttributes, 'id' | 'dose' | 'formatId'>;
+export type RemedyCreationAttributes = Optional<RemedyAttributes, 'id' | 'dose' | 'formatId'>;
 
 export default class Remedy extends Model<RemedyAttributes, RemedyCreationAttributes>
   implements RemedyAttributes {

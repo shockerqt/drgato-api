@@ -1,7 +1,6 @@
 import { DataSource } from 'apollo-datasource';
-import { UserInputError } from 'apollo-server-core';
 import { ActivePrinciple, Laboratory, Remedy, RemedyCategory, RemedyFormat, Unit } from '../models';
-import { AddRemedyInput } from '../schema/remedyResolvers';
+import { AddRemedyInput, AddRemedyPayload } from '../schema/remedyResolvers';
 
 export default class RemedyAPI extends DataSource {
 
@@ -22,8 +21,10 @@ export default class RemedyAPI extends DataSource {
     return remedy;
   }
 
-  async addRemedy(input: AddRemedyInput) {
-    const remedies = Remedy.create({
+  async addRemedy(input: AddRemedyInput): Promise<AddRemedyPayload> {
+    console.log('REMEDY INPUT', input)
+
+    const remedy = await Remedy.create({
       name: input.name,
       categoryId: {
         name: input.category,
@@ -43,10 +44,25 @@ export default class RemedyAPI extends DataSource {
         name: input.format,
       } : null,
     }, {
-      include: [RemedyCategory, ActivePrinciple, Laboratory, Unit, RemedyFormat],
+      include: [
+        RemedyCategory.associations.remedies,
+        ActivePrinciple.associations.remedies,
+        Laboratory.associations.remedies,
+        Unit.associations.remedies,
+        RemedyFormat.associations.remedies,
+      ],
     });
 
-    return remedies;
+    console.log('REMEDY NAME', remedy.get({ plain: true }));
+
+    return {
+      success: true,
+      message: 'Success',
+      addedRemedy: remedy.get(),
+      remedies: await Remedy.findAll({
+        include: [Remedy.associations.priceHistories],
+      }),
+    };
   }
 
 }

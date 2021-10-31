@@ -1,5 +1,5 @@
 import { DataSources } from '../apis';
-import { Remedy } from '../models';
+import { RemedyAttributes } from '../models/Remedy';
 
 export type AddRemedyInput = {
   name: string;
@@ -13,10 +13,10 @@ export type AddRemedyInput = {
 }
 
 export type AddRemedyPayload = {
-  success?: boolean
-  message: string
-  addedRemedy: Remedy
-  remedies: Remedy[]
+  success: boolean;
+  message?: string;
+  addedRemedy: RemedyAttributes;
+  remedies: RemedyAttributes[];
 }
 
 export default {
@@ -42,7 +42,7 @@ export default {
       _: never,
       { input }: { input: AddRemedyInput },
       { dataSources }: { dataSources: DataSources },
-    ) => dataSources.remedyAPI.addRemedy(input),
+    ): Promise<AddRemedyPayload> => dataSources.remedyAPI.addRemedy(input),
 
   },
 };
