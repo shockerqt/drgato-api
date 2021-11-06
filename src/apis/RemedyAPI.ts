@@ -22,46 +22,44 @@ export default class RemedyAPI extends DataSource {
   }
 
   async addRemedy(input: AddRemedyInput): Promise<AddRemedyPayload> {
-    console.log('REMEDY INPUT', input)
 
-    const remedy = await Remedy.create({
-      name: input.name,
-      categoryId: {
-        name: input.category,
+    const [
+      [activePrinciple],
+      [category],
+      [format],
+      [laboratory],
+      [netContentUnit],
+    ] = await Promise.all([
+      ActivePrinciple.findOrCreate({ where: { name: input.activePrinciple } }),
+      RemedyCategory.findOrCreate({ where: { name: input.category } }),
+      RemedyFormat.findOrCreate({ where: { name: input.format } }),
+      Laboratory.findOrCreate({ where: { name: input.laboratory } }),
+      Unit.findOrCreate({ where: { name: input.netContentUnit } }),
+    ]);
+
+    console.log('ACTIVE PRINCIPLE', category.get('id'));
+
+    const [remedy, created] = await Remedy.findOrCreate({
+      where: {
+        activePrincipleId: activePrinciple.get('id'),
+        categoryId: category.get('id'),
+        dose: input.dose,
+        formatId: format.get('id'),
+        laboratoryId: laboratory.get('id'),
+        name: input.name,
+        netContent: input.netContent,
+        netContentUnitId: netContentUnit.get('id'),
       },
-      dose: input.dose,
-      activePrincipleId: {
-        name: input.activePrinciple,
-      },
-      laboratoryId: {
-        name: input.laboratory,
-      },
-      netContent: input.netContent,
-      netContentUnitId: {
-        name: input.netContentUnit,
-      },
-      formatId: input.format ? {
-        name: input.format,
-      } : null,
-    }, {
-      include: [
-        RemedyCategory.associations.remedies,
-        ActivePrinciple.associations.remedies,
-        Laboratory.associations.remedies,
-        Unit.associations.remedies,
-        RemedyFormat.associations.remedies,
-      ],
     });
 
-    console.log('REMEDY NAME', remedy.get({ plain: true }));
+    console.log('REMEDY ADDED', created, remedy.get({ plain: true }));
+
 
     return {
       success: true,
       message: 'Success',
-      addedRemedy: remedy.get(),
-      remedies: await Remedy.findAll({
-        include: [Remedy.associations.priceHistories],
-      }),
+      addedRemedy: remedy.get({ plain: true }),
+      remedies: await this.getAllRemedies(),
     };
   }
 

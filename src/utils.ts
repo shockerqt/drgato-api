@@ -41,17 +41,17 @@ import Pharmacy from './models/Pharmacy';
 //     : results.slice(0, pageSize);
 // };
 
-export const createStore = () => {
+export const createStore = async () => {
 
-  const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: './store.sqlite',
+  const sequelize = new Sequelize('drgato', 'postgres', '32Bakemono', {
+    host: 'localhost',
+    dialect: 'postgres',
   });
 
   ActivePrinciple.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -62,7 +62,7 @@ export const createStore = () => {
     },
     {
       modelName: 'ActivePrinciple',
-      tableName: 'ActivePrinciples',
+      tableName: 'active_principles',
       sequelize,
     },
   );
@@ -70,7 +70,7 @@ export const createStore = () => {
   Laboratory.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -81,7 +81,7 @@ export const createStore = () => {
     },
     {
       modelName: 'Laboratory',
-      tableName: 'Laboratories',
+      tableName: 'laboratories',
       sequelize,
     },
   );
@@ -89,7 +89,7 @@ export const createStore = () => {
   Pharmacy.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -100,7 +100,7 @@ export const createStore = () => {
     },
     {
       modelName: 'Pharmacy',
-      tableName: 'Pharmacies',
+      tableName: 'pharmacies',
       sequelize,
     },
   );
@@ -108,23 +108,23 @@ export const createStore = () => {
   PriceHistory.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
       remedyId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       pharmacyId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       url: DataTypes.STRING,
     },
     {
       modelName: 'PriceHistory',
-      tableName: 'PriceHistories',
+      tableName: 'price_histories',
       sequelize,
     },
   );
@@ -132,15 +132,15 @@ export const createStore = () => {
   PriceStamp.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
       priceHistoryId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
-      price: DataTypes.INTEGER.UNSIGNED,
+      price: DataTypes.INTEGER,
       date: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -148,7 +148,7 @@ export const createStore = () => {
     },
     {
       modelName: 'PriceStamp',
-      tableName: 'PriceStamps',
+      tableName: 'prices_stamps',
       sequelize,
     },
   );
@@ -156,7 +156,7 @@ export const createStore = () => {
   Remedy.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -165,31 +165,31 @@ export const createStore = () => {
         allowNull: false,
       },
       categoryId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       dose: DataTypes.STRING,
       activePrincipleId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       laboratoryId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       netContent: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       netContentUnitId: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
-      formatId: DataTypes.INTEGER.UNSIGNED,
+      formatId: DataTypes.INTEGER,
     },
     {
       modelName: 'Remedy',
-      tableName: 'Remedies',
+      tableName: 'remedies',
       sequelize,
     },
   );
@@ -197,7 +197,7 @@ export const createStore = () => {
   RemedyCategory.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -208,7 +208,7 @@ export const createStore = () => {
     },
     {
       modelName: 'RemedyCategory',
-      tableName: 'RemedyCategories',
+      tableName: 'remedy_categories',
       sequelize,
     },
   );
@@ -216,7 +216,7 @@ export const createStore = () => {
   RemedyFormat.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -227,7 +227,7 @@ export const createStore = () => {
     },
     {
       modelName: 'RemedyFormat',
-      tableName: 'RemedyFormats',
+      tableName: 'remedy_formats',
       sequelize,
     },
   );
@@ -235,7 +235,7 @@ export const createStore = () => {
   Unit.init(
     {
       id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
@@ -246,59 +246,60 @@ export const createStore = () => {
     },
     {
       modelName: 'Unit',
-      tableName: 'Units',
+      tableName: 'units',
       sequelize,
     },
   );
 
   ActivePrinciple.hasMany(Remedy, {
-    sourceKey: 'id',
-    foreignKey: 'activePrincipleId',
     as: 'remedies',
+    foreignKey: 'activePrincipleId',
+    sourceKey: 'id',
   });
 
   Laboratory.hasMany(Remedy, {
-    sourceKey: 'id',
-    foreignKey: 'laboratoryId',
     as: 'remedies',
+    foreignKey: 'laboratoryId',
+    sourceKey: 'id',
   });
 
   RemedyCategory.hasMany(Remedy, {
-    sourceKey: 'id',
-    foreignKey: 'categoryId',
     as: 'remedies',
+    foreignKey: 'categoryId',
+    sourceKey: 'id',
   });
 
   RemedyFormat.hasMany(Remedy, {
-    sourceKey: 'id',
-    foreignKey: 'formatId',
     as: 'remedies',
+    foreignKey: 'formatId',
+    sourceKey: 'id',
   });
 
   Unit.hasMany(Remedy, {
-    sourceKey: 'id',
-    foreignKey: 'netContentUnitId',
     as: 'remedies',
+    foreignKey: 'netContentUnitId',
+    sourceKey: 'id',
   });
 
   Remedy.hasMany(PriceHistory, {
-    sourceKey: 'id',
-    foreignKey: 'remedyId',
     as: 'priceHistories',
+    foreignKey: 'remedyId',
+    sourceKey: 'id',
   });
 
   PriceHistory.hasMany(PriceStamp, {
-    sourceKey: 'id',
-    foreignKey: 'priceHistoryId',
     as: 'priceStamps',
+    foreignKey: 'priceHistoryId',
+    sourceKey: 'id',
   });
 
   Pharmacy.hasMany(PriceHistory, {
-    sourceKey: 'id',
-    foreignKey: 'pharmacyId',
     as: 'priceHistories',
+    foreignKey: 'pharmacyId',
+    sourceKey: 'id',
   });
 
-  sequelize.sync({ force: true });
+  // sequelize.drop();
+  // sequelize.sync({ force: true });
 
 };

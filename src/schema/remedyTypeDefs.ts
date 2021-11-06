@@ -42,8 +42,8 @@ export default gql`
   type AddRemedyPayload {
     success: Boolean!
     message: String
-    addedRemedy: Remedy!
-    remedies: [Remedy]!
+    addedRemedy: Remedy
+    remedies: [Remedy]
   }
 
   input UpdateRemedyInput {

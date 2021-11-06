@@ -2,21 +2,21 @@ import { DataSources } from '../apis';
 import { RemedyAttributes } from '../models/Remedy';
 
 export type AddRemedyInput = {
-  name: string;
+  activePrinciple: string;
   category: string;
   dose?: string;
-  activePrinciple: string;
+  format?: string;
   laboratory: string;
+  name: string;
   netContent: number;
   netContentUnit: string;
-  format?: string;
 }
 
 export type AddRemedyPayload = {
   success: boolean;
   message?: string;
-  addedRemedy: RemedyAttributes;
-  remedies: RemedyAttributes[];
+  addedRemedy?: RemedyAttributes;
+  remedies?: RemedyAttributes[];
 }
 
 export default {
