@@ -1,20 +1,22 @@
 import { DataSources } from '..';
-import { AddRemedyInput } from '../api/remedy';
+import { AddCategoryInput, AddRemedyInput, UpdateRemedyInput } from '../api/remedy';
+import { Category } from '../store';
 
 export default {
+
   Query: {
 
-    remedies: (
+    categories: (
       _: never,
       __: never,
       { dataSources }: { dataSources: DataSources },
-    ) => dataSources.remedyAPI.getAllRemedies(),
+    ) => dataSources.remedyAPI.getCategories(),
 
-    remediesByCategory: (
+    category: (
       _: never,
-      __: never,
+      { name }: { name: string },
       { dataSources }: { dataSources: DataSources },
-    ) => dataSources.remedyAPI.getRemediesByCategory(),
+    ) => dataSources.remedyAPI.getCategoryByName(name),
 
     remedy: (
       _: never,
@@ -22,6 +24,14 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getRemedyBySlug(slug),
 
+  },
+
+  Category: {
+    remedies: (
+      parent: Category,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getRemediesByCategory(parent.name),
   },
 
   Mutation: {
@@ -32,5 +42,18 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.addRemedy(input),
 
+    updateRemedy: (
+      _: never,
+      { input }: { input: UpdateRemedyInput },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.updateRemedy(input),
+
+    addCategory: (
+      _: never,
+      { input }: { input: AddCategoryInput },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.addCategory(input),
+
   },
+
 };

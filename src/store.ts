@@ -1,4 +1,4 @@
-import { writeFile } from 'fs';
+import { writeFileSync } from 'fs';
 
 export interface Constraints {
   remedyCategories: string[];
@@ -7,6 +7,11 @@ export interface Constraints {
     name: string;
     plural?: string;
   }
+}
+
+export interface Category {
+  name: string;
+  slug: string;
 }
 
 export interface Remedy {
@@ -21,27 +26,21 @@ export interface Remedy {
   format?: string;
 }
 
-export interface Remedies {
-  [key: string]: Remedy;
-}
 
-export interface RemediesByCategory {
-  [key: string]: Remedy[] | undefined;
-}
-
-interface StoreResponse {
+interface CommitResponse {
   ok: boolean;
   message: string;
-  remedies: Remedies;
 }
 
 export default class Store {
-  private remedies: Remedies | null = null;
-  private remediesByCategory: RemediesByCategory | null = null;
-  private constraints: Constraints | null = null;
-  private addedRemediesCount = 0;
-  private removedRemediesCount = 0;
+  private remedies: Remedy[] | null = null;
+  private categories: Category[] | null = null;
 
+  /**
+   * Get remedies from storage.
+   * Load from external json if array is not in memory.
+   * @returns a promise which resolves to all remedies on storage
+   */
   public async getRemedies() {
     if (!this.remedies) {
       const response = await import('./data/remedies.json');
@@ -50,55 +49,42 @@ export default class Store {
     return this.remedies;
   }
 
-  public async getRemediesByCategory() {
-    if (!this.remediesByCategory) {
-      const response = await import('./data/remediesByCategory.json');
-      this.remediesByCategory = response.default;
+  /**
+   * Get categories from storage.
+   * Load from external json if array is not in memory.
+   * @returns a promise which resolves to all categories on storage
+   */
+  public async getCategories() {
+    if (!this.categories) {
+      const response = await import('./data/categories.json');
+      this.categories = response.default;
     }
-    return this.remediesByCategory;
+    return this.categories;
   }
 
-  public async saveRemedies(): Promise<StoreResponse> {
-    const remedies = await this.getRemedies();
-    const remediesByCategory: RemediesByCategory = {};
-    Object.values(remedies).forEach((remedy) => {
-      if (!remediesByCategory[remedy.category]) remediesByCategory[remedy.category] = [];
-      remediesByCategory[remedy.category]?.push(remedy);
-    });
+  /**
+   * Save all remedies and categories to storage.
+   * Create and indexed file with remedies grouped by categories.
+   * @returns a promise with a status response
+   */
+  public async commit(): Promise<CommitResponse> {
+    const [
+      remedies,
+      categories,
+    ] = await Promise.all([this.getRemedies(), this.getCategories()]);
 
     try {
-      writeFile('./data/remedies.json', JSON.stringify(remedies), (error) => {
-        if (error) throw {
-          message: `
-            Failed to write to 'remedies.json'.\n
-            ${this.addedRemediesCount > 0 ? `Couldn't add ${this.addedRemediesCount} remedies.\n` : ''}
-            ${this.removedRemediesCount > 0 ? `Couldn't remove ${this.removedRemediesCount} remedies.\n` : ''}
-          `,
-        };
-      });
-      writeFile('./data/remediesByCategory.json', JSON.stringify(remedies), (error) => {
-        if (error) throw {
-          message: `
-            Failed to write to 'remediesByCategory.json'.\n
-            ${this.addedRemediesCount > 0 ? `Couldn't add ${this.addedRemediesCount} remedies.\n` : ''}
-            ${this.removedRemediesCount > 0 ? `Couldn't remove ${this.removedRemediesCount} remedies.\n` : ''}
-          `,
-        };
-      });
+      writeFileSync('./src/data/remedies.json', JSON.stringify(remedies, null, '  '));
+      writeFileSync('./src/data/categories.json', JSON.stringify(categories, null, '  '));
+
       return {
         ok: true,
-        message: `
-          Succesfully writed remedies to storage.\n
-          ${this.addedRemediesCount > 0 ? `Added ${this.addedRemediesCount} remedies.\n` : ''}
-          ${this.removedRemediesCount > 0 ? `Removed ${this.removedRemediesCount} remedies.\n` : ''}
-        `,
-        remedies,
+        message: 'Succesfully commited to storage.',
       };
-    } catch (error: any) {
+    } catch (error) {
       return {
         ok: false,
-        message: error.message,
-        remedies,
+        message: 'Failed to commit to storage.',
       };
     }
   }

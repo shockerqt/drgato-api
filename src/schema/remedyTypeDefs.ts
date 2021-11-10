@@ -1,31 +1,42 @@
-import { gql } from 'apollo-server-core';
+import { gql } from 'apollo-server';
 
 export default gql`
 
+  # type Section {
+  #   name: ID!
+  #   categories: [Category]
+  # }
+
+  type Category {
+    name: ID!
+    slug: String!
+    remedies: [Remedy]
+  }
+
   type Remedy {
-    id: ID!
+    slug: ID!
     name: String!
-    category: RemedyCategory!
     dose: String
-    activePrinciple: ActivePrinciple!
-    laboratory: Laboratory!
-    netContent: Int!
-    netContentUnit: Unit!
-    format: RemedyFormat
-    priceHistories: [PriceHistory]
+    activePrinciple: String!
+    laboratory: String!
+    netContent: Int
+    netContentUnit: String
+    format: String
   }
 
   extend type Query {
-    remedies: [Remedy]
-    remedy(id: ID!): Remedy
+    categories: [Category]
+    category(name: ID!): Category
+    remedy(slug: ID!): Remedy
   }
 
   extend type Mutation {
     addRemedy(input: AddRemedyInput!): AddRemedyPayload!
     updateRemedy(input: UpdateRemedyInput!): UpdateRemedyPayload!
-    removeRemedy(input: RemoveRemedyInput!): RemoveRemedyPayload!
-    addPriceHistory(input: AddPriceHistoryInput!): AddPriceHistoryPayload!
-    addPriceStampToHistory(input: AddPriceStampToHistoryInput!): AddPriceStampToHistoryPayload!
+    addCategory(input: AddCategoryInput!): AddCategoryPayload!
+    # removeRemedy(input: RemoveRemedyInput!): RemoveRemedyPayload!
+    # addPriceHistory(input: AddPriceHistoryInput!): AddPriceHistoryPayload!
+    # addPriceStampToHistory(input: AddPriceStampToHistoryInput!): AddPriceStampToHistoryPayload!
   }
 
   input AddRemedyInput {
@@ -34,8 +45,8 @@ export default gql`
     dose: String
     activePrinciple: String!
     laboratory: String!
-    netContent: Int!
-    netContentUnit: String!
+    netContent: Int
+    netContentUnit: String
     format: String
   }
 
@@ -47,15 +58,15 @@ export default gql`
   }
 
   input UpdateRemedyInput {
-    id: ID!
+    slug: String!
     name: String
-    category: ID
+    category: String
     dose: String
-    activePrinciple: ID
-    laboratory: ID
+    activePrinciple: String
+    laboratory: String
     netContent: Int
-    netContentUnit: ID
-    format: ID
+    netContentUnit: String
+    format: String
   }
 
   type UpdateRemedyPayload {
@@ -65,41 +76,52 @@ export default gql`
     remedies: [Remedy]
   }
 
-  input RemoveRemedyInput {
-    id: ID!
+  input AddCategoryInput {
+    name: ID!
   }
 
-  type RemoveRemedyPayload {
+  type AddCategoryPayload {
     success: Boolean!
     message: String
-    removedRemedy: Remedy
-    remedies: [Remedy]
+    addedCategory: Category
+    categories: [Category]
   }
 
-  input AddPriceHistoryInput {
-    remedyId: ID!
-    pharmacyId: ID!
-    url: String
-  }
+  # input RemoveRemedyInput {
+  #   id: ID!
+  # }
 
-  type AddPriceHistoryPayload {
-    success: Boolean!
-    message: String
-    updatedRemedy: Remedy
-    priceHistories: [PriceHistory]
-  }
+  # type RemoveRemedyPayload {
+  #   success: Boolean!
+  #   message: String
+  #   removedRemedy: Remedy
+  #   remedies: [Remedy]
+  # }
 
-  input AddPriceStampToHistoryInput {
-    remedyId: ID!
-    pharmacyId: ID!
-    price: Int
-  }
+  # input AddPriceHistoryInput {
+  #   remedyId: ID!
+  #   pharmacyId: ID!
+  #   url: String
+  # }
 
-  type AddPriceStampToHistoryPayload {
-    success: Boolean!
-    message: String
-    priceHistory: PriceHistory
-    addedPriceStamp: PriceStamp
-  }
+  # type AddPriceHistoryPayload {
+  #   success: Boolean!
+  #   message: String
+  #   updatedRemedy: Remedy
+  #   priceHistories: [PriceHistory]
+  # }
+
+  # input AddPriceStampToHistoryInput {
+  #   remedyId: ID!
+  #   pharmacyId: ID!
+  #   price: Int
+  # }
+
+  # type AddPriceStampToHistoryPayload {
+  #   success: Boolean!
+  #   message: String
+  #   priceHistory: PriceHistory
+  #   addedPriceStamp: PriceStamp
+  # }
 
 `;

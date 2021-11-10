@@ -1,11 +1,11 @@
 import { DataSource } from 'apollo-datasource';
 import slugify from 'slugify';
 
-import Store, { Remedies, RemediesByCategory, Remedy } from '../store';
+import Store, { Category, Remedy } from '../store';
 
 export interface AddRemedyInput {
+  name: string;
   category: string;
-  name: string
   dose?: string;
   activePrinciple: string;
   laboratory: string;
@@ -18,27 +18,38 @@ export interface AddRemedyPayload {
   success: boolean;
   message?: string;
   addedRemedy?: Remedy;
-  remedies: Remedies | null;
+  remedies?: Remedy[];
 }
 
-export interface GetRemedyBySlugPayload {
+export interface UpdateRemedyInput {
+  slug: string;
+  name?: string;
+  category?: string;
+  dose?: string;
+  activePrinciple?: string;
+  laboratory?: string;
+  netContent?: number;
+  netContentUnit?: string;
+  format?: string;
+}
+
+export interface UpdateRemedyPayload {
   success: boolean;
   message?: string;
-  remedy?: Remedy;
+  updatedRemedy?: Remedy;
+  remedies?: Remedy[];
 }
 
-export interface GetAllRemediesPayload {
+export interface AddCategoryInput {
+  name: string;
+}
+
+export interface AddCategoryPayload {
   success: boolean;
   message?: string;
-  remedies: Remedies | null;
+  addedCategory?: Category;
+  categories?: Category[];
 }
-
-export interface GetRemediesByCategoryPayload {
-  success: boolean;
-  message?: string;
-  remediesByCategory: RemediesByCategory | null;
-}
-
 
 export default class RemedyAPI extends DataSource {
   private store;
@@ -61,11 +72,11 @@ export default class RemedyAPI extends DataSource {
       ${remedy.name}
       -${remedy.laboratory}
       ${remedy.dose ? `-${remedy.dose}` : ''}
-      ${remedy.netContent && remedy.netContentUnit ? `-${remedy.netContentUnit}` : ''}
+      ${remedy.netContent && remedy.netContentUnit ? `-${remedy.netContent}` : ''}
       ${remedy.netContent && remedy.netContentUnit ? `-${remedy.netContentUnit}` : ''}
     `;
 
-    return slugify(identifier);
+    return slugify(identifier, { lower: true });
   }
 
   /**
@@ -77,26 +88,41 @@ export default class RemedyAPI extends DataSource {
   public async addRemedy(remedy: AddRemedyInput): Promise<AddRemedyPayload> {
     const slug = this.generateRemedySlug(remedy);
 
-    const remedyToAdd = {
-      ...remedy,
+    const remedyToAdd: Remedy = {
+      name: remedy.name,
+      category: remedy.category,
+      activePrinciple: remedy.activePrinciple,
+      laboratory: remedy.laboratory,
+      ...(remedy.dose && { dose: remedy.dose }),
+      ...(remedy.format && { format: remedy.format }),
+      ...((remedy.netContent && remedy.netContentUnit) && { netContent: remedy.netContent, netContentUnit: remedy.netContentUnit }),
       slug,
     };
 
-    const remedies = await this.store.getRemedies();
-
-    if (slug in remedies) return {
-      success: false,
-      message: `Operation Failed.\n"${slug}" is already in remedies storage\n`,
+    const [
       remedies,
+      categories,
+    ] = await Promise.all([this.store.getRemedies(), this.store.getCategories()]);
+
+    if (remedies.some((remedy) => remedy.slug === slug)) return {
+      success: false,
+      message: `Remedy with slug '${slug}' is already in storage.`,
     };
 
-    const response = await this.store.saveRemedies();
+    if (!categories.some((category) => category.name === remedy.category)) return {
+      success: false,
+      message: `Category '${remedy.category}' doesn't exists in storage. Please add it first.`,
+    };
+
+    remedies.push(remedyToAdd);
+
+    const response = await this.store.commit();
 
     return {
       success: response.ok,
       message: response.message,
       ...(response.ok && { addedRemedy: remedyToAdd }),
-      remedies: response.remedies,
+      remedies,
     };
   }
 
@@ -104,46 +130,87 @@ export default class RemedyAPI extends DataSource {
    * Get a remedy by its slug in storage if it exists.
    * @returns a remedy
    */
-  public async getRemedyBySlug(slug: string): Promise<GetRemedyBySlugPayload> {
-
+  public async getRemedyBySlug(slug: string): Promise<Remedy | null> {
     const remedies = await this.store.getRemedies();
+    return remedies.find((remedy) => remedy.slug === slug) || null;
+  }
 
-    if (!(slug in remedies)) return {
+  /**
+   * @returns all categories from storage.
+   */
+  public async getCategories(): Promise<Category[]> {
+    return await this.store.getCategories();
+  }
+
+  /**
+   * @param name the category name to return.
+   * @returns returns a category
+   */
+  public async getCategoryByName(name: string): Promise<Category | null> {
+    const categories = await this.store.getCategories();
+    return categories.find((category) => category.name === name) || null;
+  }
+
+  /**
+   * @param name the category name filtered.
+   * @returns all the remedies from a category
+   */
+  public async getRemediesByCategory(name: string): Promise<Remedy[]> {
+    const remedies = await this.store.getRemedies();
+    return remedies.filter(remedy => remedy.category === name);
+  }
+
+  public async updateRemedy(input: UpdateRemedyInput): Promise<UpdateRemedyPayload> {
+    const remedy = await this.getRemedyBySlug(input.slug);
+
+    if (!remedy) return {
       success: false,
-      message: `Operation Failed.\n"${slug}" doesn't exists in storage\n`,
+      message: `Remedy with slug '${input.slug}' doesn't exist in remedies storage.`,
     };
 
+    if (input.name) remedy.name = input.name;
+    if (input.category) remedy.category = input.category;
+    if (input.activePrinciple) remedy.activePrinciple = input.activePrinciple;
+    if (input.laboratory) remedy.laboratory = input.laboratory;
+    if (input.dose) remedy.dose = input.dose;
+    if (input.format) remedy.format = input.format;
+    if (input.netContent && input.netContentUnit) {
+      remedy.netContent = input.netContent;
+      remedy.netContentUnit = input.netContentUnit;
+    }
+
+    const response = await this.store.commit();
+
     return {
-      success: true,
-      remedy: remedies[slug],
+      success: response.ok,
+      message: response.message,
+      ...(response.ok && { addedRemedy: remedy }),
+      remedies: await this.store.getRemedies(),
     };
   }
 
-  /**
-   * Get all remedies from storage indexed by its slug.
-   * @returns a remedies object with their slug as key.
-   */
-  public async getAllRemedies(): Promise<GetAllRemediesPayload> {
+  public async addCategory(input: AddCategoryInput): Promise<AddCategoryPayload> {
+    const categories = await this.store.getCategories();
 
-    const remedies = await this.store.getRemedies();
-
-    return {
-      success: true,
-      remedies,
+    if (categories.some((category) => category.name === input.name)) return {
+      success: false,
+      message: `Category '${input.name}' is already in storage.`,
     };
-  }
 
-  /**
-   * Get all remedies from storage indexed by its slug.
-   * @returns a remedies object with their slug as key.
-   */
-  public async getRemediesByCategory(): Promise<GetRemediesByCategoryPayload> {
+    const categoryToAdd = {
+      name: input.name,
+      slug: slugify(input.name, { lower: true }),
+    };
 
-    const remediesByCategory = await this.store.getRemediesByCategory();
+    categories.push(categoryToAdd);
+
+    const response = await this.store.commit();
 
     return {
-      success: true,
-      remediesByCategory,
+      success: response.ok,
+      message: response.message,
+      ...(response.ok && { addedCategory: categoryToAdd }),
+      categories,
     };
   }
 
