@@ -1,23 +1,5 @@
-import { DataSources } from '../apis';
-import { RemedyAttributes } from '../models/Remedy';
-
-export type AddRemedyInput = {
-  activePrinciple: string;
-  category: string;
-  dose?: string;
-  format?: string;
-  laboratory: string;
-  name: string;
-  netContent: number;
-  netContentUnit: string;
-}
-
-export type AddRemedyPayload = {
-  success: boolean;
-  message?: string;
-  addedRemedy?: RemedyAttributes;
-  remedies?: RemedyAttributes[];
-}
+import { DataSources } from '..';
+import { AddRemedyInput } from '../api/remedy';
 
 export default {
   Query: {
@@ -28,11 +10,17 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getAllRemedies(),
 
+    remediesByCategory: (
+      _: never,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getRemediesByCategory(),
+
     remedy: (
       _: never,
-      { id }: { id: number },
+      { slug }: { slug: string },
       { dataSources }: { dataSources: DataSources },
-    ) => dataSources.remedyAPI.getRemedyById(id),
+    ) => dataSources.remedyAPI.getRemedyBySlug(slug),
 
   },
 
@@ -42,7 +30,7 @@ export default {
       _: never,
       { input }: { input: AddRemedyInput },
       { dataSources }: { dataSources: DataSources },
-    ): Promise<AddRemedyPayload> => dataSources.remedyAPI.addRemedy(input),
+    ) => dataSources.remedyAPI.addRemedy(input),
 
   },
 };

@@ -1,36 +1,31 @@
-import { ApolloServer } from 'apollo-server-express';
-import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
-import express from 'express';
-import http from 'http';
-import { DocumentNode } from 'graphql';
+import { ApolloServer } from 'apollo-server';
 
 import { typeDefs, resolvers } from './schema';
-import { createStore } from './utils';
-import { dataSources } from './apis';
+import Store from './store';
+import { RemedyAPI } from './api';
 
+const store = new Store();
 
-const startApolloServer = async (typeDefs: DocumentNode[], resolvers: any) => {
-  const app = express();
-  const httpServer = http.createServer(app);
+export interface DataSources {
+  remedyAPI: RemedyAPI;
+}
 
-  createStore();
-
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    dataSources,
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-  });
-
-  await server.start();
-  server.applyMiddleware({
-    app,
-    path: '/',
-  });
-
-  await new Promise(resolve => httpServer.listen({ port: 4000 }, () => {
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`, resolve);
-  }));
+const dataSources = {
+  remedyAPI: new RemedyAPI({ store }),
 };
 
-startApolloServer(typeDefs, resolvers);
+const startServer = async () => {
+  const apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+    dataSources: () => dataSources,
+  });
+
+  const { url } = await apolloServer.listen();
+
+  console.log(`🚀  Server ready at ${url}`);
+
+  return apolloServer;
+};
+
+startServer();

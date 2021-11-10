@@ -35,12 +35,8 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "apollo-server-core": "^3.4.0",
-    "apollo-server-express": "^3.4.0",
-    "express": "^4.17.1",
-    "graphql": "^15.6.1",
-    "pg": "^8.7.1",
-    "sequelize": "^6.8.0",
-    "sqlite3": "^5.0.2"
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.7.2",
+    "slugify": "^1.6.2"
   }
 }

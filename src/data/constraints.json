@@ -1,0 +1,29 @@
+{
+  "remedyCategories": [
+    "Sistema respiratorio y alergias"
+  ],
+  "pharmacies": [
+    "Farmacias Cruz Verde",
+    "Farmacias Ahumada",
+    "Farmacias Salcobrand"
+  ],
+  "units": [
+    {
+      "name": "comprimido",
+      "plural": "comprimidos"
+    },
+    {
+      "name": "mL"
+    },
+    {
+      "name": "cápsula",
+      "plural": "cápsulas"
+    },
+    {
+      "name": "dosis"
+    },
+    {
+      "name": "gr"
+    }
+  ]
+}

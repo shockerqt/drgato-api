@@ -1,4 +1,4 @@
-import { DataSources } from '../apis';
+import { DataSources } from '../api';
 import { RemedyCategory } from '../models';
 
 export type AddRemedyCategoryInput = {
