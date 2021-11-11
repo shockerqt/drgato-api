@@ -63,8 +63,8 @@ export default class RemedyAPI extends DataSource {
    * Generate a unique identifier (slug) for a remedy using
    * its name, laboratory, dose, netContent and netContentUnit info,
    * separated by dashes
-   * @param remedy
-   * @returns a slug
+   * @param remedy the remedy that will get a slug
+   * @returns a slug from the remedy data
    */
   private generateRemedySlug(remedy: AddRemedyInput): string {
 
@@ -83,7 +83,7 @@ export default class RemedyAPI extends DataSource {
    * Add a remedy to storage.
    * It checks if another remedy with the same generated slug exists.
    * @param remedy the remedy to add
-   * @returns AddRemedyPayload
+   * @returns a promise that resolves to a payload
    */
   public async addRemedy(remedy: AddRemedyInput): Promise<AddRemedyPayload> {
     const slug = this.generateRemedySlug(remedy);
@@ -128,7 +128,8 @@ export default class RemedyAPI extends DataSource {
 
   /**
    * Get a remedy by its slug in storage if it exists.
-   * @returns a remedy
+   * @param slug the slug from the remedy to look for
+   * @returns a promise that resolves to a remedy
    */
   public async getRemedyBySlug(slug: string): Promise<Remedy | null> {
     const remedies = await this.store.getRemedies();
@@ -136,7 +137,7 @@ export default class RemedyAPI extends DataSource {
   }
 
   /**
-   * @returns all categories from storage.
+   * @returns a promise that resolves to all categories
    */
   public async getCategories(): Promise<Category[]> {
     return await this.store.getCategories();
@@ -144,7 +145,7 @@ export default class RemedyAPI extends DataSource {
 
   /**
    * @param name the category name to return.
-   * @returns returns a category
+   * @returns a promise that resolves to a category
    */
   public async getCategoryByName(name: string): Promise<Category | null> {
     const categories = await this.store.getCategories();
@@ -153,13 +154,17 @@ export default class RemedyAPI extends DataSource {
 
   /**
    * @param name the category name filtered.
-   * @returns all the remedies from a category
+   * @returns a promise that resolves to all remedies on a category
    */
   public async getRemediesByCategory(name: string): Promise<Remedy[]> {
     const remedies = await this.store.getRemedies();
     return remedies.filter(remedy => remedy.category === name);
   }
 
+  /**
+   * @param input the data to update the remedy
+   * @returns a promise that resolve to a payload
+   */
   public async updateRemedy(input: UpdateRemedyInput): Promise<UpdateRemedyPayload> {
     const remedy = await this.getRemedyBySlug(input.slug);
 
@@ -189,6 +194,11 @@ export default class RemedyAPI extends DataSource {
     };
   }
 
+  /**
+   * Add a category if it doesn't exists on storage
+   * @param input the category to add
+   * @returns a promise that resolves to a payload
+   */
   public async addCategory(input: AddCategoryInput): Promise<AddCategoryPayload> {
     const categories = await this.store.getCategories();
 
