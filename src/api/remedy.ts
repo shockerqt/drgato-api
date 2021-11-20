@@ -1,7 +1,24 @@
 import { DataSource } from 'apollo-datasource';
 import slugify from 'slugify';
 
-import Store, { Category, Remedy } from '../store';
+import Store, { StoreRemedy } from '../store';
+
+export interface Remedy {
+  slug: string;
+  category: string;
+  name: string
+  dose?: string;
+  activePrinciple: string;
+  laboratory: string;
+  netContent?: number;
+  netContentUnit?: string;
+  format?: string;
+}
+
+export interface Category {
+  slug: string;
+  name: string;
+}
 
 export interface AddRemedyInput {
   name: string;
@@ -66,7 +83,13 @@ export default class RemedyAPI extends DataSource {
    * @param remedy the remedy that will get a slug
    * @returns a slug from the remedy data
    */
-  private generateRemedySlug(remedy: AddRemedyInput): string {
+  private generateRemedySlug(remedy: {
+    name: string;
+    laboratory: string;
+    dose?: string;
+    netContent?: number;
+    netContentUnit?: string;
+  }): string {
 
     const identifier = `
       ${remedy.name}
@@ -88,7 +111,8 @@ export default class RemedyAPI extends DataSource {
   public async addRemedy(remedy: AddRemedyInput): Promise<AddRemedyPayload> {
     const slug = this.generateRemedySlug(remedy);
 
-    const remedyToAdd: Remedy = {
+    const remedyToAdd: StoreRemedy = {
+      slug,
       name: remedy.name,
       category: remedy.category,
       activePrinciple: remedy.activePrinciple,
@@ -96,32 +120,38 @@ export default class RemedyAPI extends DataSource {
       ...(remedy.dose && { dose: remedy.dose }),
       ...(remedy.format && { format: remedy.format }),
       ...((remedy.netContent && remedy.netContentUnit) && { netContent: remedy.netContent, netContentUnit: remedy.netContentUnit }),
-      slug,
     };
 
-    const [
-      remedies,
-      categories,
-    ] = await Promise.all([this.store.getRemedies(), this.store.getCategories()]);
+    const categories = this.store.remedyCategories;
 
-    if (remedies.some((remedy) => remedy.slug === slug)) return {
-      success: false,
-      message: `Remedy with slug '${slug}' is already in storage.`,
-    };
-
-    if (!categories.some((category) => category.name === remedy.category)) return {
+    if (!Object.hasOwn(categories, remedy.category)) return {
       success: false,
       message: `Category '${remedy.category}' doesn't exists in storage. Please add it first.`,
     };
 
-    remedies.push(remedyToAdd);
+    if (Object.hasOwn(this.store.indexedProducts, slug)) return {
+      success: false,
+      message: `A product with the slug '${slug}' is already in storage.`,
+    };
 
-    const response = await this.store.commit();
+    categories[remedy.category].products[slug] = remedyToAdd;
+
+    const response = this.store.commit();
+
+    const addedRemedy = {
+      ...remedyToAdd,
+      slug,
+    };
+
+    const remedies = Object.entries(categories[remedy.category].products).map(([slug, remedy]) => ({
+      ...remedy,
+      slug,
+    }));
 
     return {
       success: response.ok,
       message: response.message,
-      ...(response.ok && { addedRemedy: remedyToAdd }),
+      ...(response.ok && { addedRemedy }),
       remedies,
     };
   }
@@ -132,15 +162,21 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to a remedy
    */
   public async getRemedyBySlug(slug: string): Promise<Remedy | null> {
-    const remedies = await this.store.getRemedies();
-    return remedies.find((remedy) => remedy.slug === slug) || null;
+    const remedies = this.store.indexedRemedies;
+
+    return remedies[slug] || null;
   }
 
   /**
    * @returns a promise that resolves to all categories
    */
   public async getCategories(): Promise<Category[]> {
-    return await this.store.getCategories();
+    return Object.entries(this.store.remedyCategories).map(([slug, category]) => (
+      {
+        slug,
+        name: category.name,
+      }
+    ));
   }
 
   /**
@@ -148,49 +184,79 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to a category
    */
   public async getCategoryByName(name: string): Promise<Category | null> {
-    const categories = await this.store.getCategories();
-    return categories.find((category) => category.name === name) || null;
+    const slug = slugify(name);
+    const storeCategory = this.store.remedyCategories[slug];
+    if (!storeCategory) return null;
+    return {
+      slug,
+      name: storeCategory.name,
+    };
   }
 
-  /**
-   * @param name the category name filtered.
-   * @returns a promise that resolves to all remedies on a category
-   */
-  public async getRemediesByCategory(name: string): Promise<Remedy[]> {
-    const remedies = await this.store.getRemedies();
-    return remedies.filter(remedy => remedy.category === name);
-  }
+  // /**
+  //  * @param name the category name filtered.
+  //  * @returns a promise that resolves to all remedies on a category
+  //  */
+  // public async getRemediesByCategory(name: string): Promise<Remedies> {
+  //   const remedies = await this.store.remedyCategories;
+  //   return remedies.filter(remedy => remedy.category === name);
+  // }
 
   /**
    * @param input the data to update the remedy
    * @returns a promise that resolve to a payload
    */
   public async updateRemedy(input: UpdateRemedyInput): Promise<UpdateRemedyPayload> {
-    const remedy = await this.getRemedyBySlug(input.slug);
+    const { slug } = input;
 
-    if (!remedy) return {
+    const categories = this.store.remedyCategories;
+
+    if (!Object.hasOwn(this.store.indexedProducts, slug)) return {
       success: false,
-      message: `Remedy with slug '${input.slug}' doesn't exist in remedies storage.`,
+      message: `Product '${slug}' doesn't exist in storage.`,
     };
 
-    if (input.name) remedy.name = input.name;
-    if (input.category) remedy.category = input.category;
-    if (input.activePrinciple) remedy.activePrinciple = input.activePrinciple;
-    if (input.laboratory) remedy.laboratory = input.laboratory;
-    if (input.dose) remedy.dose = input.dose;
-    if (input.format) remedy.format = input.format;
-    if (input.netContent && input.netContentUnit) {
-      remedy.netContent = input.netContent;
-      remedy.netContentUnit = input.netContentUnit;
-    }
+    if (!Object.hasOwn(this.store.indexedRemedies, slug)) return {
+      success: false,
+      message: `Product '${slug}' is not a remedy.`,
+    };
 
-    const response = await this.store.commit();
+    if (input.category && !Object.hasOwn(categories, input.category)) return {
+      success: false,
+      message: `Category '${input.category}' doesn't exists in storage. Please add it first.`,
+    };
+
+    const remedy = this.store.indexedRemedies[slug];
+
+    const remedyToUpdate: StoreRemedy = {
+      ...remedy,
+      ...(input.name && { name: input.name }),
+      ...(input.category && { category: input.category }),
+      ...(input.activePrinciple && { name: input.activePrinciple }),
+      ...(input.laboratory && { name: input.laboratory }),
+      ...(input.dose && { dose: input.dose }),
+      ...(input.format && { format: input.format }),
+      ...((input.netContent && input.netContentUnit) && { netContent: input.netContent, netContentUnit: input.netContentUnit }),
+    };
+
+    const newSlug = this.generateRemedySlug(remedyToUpdate);
+    remedyToUpdate.slug = newSlug;
+
+    // Delete obsolete remedy from storage
+    delete categories[remedy.category].products[remedy.slug];
+
+    // Add new remedy to storage
+    categories[remedyToUpdate.category].products[slug] = remedyToUpdate;
+
+    const response = this.store.commit();
+
+    const remedies = Object.values(categories[remedy.category].products);
 
     return {
       success: response.ok,
       message: response.message,
-      ...(response.ok && { addedRemedy: remedy }),
-      remedies: await this.store.getRemedies(),
+      ...(response.ok && { updatedRemedy: remedyToUpdate }),
+      remedies,
     };
   }
 
@@ -200,27 +266,28 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to a payload
    */
   public async addCategory(input: AddCategoryInput): Promise<AddCategoryPayload> {
-    const categories = await this.store.getCategories();
+    const categories = this.store.remedyCategories;
 
-    if (categories.some((category) => category.name === input.name)) return {
+    if (Object.hasOwn(categories, input.name)) return {
       success: false,
-      message: `Category '${input.name}' is already in storage.`,
+      message: `Category '${input.name}' already exists in storage.`,
     };
 
     const categoryToAdd = {
       name: input.name,
       slug: slugify(input.name, { lower: true }),
+      products: {},
     };
 
-    categories.push(categoryToAdd);
+    categories[input.name] = categoryToAdd;
 
-    const response = await this.store.commit();
+    const response = this.store.commit();
 
     return {
       success: response.ok,
       message: response.message,
       ...(response.ok && { addedCategory: categoryToAdd }),
-      categories,
+      categories: Object.values(categories),
     };
   }
 

@@ -1,6 +1,10 @@
 import { DataSources } from '..';
-import { AddCategoryInput, AddRemedyInput, UpdateRemedyInput } from '../api/remedy';
-import { Category } from '../store';
+import {
+  AddCategoryInput,
+  AddRemedyInput,
+  UpdateRemedyInput,
+  Category,
+} from '../api/remedy';
 
 export default {
 
@@ -26,13 +30,13 @@ export default {
 
   },
 
-  Category: {
-    remedies: (
-      parent: Category,
-      __: never,
-      { dataSources }: { dataSources: DataSources },
-    ) => dataSources.remedyAPI.getRemediesByCategory(parent.name),
-  },
+  // Category: {
+  //   remedies: (
+  //     parent: Category,
+  //     __: never,
+  //     { dataSources }: { dataSources: DataSources },
+  //   ) => dataSources.remedyAPI.getRemediesByCategory(parent.name),
+  // },
 
   Mutation: {
 

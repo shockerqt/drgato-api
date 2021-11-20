@@ -23,6 +23,7 @@ const startServer = async () => {
 
   const { url } = await apolloServer.listen();
 
+  // eslint-disable-next-line no-console
   console.log(`🚀  Server ready at ${url}`);
 
   return apolloServer;

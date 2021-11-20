@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
+    "async-mutex": "^0.3.2",
     "graphql": "^15.7.2",
     "slugify": "^1.6.2"
   }

@@ -1,22 +1,59 @@
 import { writeFileSync } from 'fs';
 
-export interface Constraints {
-  remedyCategories: string[];
-  pharmacies: string[];
-  units: {
-    name: string;
-    plural?: string;
-  }
+// {
+//   "sections": {
+//     "remedies": {
+//       "name": "Remedios",
+//       "categories": {
+//         "sistema-respiratorio-y-alergias": {
+//           "name": "Sistema respiratorio y alergias",
+//           "products": {}
+//         }
+//       }
+//     }
+//   }
+// }
+
+export interface StoreData {
+  sections: StoreSections;
 }
 
-export interface Category {
+export interface StoreSections {
+  remedies: StoreSection<StoreRemedy>;
+}
+
+export interface StoreSection<Type> {
   name: string;
-  slug: string;
+  categories: StoreCategories<Type>;
 }
 
-export interface Remedy {
+export interface StoreCategories<Type> {
+  [slug: string]: StoreCategory<Type>;
+}
+
+export interface StoreCategory<Type> {
   slug: string;
+  name: string;
+  products: StoreProducts<Type>;
+}
+
+export interface StoreProducts<Type> {
+  [slug: string]: Type;
+}
+
+export interface StoreRemedy {
+  slug: string;
+  name: string
   category: string;
+  dose?: string;
+  activePrinciple: string;
+  laboratory: string;
+  netContent?: number;
+  netContentUnit?: string;
+  format?: string;
+}
+
+export interface StoreBeauty {
   name: string
   dose?: string;
   activePrinciple: string;
@@ -26,6 +63,7 @@ export interface Remedy {
   format?: string;
 }
 
+export type StoreProductTypes = StoreRemedy | StoreBeauty;
 
 interface CommitResponse {
   ok: boolean;
@@ -33,50 +71,85 @@ interface CommitResponse {
 }
 
 export default class Store {
-  private remedies: Remedy[] | null = null;
-  private categories: Category[] | null = null;
+  private data!: StoreData;
+  private products!: StoreProducts<StoreProductTypes>;
+  private remedies!: StoreProducts<StoreRemedy>;
+
+  public async init(): Promise<void> {
+    this.data = await this.loadData();
+
+    this.indexProducts(this.data);
+
+  }
 
   /**
-   * Get remedies from storage.
-   * Load from external json if array is not in memory.
-   * @returns a promise which resolves to all remedies on storage
+   * Load data from external storage if not in memory
+   * @returns  a promise that resolves to the data
    */
-  public async getRemedies() {
-    if (!this.remedies) {
-      const response = await import('./data/remedies.json');
-      this.remedies = response.default;
-    }
+  private async loadData(): Promise<StoreData> {
+    const data = await import('./data/data.json');
+    return data.default;
+  }
+
+  /**
+   * Get all remedies from storage in objects like { slug: Remedy }
+   * @param data the data from storage
+   * @returns an object with all remedies indexed by slug
+   */
+  private indexRemedies(data: StoreData): StoreProducts<StoreRemedy> {
+    let remedies = {};
+    Object.values(data.sections.remedies.categories).forEach((category) => {
+      remedies = {
+        ...remedies,
+        ...category.products,
+      };
+    });
+
+    return remedies;
+  }
+
+  /**
+   * Create an object indexed by slug for each section and
+   * a products object with all sections
+   * @param data the data from storage
+   */
+  private indexProducts(data: StoreData): void {
+    this.remedies = this.indexRemedies(data);
+
+    this.products = {
+      ...this.remedies,
+    };
+  }
+
+  /**
+   * Get all remedy categories from data
+   * @returns a promise which resolves to all data from store
+   */
+  get remedyCategories(): StoreCategories<StoreRemedy> {
+    return this.data.sections.remedies.categories;
+  }
+
+  get indexedProducts(): StoreProducts<StoreProductTypes> {
+    return this.products;
+  }
+
+  get indexedRemedies(): StoreProducts<StoreRemedy> {
     return this.remedies;
   }
 
   /**
-   * Get categories from storage.
-   * Load from external json if array is not in memory.
-   * @returns a promise which resolves to all categories on storage
-   */
-  public async getCategories() {
-    if (!this.categories) {
-      const response = await import('./data/categories.json');
-      this.categories = response.default;
-    }
-    return this.categories;
-  }
-
-  /**
-   * Save all remedies and categories to storage.
-   * Create and indexed file with remedies grouped by categories.
+   * Save all data to external storage.
    * @returns a promise with a status response
    */
-  public async commit(): Promise<CommitResponse> {
-    const [
-      remedies,
-      categories,
-    ] = await Promise.all([this.getRemedies(), this.getCategories()]);
+  public commit(): CommitResponse {
+
+    if (!this.data) return {
+      ok: false,
+      message: 'Nothing to commit.',
+    };
 
     try {
-      writeFileSync('./src/data/remedies.json', JSON.stringify(remedies, null, '  '));
-      writeFileSync('./src/data/categories.json', JSON.stringify(categories, null, '  '));
-
+      writeFileSync('./src/data/data.json', JSON.stringify(this.data, null, '  '));
       return {
         ok: true,
         message: 'Succesfully commited to storage.',

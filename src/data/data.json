@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "remedies": {
+      "name": "Remedios",
+      "categories": {
+        "sistema-respiratorio-y-alergias": {
+          "slug": "sistema-respiratorio-y-alergias",
+          "name": "Sistema respiratorio y alergias",
+          "products": {}
+        }
+      }
+    }
+  }
+}
