@@ -4,6 +4,7 @@ import {
   AddRemedyInput,
   UpdateRemedyInput,
   Category,
+  Remedy,
 } from '../api/remedy';
 
 export default {
@@ -28,15 +29,29 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getRemedyBySlug(slug),
 
+    remedies: (
+      _: never,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getRemedies(),
+
   },
 
-  // Category: {
-  //   remedies: (
-  //     parent: Category,
-  //     __: never,
-  //     { dataSources }: { dataSources: DataSources },
-  //   ) => dataSources.remedyAPI.getRemediesByCategory(parent.name),
-  // },
+  Category: {
+    remedies: (
+      parent: Category,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getRemediesByCategory(parent.slug),
+  },
+
+  Remedy: {
+    category: (
+      parent: Remedy,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getCategoryByName(parent.category),
+  },
 
   Mutation: {
 

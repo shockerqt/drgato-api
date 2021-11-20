@@ -15,6 +15,8 @@ const dataSources = {
 };
 
 const startServer = async () => {
+  await store.init();
+
   const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,

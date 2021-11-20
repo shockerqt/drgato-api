@@ -103,6 +103,17 @@ export default class RemedyAPI extends DataSource {
   }
 
   /**
+   * Generate a unique identifier (slug) for a category using its name
+   * @param category the category that will get a slug
+   * @returns a slug from the category name
+   */
+  private generateCategorySlug(category: { name: string; }): string {
+    const identifier = category.name;
+
+    return slugify(identifier, { lower: true });
+  }
+
+  /**
    * Add a remedy to storage.
    * It checks if another remedy with the same generated slug exists.
    * @param remedy the remedy to add
@@ -110,6 +121,7 @@ export default class RemedyAPI extends DataSource {
    */
   public async addRemedy(remedy: AddRemedyInput): Promise<AddRemedyPayload> {
     const slug = this.generateRemedySlug(remedy);
+    const categorySlug = this.generateCategorySlug({ name: remedy.category });
 
     const remedyToAdd: StoreRemedy = {
       slug,
@@ -122,19 +134,20 @@ export default class RemedyAPI extends DataSource {
       ...((remedy.netContent && remedy.netContentUnit) && { netContent: remedy.netContent, netContentUnit: remedy.netContentUnit }),
     };
 
+
     const categories = this.store.remedyCategories;
 
-    if (!Object.hasOwn(categories, remedy.category)) return {
+    if (!categories[categorySlug]) return {
       success: false,
       message: `Category '${remedy.category}' doesn't exists in storage. Please add it first.`,
     };
 
-    if (Object.hasOwn(this.store.indexedProducts, slug)) return {
+    if (this.store.indexedProducts[slug]) return {
       success: false,
       message: `A product with the slug '${slug}' is already in storage.`,
     };
 
-    categories[remedy.category].products[slug] = remedyToAdd;
+    categories[categorySlug].products[slug] = remedyToAdd;
 
     const response = this.store.commit();
 
@@ -143,7 +156,7 @@ export default class RemedyAPI extends DataSource {
       slug,
     };
 
-    const remedies = Object.entries(categories[remedy.category].products).map(([slug, remedy]) => ({
+    const remedies = Object.entries(categories[categorySlug].products).map(([slug, remedy]) => ({
       ...remedy,
       slug,
     }));
@@ -171,12 +184,7 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to all categories
    */
   public async getCategories(): Promise<Category[]> {
-    return Object.entries(this.store.remedyCategories).map(([slug, category]) => (
-      {
-        slug,
-        name: category.name,
-      }
-    ));
+    return Object.values(this.store.remedyCategories);
   }
 
   /**
@@ -184,23 +192,26 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to a category
    */
   public async getCategoryByName(name: string): Promise<Category | null> {
-    const slug = slugify(name);
+    const slug = this.generateCategorySlug({ name });
     const storeCategory = this.store.remedyCategories[slug];
     if (!storeCategory) return null;
-    return {
-      slug,
-      name: storeCategory.name,
-    };
+    return storeCategory;
   }
 
-  // /**
-  //  * @param name the category name filtered.
-  //  * @returns a promise that resolves to all remedies on a category
-  //  */
-  // public async getRemediesByCategory(name: string): Promise<Remedies> {
-  //   const remedies = await this.store.remedyCategories;
-  //   return remedies.filter(remedy => remedy.category === name);
-  // }
+  /**
+   * @returns a promise that resolves to all categories
+   */
+  public async getRemedies(): Promise<Remedy[]> {
+    return Object.values(this.store.indexedRemedies);
+  }
+
+  /**
+   * @param name the category name.
+   * @returns a promise that resolves to all remedies on a category
+   */
+  public async getRemediesByCategory(slug: string): Promise<Remedy[] | null> {
+    return Object.values(this.store.remedyCategories[slug].products);
+  }
 
   /**
    * @param input the data to update the remedy
@@ -211,22 +222,24 @@ export default class RemedyAPI extends DataSource {
 
     const categories = this.store.remedyCategories;
 
-    if (!Object.hasOwn(this.store.indexedProducts, slug)) return {
+    if (!this.store.indexedProducts[slug]) return {
       success: false,
       message: `Product '${slug}' doesn't exist in storage.`,
     };
 
-    if (!Object.hasOwn(this.store.indexedRemedies, slug)) return {
+    if (!this.store.indexedRemedies[slug]) return {
       success: false,
       message: `Product '${slug}' is not a remedy.`,
     };
 
-    if (input.category && !Object.hasOwn(categories, input.category)) return {
+    const remedy = this.store.indexedRemedies[slug];
+    const categorySlug = this.generateCategorySlug({ name: remedy.category });
+
+    if (input.category && !categories[input.category]) return {
       success: false,
       message: `Category '${input.category}' doesn't exists in storage. Please add it first.`,
     };
 
-    const remedy = this.store.indexedRemedies[slug];
 
     const remedyToUpdate: StoreRemedy = {
       ...remedy,
@@ -243,14 +256,15 @@ export default class RemedyAPI extends DataSource {
     remedyToUpdate.slug = newSlug;
 
     // Delete obsolete remedy from storage
-    delete categories[remedy.category].products[remedy.slug];
+    delete categories[categorySlug].products[remedy.slug];
 
     // Add new remedy to storage
-    categories[remedyToUpdate.category].products[slug] = remedyToUpdate;
+    const newCategorySlug = this.generateCategorySlug({ name: remedyToUpdate.category });
+    categories[newCategorySlug].products[slug] = remedyToUpdate;
 
     const response = this.store.commit();
 
-    const remedies = Object.values(categories[remedy.category].products);
+    const remedies = Object.values(categories[newCategorySlug].products);
 
     return {
       success: response.ok,
@@ -267,19 +281,21 @@ export default class RemedyAPI extends DataSource {
    */
   public async addCategory(input: AddCategoryInput): Promise<AddCategoryPayload> {
     const categories = this.store.remedyCategories;
+    const slug = this.generateCategorySlug({ name: input.name });
 
-    if (Object.hasOwn(categories, input.name)) return {
+    if (categories[slug]) return {
       success: false,
       message: `Category '${input.name}' already exists in storage.`,
     };
 
+
     const categoryToAdd = {
       name: input.name,
-      slug: slugify(input.name, { lower: true }),
+      slug,
       products: {},
     };
 
-    categories[input.name] = categoryToAdd;
+    categories[slug] = categoryToAdd;
 
     const response = this.store.commit();
 

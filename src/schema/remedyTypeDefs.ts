@@ -8,14 +8,15 @@ export default gql`
   # }
 
   type Category {
-    name: ID!
-    slug: String!
+    slug: ID!
+    name: String!
     remedies: [Remedy]
   }
 
   type Remedy {
     slug: ID!
     name: String!
+    category: Category!
     dose: String
     activePrinciple: String!
     laboratory: String!
@@ -26,7 +27,8 @@ export default gql`
 
   extend type Query {
     categories: [Category]
-    category(name: ID!): Category
+    category(name: String!): Category
+    remedies: [Remedy]
     remedy(slug: ID!): Remedy
   }
 
