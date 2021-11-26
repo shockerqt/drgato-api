@@ -1,90 +1,44 @@
 import { writeFileSync } from 'fs';
 
-// {
-//   "sections": {
-//     "remedies": {
-//       "name": "Remedios",
-//       "categories": {
-//         "sistema-respiratorio-y-alergias": {
-//           "name": "Sistema respiratorio y alergias",
-//           "products": {}
-//         }
-//       }
-//     }
-//   }
-// }
-
-interface StoreData {
-  sections: StoreSections;
-  pharmacies: StorePharmacies;
+interface StoreRemedies {
+  [slug: string]: StoreRemedy;
 }
 
-interface StoreSections {
-  remedies: StoreSection<StoreRemedy>;
+interface StoreRemedy {
+  activePrinciple: string;
+  category: string;
+  dose?: string;
+  format?: string;
+  laboratory: string;
+  name: string
+  netContent?: number;
+  netContentUnit?: string;
+  vendors: Vendors;
 }
 
-interface StorePharmacies {
-  [slug: string]: StorePharmacy;
-}
-
-interface StorePharmacy {
-  slug: string;
-  name: string;
-}
-
-export interface StoreSection<Type> {
-  name: string;
-  categories: StoreCategories<Type>;
-}
-
-export interface StoreCategories<Type> {
-  [slug: string]: StoreCategory<Type>;
-}
-
-export interface StoreCategory<Type> {
-  slug: string;
-  name: string;
-  products: StoreProducts<Type>;
-}
-
-export interface StoreProducts<Type> {
-  [slug: string]: Type;
-}
-
-export interface Vendors {
+interface Vendors {
   [slug: string]: Vendor;
 }
 
-export interface Vendor {
+interface Vendor {
   slug: string;
   url: string;
   lastPrice?: number;
 }
 
-export interface StoreRemedy {
-  slug: string;
-  name: string
-  category: string;
-  dose?: string;
-  activePrinciple: string;
-  laboratory: string;
-  netContent?: number;
-  netContentUnit?: string;
-  format?: string;
-  vendors: Vendors;
+interface StoreRemedyCategories {
+  [slug: string]: StoreRemedyCategory;
 }
 
-export interface StoreBeauty {
-  name: string
-  dose?: string;
-  activePrinciple: string;
-  laboratory: string;
-  netContent?: number;
-  netContentUnit?: string;
-  format?: string;
+interface StoreRemedyCategory {
+  name: string;
+  remedies: string[];
 }
 
-export type StoreProductTypes = StoreRemedy | StoreBeauty;
+interface StoreRemediesData {
+  remedies: StoreRemedies;
+  remedyCategories: StoreRemedyCategories;
+}
 
 interface CommitResponse {
   ok: boolean;

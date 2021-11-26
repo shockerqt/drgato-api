@@ -1,0 +1,31 @@
+{
+  "remedyCategories": {
+    "sistema-respiratorio-y-alergias": {
+      "name": "Sistema respiratorio y alergias",
+      "remedies": [
+        "adrisin-heel-50-comprimidos" 
+      ]
+    }
+  },
+  "remedies": {
+    "adrisin-heel-50-comprimidos": {
+      "name": "Adrisin",
+      "category": "sistema-respiratorio-y-alergias",
+      "activePrinciple": "Adrisin",
+      "laboratory": "Heel",
+      "format": "Comprimidos sublinguales",
+      "netContent": 50,
+      "netContentUnit": "comprimidos",
+      "vendors": {
+        "farmacias-cruz-verde": {
+          "url": "https://www.cruzverde.cl/adrisin-50-comprimidos-sublinguales/390928.html",
+          "lastPrice": 4893
+        },
+        "farmacias-salcobrand": {
+          "url": "https://salcobrand.cl/products/adrisin-50-comprimidos-sublinguales",
+          "lastPrice": 5893
+        }
+      }
+    }
+  }
+}

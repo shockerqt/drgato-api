@@ -15,11 +15,37 @@
               "laboratory": "Heel",
               "format": "Comprimidos sublinguales",
               "netContent": 50,
-              "netContentUnit": "comprimidos"
+              "netContentUnit": "comprimidos",
+              "vendors": {
+                "farmacias-cruz-verde": {
+                  "slug": "farmacias-cruz-verde",
+                  "url": "https://www.cruzverde.cl/adrisin-50-comprimidos-sublinguales/390928.html",
+                  "lastPrice": 4893
+                },
+                "farmacias-salcobrand": {
+                  "slug": "farmacias-salcobrand",
+                  "url": "https://salcobrand.cl/products/adrisin-50-comprimidos-sublinguales",
+                  "lastPrice": 5893
+                }
+              }
             }
           }
         }
       }
+    }
+  },
+  "pharmacies": {
+    "farmacias-salcobrand": {
+      "name": "Farmacias Salcobrand",
+      "slug": "farmacias-salcobrand"
+    },
+    "farmacias-cruz-verde": {
+      "name": "Farmacias Cruz Verde",
+      "slug": "farmacias-cruz-verde"
+    },
+    "farmacias-ahumada": {
+      "name": "Farmacias Ahumada",
+      "slug": "farmacias-ahumada"
     }
   }
 }

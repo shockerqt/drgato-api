@@ -13,6 +13,11 @@ export default gql`
     remedies: [Remedy]
   }
 
+  type Pharmacy {
+    slug: ID!
+    name: String!
+  }
+
   type Remedy {
     slug: ID!
     name: String!
@@ -23,6 +28,13 @@ export default gql`
     netContent: Int
     netContentUnit: String
     format: String
+    vendors: [Vendor]!
+  }
+
+  type Vendor {
+    pharmacy: Pharmacy!
+    url: String!
+    lastPrice: Int
   }
 
   extend type Query {
@@ -30,12 +42,15 @@ export default gql`
     category(name: String!): Category
     remedies: [Remedy]
     remedy(slug: ID!): Remedy
+    pharmacies: [Pharmacy]
   }
 
   extend type Mutation {
     addRemedy(input: AddRemedyInput!): AddRemedyPayload!
     updateRemedy(input: UpdateRemedyInput!): UpdateRemedyPayload!
     addCategory(input: AddCategoryInput!): AddCategoryPayload!
+    addPharmacy(input: AddPharmacyInput!): AddPharmacyPayload!
+    addVendor(input: AddVendorInput!): AddVendorPayload!
     # removeRemedy(input: RemoveRemedyInput!): RemoveRemedyPayload!
     # addPriceHistory(input: AddPriceHistoryInput!): AddPriceHistoryPayload!
     # addPriceStampToHistory(input: AddPriceStampToHistoryInput!): AddPriceStampToHistoryPayload!
@@ -88,6 +103,30 @@ export default gql`
     addedCategory: Category
     categories: [Category]
   }
+
+  input AddPharmacyInput {
+    name: ID!
+  }
+
+  type AddPharmacyPayload {
+    success: Boolean!
+    message: String
+    addedPharmacy: Pharmacy
+    pharmacies: [Pharmacy]
+  }
+  
+  input AddVendorInput {
+    pharmacy: String!
+    url: String!
+  }
+
+  type AddVendorPayload {
+    success: Boolean!
+    message: String
+    addedVendor: Vendor
+    vendors: [Vendor]
+  }
+
 
   # input RemoveRemedyInput {
   #   id: ID!

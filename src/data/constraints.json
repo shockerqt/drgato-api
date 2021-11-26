@@ -1,0 +1,13 @@
+{
+  "pharmacies": {
+    "farmacias-salcobrand": {
+      "name": "Farmacias Salcobrand"
+    },
+    "farmacias-cruz-verde": {
+      "name": "Farmacias Cruz Verde"
+    },
+    "farmacias-ahumada": {
+      "name": "Farmacias Ahumada"
+    }
+  }
+}

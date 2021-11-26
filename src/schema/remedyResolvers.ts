@@ -5,6 +5,8 @@ import {
   UpdateRemedyInput,
   Category,
   Remedy,
+  AddPharmacyInput,
+  AddVendorInput,
 } from '../api/remedy';
 
 export default {
@@ -35,6 +37,12 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getRemedies(),
 
+    pharmacies: (
+      _: never,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getPharmacies(),
+
   },
 
   Category: {
@@ -51,6 +59,13 @@ export default {
       __: never,
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getCategoryByName(parent.category),
+
+    // vendors: (
+    //   parent: Remedy,
+    //   __: never,
+    //   { dataSources }: { dataSources: DataSources },
+    // ) => dataSources.remedyAPI.getRemedyVendors(parent.category),
+
   },
 
   Mutation: {
@@ -73,6 +88,17 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.addCategory(input),
 
+    addPharmacy: (
+      _: never,
+      { input }: { input: AddPharmacyInput },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.addPharmacy(input),
+
+    addVendor: (
+      _: never,
+      { input }: { input: AddVendorInput },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.addVendor(input),
   },
 
 };
