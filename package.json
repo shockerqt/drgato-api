@@ -35,7 +35,6 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "apollo-server-core": "^3.5.0",
     "apollo-server-lambda": "^3.5.0",
     "graphql": "^15.7.2",
     "slugify": "^1.6.2"
