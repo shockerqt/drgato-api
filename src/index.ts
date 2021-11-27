@@ -11,20 +11,18 @@ export interface DataSources {
 
 const store = new Store();
 
+store.init();
+
 const dataSources = {
   remedyAPI: new RemedyAPI({ store }),
 };
 
-export const handler = async () => {
-  await store.init();
+const apolloServer = new ApolloServer({
+  typeDefs,
+  resolvers,
+  dataSources: () => dataSources,
+  introspection: true,
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+});
 
-  const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers,
-    dataSources: () => dataSources,
-    introspection: true,
-    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
-  });
-
-  return apolloServer.createHandler();
-};
+export const handler = apolloServer.createHandler();
