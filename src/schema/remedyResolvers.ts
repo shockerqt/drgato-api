@@ -7,7 +7,7 @@ import {
   Remedy,
   AddPharmacyInput,
   AddVendorInput,
-} from '../api/remedy';
+} from '../api/remedyAPI';
 
 export default {
 

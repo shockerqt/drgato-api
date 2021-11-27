@@ -1,14 +1,14 @@
 import { ApolloServer } from 'apollo-server';
 
 import { typeDefs, resolvers } from './schema';
-import Store from './store';
+import Store from './models';
 import { RemedyAPI } from './api';
-
-const store = new Store();
 
 export interface DataSources {
   remedyAPI: RemedyAPI;
 }
+
+const store = new Store();
 
 const dataSources = {
   remedyAPI: new RemedyAPI({ store }),

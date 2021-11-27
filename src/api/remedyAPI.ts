@@ -1,108 +1,32 @@
 import { DataSource } from 'apollo-datasource';
 import slugify from 'slugify';
+import {
+  AddPharmacyInput,
+  AddPharmacyPayload,
+  AddRemedyInput,
+  AddRemedyPayload,
+  AddVendorInput,
+  AddVendorPayload,
+  Pharmacy,
+  Remedy,
+  RemedyCategory,
+  UpdateRemedyInput,
+  UpdateRemedyPayload,
+} from '.';
 
-import Store, { StoreRemedy, Vendor } from '../store';
-
-export interface Remedy {
-  slug: string;
-  category: string;
-  name: string
-  dose?: string;
-  activePrinciple: string;
-  laboratory: string;
-  netContent?: number;
-  netContentUnit?: string;
-  format?: string;
-}
-
-export interface Category {
-  slug: string;
-  name: string;
-}
-
-export interface Pharmacy {
-  slug: string;
-  name: string;
-}
-
-export interface AddRemedyInput {
-  name: string;
-  category: string;
-  dose?: string;
-  activePrinciple: string;
-  laboratory: string;
-  netContent?: number;
-  netContentUnit?: string;
-  format?: string;
-}
-
-export interface AddRemedyPayload {
-  success: boolean;
-  message?: string;
-  addedRemedy?: Remedy;
-  remedies?: Remedy[];
-}
-
-export interface UpdateRemedyInput {
-  slug: string;
-  name?: string;
-  category?: string;
-  dose?: string;
-  activePrinciple?: string;
-  laboratory?: string;
-  netContent?: number;
-  netContentUnit?: string;
-  format?: string;
-}
-
-export interface UpdateRemedyPayload {
-  success: boolean;
-  message?: string;
-  updatedRemedy?: Remedy;
-  remedies?: Remedy[];
-}
-
-export interface AddCategoryInput {
-  name: string;
-}
-
-export interface AddCategoryPayload {
-  success: boolean;
-  message?: string;
-  addedCategory?: Category;
-  categories?: Category[];
-}
-
-export interface AddPharmacyInput {
-  name: string;
-}
-
-export interface AddPharmacyPayload {
-  success: boolean;
-  message?: string;
-  addedPharmacy?: Pharmacy;
-  pharmacies?: Pharmacy[];
-}
-
-export interface AddVendorInput {
-  remedySlug: string;
-  pharmacySlug: string;
-  url: string;
-}
-
-export interface AddVendorPayload {
-  success: boolean;
-  message?: string;
-  addedVendor?: Vendor;
-  updatedRemedy?: Remedy;
-}
+import Store, {
+  RemedyModel,
+} from '../models';
+import RemedyStore from '../models/remedyStore';
 
 export default class RemedyAPI extends DataSource {
-  private store;
+  private store: Store;
+  private remedyStore: RemedyStore;
 
   constructor({ store }: { store: Store }) {
     super();
     this.store = store;
+    this.remedyStore = store.remedyStore;
   }
 
   /**
@@ -150,49 +74,43 @@ export default class RemedyAPI extends DataSource {
     const slug = this.generateRemedySlug(remedy);
     const categorySlug = this.generateSlug(remedy.category);
 
-    const remedyToAdd: StoreRemedy = {
-      slug,
+    const remedyToAdd: RemedyModel = {
       name: remedy.name,
       category: remedy.category,
       activePrinciple: remedy.activePrinciple,
       laboratory: remedy.laboratory,
+      vendors: {},
       ...(remedy.dose && { dose: remedy.dose }),
       ...(remedy.format && { format: remedy.format }),
       ...((remedy.netContent && remedy.netContentUnit) && { netContent: remedy.netContent, netContentUnit: remedy.netContentUnit }),
     };
 
 
-    const categories = this.store.remedyCategories;
+    const { categories, remedies } = this.remedyStore;
+
+    if (remedies[slug]) return {
+      success: false,
+      message: `A product with the slug '${slug}' is already in storage.`,
+    };
 
     if (!categories[categorySlug]) return {
       success: false,
       message: `Category '${remedy.category}' doesn't exists in storage. Please add it first.`,
     };
 
-    if (this.store.indexedProducts[slug]) return {
-      success: false,
-      message: `A product with the slug '${slug}' is already in storage.`,
-    };
+    this.remedyStore.addOrUpdateRemedy(slug, remedyToAdd);
 
-    categories[categorySlug].products[slug] = remedyToAdd;
-
-    const response = this.store.commit();
+    const response = this.remedyStore.commit();
 
     const addedRemedy = {
       ...remedyToAdd,
       slug,
     };
 
-    const remedies = Object.entries(categories[categorySlug].products).map(([slug, remedy]) => ({
-      ...remedy,
-      slug,
-    }));
-
     return {
       success: response.ok,
       message: response.message,
       ...(response.ok && { addedRemedy }),
-      remedies,
     };
   }
 
@@ -202,34 +120,39 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to a remedy
    */
   public async getRemedyBySlug(slug: string): Promise<Remedy | null> {
-    const remedies = this.store.indexedRemedies;
+    const remedy = this.remedyStore.remedies[slug] || null;
 
-    return remedies[slug] || null;
+    return remedy ? {
+      ...remedy,
+      slug,
+    } : null;
   }
 
   /**
    * @returns a promise that resolves to all categories
    */
-  public async getCategories(): Promise<Category[]> {
-    return Object.values(this.store.remedyCategories);
+  public async getCategories(): Promise<RemedyCategory[]> {
+    return Object.entries(this.remedyStore.categories).map(([slug, category]) => ({ ...category, slug }));
   }
 
   /**
    * @param name the category name to return.
    * @returns a promise that resolves to a category
    */
-  public async getCategoryByName(name: string): Promise<Category | null> {
+  public async getCategoryByName(name: string): Promise<RemedyCategory | null> {
     const slug = this.generateSlug(name);
-    const storeCategory = this.store.remedyCategories[slug];
-    if (!storeCategory) return null;
-    return storeCategory;
+    const category = this.remedyStore.categories[slug] || null;
+    return category ? {
+      ...category,
+      slug,
+    } : null;
   }
 
   /**
-   * @returns a promise that resolves to all categories
+   * @returns a promise that resolves to all remedies
    */
   public async getRemedies(): Promise<Remedy[]> {
-    return Object.values(this.store.indexedRemedies);
+    return Object.entries(this.remedyStore.remedies).map(([slug, remedy]) => ({ ...remedy, slug }));
   }
 
   /**
@@ -237,11 +160,17 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to all remedies on a category
    */
   public async getRemediesByCategory(slug: string): Promise<Remedy[] | null> {
-    return Object.values(this.store.remedyCategories[slug].products);
+    return Object.values(this.remedyStore.categories[slug]).map(remedySlug => ({
+      ...this.remedyStore.remedies[remedySlug],
+      slug: remedySlug,
+    }));
   }
 
+  /**
+   * @returns a promise that resolves to all pharmacies
+   */
   public async getPharmacies(): Promise<Pharmacy[]> {
-    return Object.values(this.store.pharmacies);
+    return Object.entries(this.store.pharmacies).map(([slug, pharmacy]) => ({ ...pharmacy, slug }));
   }
 
   /**
@@ -251,16 +180,11 @@ export default class RemedyAPI extends DataSource {
   public async updateRemedy(input: UpdateRemedyInput): Promise<UpdateRemedyPayload> {
     const { slug } = input;
 
-    const categories = this.store.remedyCategories;
+    const { categories, remedies } = this.remedyStore;
 
-    if (!this.store.indexedProducts[slug]) return {
+    if (!remedies[slug]) return {
       success: false,
-      message: `Product '${slug}' doesn't exist in storage.`,
-    };
-
-    if (!this.store.indexedRemedies[slug]) return {
-      success: false,
-      message: `Product '${slug}' is not a remedy.`,
+      message: `Remedy '${slug}' doesn't exist in storage.`,
     };
 
     const remedy = this.store.indexedRemedies[slug];
