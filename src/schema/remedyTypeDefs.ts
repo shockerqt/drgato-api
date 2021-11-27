@@ -43,6 +43,8 @@ export default gql`
     remedies: [Remedy]
     remedy(slug: ID!): Remedy
     pharmacies: [Pharmacy]
+    pharmacy: Pharmacy
+    vendors(remedySlug: ID!): [Vendor]
   }
 
   extend type Mutation {
@@ -71,7 +73,6 @@ export default gql`
     success: Boolean!
     message: String
     addedRemedy: Remedy
-    remedies: [Remedy]
   }
 
   input UpdateRemedyInput {
@@ -90,7 +91,6 @@ export default gql`
     success: Boolean!
     message: String
     updatedRemedy: Remedy
-    remedies: [Remedy]
   }
 
   input AddCategoryInput {
@@ -101,7 +101,6 @@ export default gql`
     success: Boolean!
     message: String
     addedCategory: Category
-    categories: [Category]
   }
 
   input AddPharmacyInput {
@@ -112,11 +111,11 @@ export default gql`
     success: Boolean!
     message: String
     addedPharmacy: Pharmacy
-    pharmacies: [Pharmacy]
   }
   
   input AddVendorInput {
-    pharmacy: String!
+    remedySlug: String!
+    pharmacySlug: String!
     url: String!
   }
 
@@ -124,7 +123,7 @@ export default gql`
     success: Boolean!
     message: String
     addedVendor: Vendor
-    vendors: [Vendor]
+    updatedRemedy: Remedy
   }
 
 

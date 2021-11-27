@@ -3,6 +3,8 @@ import slugify from 'slugify';
 import {
   AddPharmacyInput,
   AddPharmacyPayload,
+  AddRemedyCategoryInput,
+  AddRemedyCategoryPayload,
   AddRemedyInput,
   AddRemedyPayload,
   AddVendorInput,
@@ -12,6 +14,7 @@ import {
   RemedyCategory,
   UpdateRemedyInput,
   UpdateRemedyPayload,
+  Vendor,
 } from '.';
 
 import Store, {
@@ -160,7 +163,7 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to all remedies on a category
    */
   public async getRemediesByCategory(slug: string): Promise<Remedy[] | null> {
-    return Object.values(this.remedyStore.categories[slug]).map(remedySlug => ({
+    return this.remedyStore.categories[slug].remedies.map(remedySlug => ({
       ...this.remedyStore.remedies[remedySlug],
       slug: remedySlug,
     }));
@@ -187,19 +190,17 @@ export default class RemedyAPI extends DataSource {
       message: `Remedy '${slug}' doesn't exist in storage.`,
     };
 
-    const remedy = this.store.indexedRemedies[slug];
-    const categorySlug = this.generateSlug(remedy.category);
-
     if (input.category && !categories[input.category]) return {
       success: false,
       message: `Category '${input.category}' doesn't exists in storage. Please add it first.`,
     };
 
+    const remedy = remedies[slug];
 
-    const remedyToUpdate: StoreRemedy = {
+    const remedyToUpdate: RemedyModel = {
       ...remedy,
       ...(input.name && { name: input.name }),
-      ...(input.category && { category: input.category }),
+      ...(input.category && { category: this.generateSlug(input.category) }),
       ...(input.activePrinciple && { name: input.activePrinciple }),
       ...(input.laboratory && { name: input.laboratory }),
       ...(input.dose && { dose: input.dose }),
@@ -208,24 +209,19 @@ export default class RemedyAPI extends DataSource {
     };
 
     const newSlug = this.generateRemedySlug(remedyToUpdate);
-    remedyToUpdate.slug = newSlug;
 
     // Delete obsolete remedy from storage
-    delete categories[categorySlug].products[remedy.slug];
+    this.remedyStore.removeRemedy(slug);
 
     // Add new remedy to storage
-    const newCategorySlug = this.generateSlug(remedyToUpdate.category);
-    categories[newCategorySlug].products[slug] = remedyToUpdate;
+    this.remedyStore.addOrUpdateRemedy(newSlug, remedyToUpdate);
 
-    const response = this.store.commit();
-
-    const remedies = Object.values(categories[newCategorySlug].products);
+    const response = this.remedyStore.commit();
 
     return {
       success: response.ok,
       message: response.message,
-      ...(response.ok && { updatedRemedy: remedyToUpdate }),
-      remedies,
+      ...(response.ok && { updatedRemedy: { ...remedyToUpdate, slug: newSlug } }),
     };
   }
 
@@ -234,8 +230,8 @@ export default class RemedyAPI extends DataSource {
    * @param input the category to add
    * @returns a promise that resolves to a payload
    */
-  public async addCategory(input: AddCategoryInput): Promise<AddCategoryPayload> {
-    const categories = this.store.remedyCategories;
+  public async addCategory(input: AddRemedyCategoryInput): Promise<AddRemedyCategoryPayload> {
+    const { categories } = this.remedyStore;
     const slug = this.generateSlug(input.name);
 
     if (categories[slug]) return {
@@ -246,19 +242,17 @@ export default class RemedyAPI extends DataSource {
 
     const categoryToAdd = {
       name: input.name,
-      slug,
-      products: {},
+      remedies: [],
     };
 
-    categories[slug] = categoryToAdd;
+    this.remedyStore.addCategory(slug, categoryToAdd);
 
-    const response = this.store.commit();
+    const response = this.remedyStore.commit();
 
     return {
       success: response.ok,
       message: response.message,
-      ...(response.ok && { addedCategory: categoryToAdd }),
-      categories: Object.values(categories),
+      ...(response.ok && { addedCategory: { ...categoryToAdd, slug } }),
     };
   }
 
@@ -278,7 +272,6 @@ export default class RemedyAPI extends DataSource {
 
     const pharmacyToAdd = {
       name: input.name,
-      slug,
     };
 
     pharmacies[slug] = pharmacyToAdd;
@@ -288,15 +281,14 @@ export default class RemedyAPI extends DataSource {
     return {
       success: response.ok,
       message: response.message,
-      ...(response.ok && { addedPharmacy: pharmacyToAdd }),
-      pharmacies: Object.values(pharmacies),
+      ...(response.ok && { addedPharmacy: { ...pharmacyToAdd, slug } }),
     };
 
   }
 
   public async addVendor(input: AddVendorInput): Promise<AddVendorPayload> {
     const { pharmacies } = this.store;
-    const remedies = this.store.indexedRemedies;
+    const { remedies } = this.remedyStore;
 
     const { remedySlug, pharmacySlug } = input;
 
@@ -318,21 +310,34 @@ export default class RemedyAPI extends DataSource {
     const remedy = remedies[remedySlug];
 
     const vendorToAdd = {
-      slug: pharmacySlug,
       url: input.url,
     };
 
-    categories[remedySlug].vendors[pharmacySlug] = vendorToAdd;
+    remedies[remedySlug].vendors[pharmacySlug] = vendorToAdd;
 
-    const response = this.store.commit();
+    const response = this.remedyStore.commit();
 
     return {
       success: response.ok,
       message: response.message,
-      ...(response.ok && { addedPharmacy: pharmacyToAdd }),
-      pharmacies: Object.values(pharmacies),
+      ...(response.ok && { addedVendor: { ...vendorToAdd, pharmacy: pharmacySlug } }),
+      updatedRemedy: { ...remedy, slug: remedySlug },
     };
 
+  }
+
+  /**
+   * @returns a promise that resolves to all remedies
+   */
+  public async getRemedyVendors(remedySlug: string): Promise<Vendor[]> {
+    return Object.entries(this.remedyStore.remedies[remedySlug].vendors).map(([slug, vendor]) => ({ ...vendor, pharmacy: slug }));
+  }
+
+  /**
+   * @returns a promise that resolves to all remedies
+   */
+  public async getPharmacy(pharmacySlug: string): Promise<Pharmacy> {
+    return { ...this.store.pharmacies[pharmacySlug], slug: pharmacySlug };
   }
 
 }

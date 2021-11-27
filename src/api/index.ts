@@ -23,7 +23,7 @@ export interface Pharmacy {
 }
 
 export interface Vendor {
-  slug: string;
+  pharmacy: string;
   lastPrice?: number;
   url: string;
 }

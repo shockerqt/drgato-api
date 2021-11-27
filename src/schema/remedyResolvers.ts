@@ -1,13 +1,14 @@
 import { DataSources } from '..';
 import {
-  AddCategoryInput,
-  AddRemedyInput,
-  UpdateRemedyInput,
-  Category,
-  Remedy,
   AddPharmacyInput,
+  AddRemedyCategoryInput,
+  AddRemedyInput,
   AddVendorInput,
-} from '../api/remedyAPI';
+  Remedy,
+  RemedyCategory,
+  UpdateRemedyInput,
+  Vendor,
+} from '../api';
 
 export default {
 
@@ -37,17 +38,28 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getRemedies(),
 
+    pharmacy: (
+      _: never,
+      { pharmacySlug }: { pharmacySlug: string },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getPharmacy(pharmacySlug),
+
     pharmacies: (
       _: never,
       __: never,
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getPharmacies(),
 
+    vendors: (
+      _: never,
+      { remedySlug }: { remedySlug: string },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getRemedyVendors(remedySlug),
   },
 
   Category: {
     remedies: (
-      parent: Category,
+      parent: RemedyCategory,
       __: never,
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getRemediesByCategory(parent.slug),
@@ -60,12 +72,20 @@ export default {
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.getCategoryByName(parent.category),
 
-    // vendors: (
-    //   parent: Remedy,
-    //   __: never,
-    //   { dataSources }: { dataSources: DataSources },
-    // ) => dataSources.remedyAPI.getRemedyVendors(parent.category),
+    vendors: (
+      parent: Remedy,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getRemedyVendors(parent.slug),
 
+  },
+
+  Vendor: {
+    pharmacy: (
+      parent: Vendor,
+      __: never,
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.getPharmacy(parent.pharmacy),
   },
 
   Mutation: {
@@ -84,7 +104,7 @@ export default {
 
     addCategory: (
       _: never,
-      { input }: { input: AddCategoryInput },
+      { input }: { input: AddRemedyCategoryInput },
       { dataSources }: { dataSources: DataSources },
     ) => dataSources.remedyAPI.addCategory(input),
 

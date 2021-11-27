@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs';
 import RemedyStore from './remedyStore';
 
 export interface RemediesModel {
@@ -83,5 +84,30 @@ export default class Store {
    */
   get pharmacies(): PharmaciesModel {
     return this.data.pharmacies;
+  }
+
+  /**
+   * Save all data to external storage.
+   * @returns a promise with a status response
+   */
+  public commit(): CommitResponse {
+
+    if (!this.data) return {
+      ok: false,
+      message: 'Nothing to commit.',
+    };
+
+    try {
+      writeFileSync('./src/data/constraints.json', JSON.stringify(this.data, null, '  '));
+      return {
+        ok: true,
+        message: 'Succesfully commited to storage.',
+      };
+    } catch (error) {
+      return {
+        ok: false,
+        message: 'Failed to commit to storage.',
+      };
+    }
   }
 }
