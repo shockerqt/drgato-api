@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server-lambda';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 
 import { typeDefs, resolvers } from './schema';
 import Store from './models';
@@ -21,6 +22,8 @@ export const handler = async () => {
     typeDefs,
     resolvers,
     dataSources: () => dataSources,
+    introspection: true,
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
   });
 
   return apolloServer.createHandler();
