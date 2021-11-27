@@ -14,7 +14,7 @@ const dataSources = {
   remedyAPI: new RemedyAPI({ store }),
 };
 
-const startServer = async () => {
+export const handler = async () => {
   await store.init();
 
   const apolloServer = new ApolloServer({
@@ -25,5 +25,3 @@ const startServer = async () => {
 
   return apolloServer.createHandler();
 };
-
-export const handler = startServer();
