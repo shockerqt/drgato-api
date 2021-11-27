@@ -35,8 +35,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "apollo-server": "^3.5.0",
-    "async-mutex": "^0.3.2",
+    "apollo-server-lambda": "^3.5.0",
     "graphql": "^15.7.2",
     "slugify": "^1.6.2"
   }

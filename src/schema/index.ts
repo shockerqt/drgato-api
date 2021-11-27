@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server';
+import { gql } from 'apollo-server-lambda';
 
 import { dateScalar } from './scalars';
 import remedyTypeDefs from './remedyTypeDefs';

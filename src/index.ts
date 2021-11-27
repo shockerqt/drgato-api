@@ -1,4 +1,4 @@
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer } from 'apollo-server-lambda';
 
 import { typeDefs, resolvers } from './schema';
 import Store from './models';
@@ -23,12 +23,7 @@ const startServer = async () => {
     dataSources: () => dataSources,
   });
 
-  const { url } = await apolloServer.listen();
-
-  // eslint-disable-next-line no-console
-  console.log(`🚀  Server ready at ${url}`);
-
-  return apolloServer;
+  return apolloServer.createHandler();
 };
 
-startServer();
+export const handler = startServer();
