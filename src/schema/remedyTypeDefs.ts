@@ -2,11 +2,6 @@ import { gql } from 'apollo-server';
 
 export default gql`
 
-  # type Section {
-  #   name: ID!
-  #   categories: [Category]
-  # }
-
   type Category {
     slug: ID!
     name: String!
@@ -53,9 +48,6 @@ export default gql`
     addCategory(input: AddCategoryInput!): AddCategoryPayload!
     addPharmacy(input: AddPharmacyInput!): AddPharmacyPayload!
     addVendor(input: AddVendorInput!): AddVendorPayload!
-    # removeRemedy(input: RemoveRemedyInput!): RemoveRemedyPayload!
-    # addPriceHistory(input: AddPriceHistoryInput!): AddPriceHistoryPayload!
-    # addPriceStampToHistory(input: AddPriceStampToHistoryInput!): AddPriceStampToHistoryPayload!
   }
 
   input AddRemedyInput {
@@ -125,43 +117,5 @@ export default gql`
     addedVendor: Vendor
     updatedRemedy: Remedy
   }
-
-
-  # input RemoveRemedyInput {
-  #   id: ID!
-  # }
-
-  # type RemoveRemedyPayload {
-  #   success: Boolean!
-  #   message: String
-  #   removedRemedy: Remedy
-  #   remedies: [Remedy]
-  # }
-
-  # input AddPriceHistoryInput {
-  #   remedyId: ID!
-  #   pharmacyId: ID!
-  #   url: String
-  # }
-
-  # type AddPriceHistoryPayload {
-  #   success: Boolean!
-  #   message: String
-  #   updatedRemedy: Remedy
-  #   priceHistories: [PriceHistory]
-  # }
-
-  # input AddPriceStampToHistoryInput {
-  #   remedyId: ID!
-  #   pharmacyId: ID!
-  #   price: Int
-  # }
-
-  # type AddPriceStampToHistoryPayload {
-  #   success: Boolean!
-  #   message: String
-  #   priceHistory: PriceHistory
-  #   addedPriceStamp: PriceStamp
-  # }
 
 `;
