@@ -3,7 +3,7 @@ export { default as RemedyAPI } from './remedyAPI';
 export interface Remedy {
   slug: string;
   category: string;
-  name: string
+  name: string;
   dose?: string;
   activePrinciple: string;
   laboratory: string;
@@ -37,6 +37,12 @@ export interface AddRemedyInput {
   netContent?: number;
   netContentUnit?: string;
   format?: string;
+  vendors?: VendorInput[];
+}
+
+export interface VendorInput {
+  pharmacy: string;
+  url: string;
 }
 
 export interface AddRemedyPayload {
@@ -55,6 +61,7 @@ export interface UpdateRemedyInput {
   netContent?: number;
   netContentUnit?: string;
   format?: string;
+  vendors?: string[];
 }
 
 export interface UpdateRemedyPayload {
@@ -94,4 +101,16 @@ export interface AddVendorPayload {
   message?: string;
   addedVendor?: Vendor;
   updatedRemedy?: Remedy;
+}
+
+export interface RemedySheetInput {
+  category: string;
+  sheet: string;
+}
+
+export interface RemedySheetPayload {
+  success: boolean;
+  message?: string;
+  addedVendor?: Vendor;
+  remedies?: Remedy[];
 }

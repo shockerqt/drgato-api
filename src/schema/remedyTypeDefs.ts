@@ -43,11 +43,23 @@ export default gql`
   }
 
   extend type Mutation {
+    remedySheet(input: RemedySheetInput!): RemedySheetPayload!
     addRemedy(input: AddRemedyInput!): AddRemedyPayload!
     updateRemedy(input: UpdateRemedyInput!): UpdateRemedyPayload!
     addCategory(input: AddCategoryInput!): AddCategoryPayload!
     addPharmacy(input: AddPharmacyInput!): AddPharmacyPayload!
     addVendor(input: AddVendorInput!): AddVendorPayload!
+  }
+
+  input RemedySheetInput {
+    category: String!
+    sheet: String!
+  }
+
+  type RemedySheetPayload {
+    success: Boolean!
+    message: String
+    remedies: [Remedy]
   }
 
   input AddRemedyInput {
@@ -59,6 +71,12 @@ export default gql`
     netContent: Int
     netContentUnit: String
     format: String
+    vendors: [VendorInput]
+  }
+
+  input VendorInput {
+    pharmacy: String!
+    url: String!
   }
 
   type AddRemedyPayload {
@@ -77,6 +95,7 @@ export default gql`
     netContent: Int
     netContentUnit: String
     format: String
+    vendors: [VendorInput]
   }
 
   type UpdateRemedyPayload {

@@ -8,14 +8,14 @@ export interface DataSources {
   remedyAPI: RemedyAPI;
 }
 
-const store = new Store();
-
-const dataSources = {
-  remedyAPI: new RemedyAPI({ store }),
-};
-
 const startServer = async () => {
+
+  const store = new Store();
   await store.init();
+
+  const dataSources = {
+    remedyAPI: new RemedyAPI({ store }),
+  };
 
   const apolloServer = new ApolloServer({
     typeDefs,

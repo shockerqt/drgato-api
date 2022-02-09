@@ -1,30 +1,4077 @@
 {
-  "remedyCategories": {
-    "sistema-respiratorio-y-alergias": {
-      "name": "Sistema respiratorio y alergias",
-      "remedies": [
-        "adrisin-heel-50-comprimidos" 
-      ]
+  "adrisin-heel-50-comprimidos": {
+    "name": "Adrisin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Adrisin",
+    "laboratory": "Heel",
+    "format": "Comprimidos sublinguales",
+    "netContent": 50,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/adrisin-50-comprimidos-sublinguales/390928.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/adrisin-50-comprimidos-sublinguales"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/adrisin-50-comprimidos-sublinguales.html"
+      }
     }
   },
-  "remedies": {
-    "adrisin-heel-50-comprimidos": {
-      "name": "Adrisin",
-      "category": "sistema-respiratorio-y-alergias",
-      "activePrinciple": "Adrisin",
-      "laboratory": "Heel",
-      "format": "Comprimidos sublinguales",
-      "netContent": 50,
-      "netContentUnit": "comprimidos",
-      "vendors": {
-        "farmacias-cruz-verde": {
-          "url": "https://www.cruzverde.cl/adrisin-50-comprimidos-sublinguales/390928.html",
-          "lastPrice": 4893
-        },
-        "farmacias-salcobrand": {
-          "url": "https://salcobrand.cl/products/adrisin-50-comprimidos-sublinguales",
-          "lastPrice": 5893
-        }
+  "aerius-merck-2.5-mg5-ml-120-ml": {
+    "name": "Aerius",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Merck",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerius-desloratadina-25-mg5ml-solucion-oral-120-ml/267614.html"
+      }
+    }
+  },
+  "aerius-merck-5-mg-30-comprimidos": {
+    "name": "Aerius",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Merck",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerius-desloratadina-5-mg-30-comprimidos-recubierto/23182.html"
+      }
+    }
+  },
+  "aerocamara-universal-mintlab": {
+    "name": "Aerocámara Universal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Mintlab",
+    "format": "Camara inhalatoria",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerocamara-universal-inhalador/260997.html"
+      }
+    }
+  },
+  "aerochamber-abbott-0-18-meses": {
+    "name": "AeroChamber",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Flow-Vu",
+    "laboratory": "Abbott",
+    "dose": "0-18 meses",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aero-chamber-plus-flow-vu-con-valvula-chica-0---18-meses-1-camara-espaciadora/296993.html"
+      }
+    }
+  },
+  "aerochamber-abbott-1-5-anos": {
+    "name": "AeroChamber",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Flow-Vu",
+    "laboratory": "Abbott",
+    "dose": "1-5 años",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aero-chamber-plus-flow-vu-con-valvula-mediana-1---5-anos-1-camara-espaciadora-/296998.html"
+      }
+    }
+  },
+  "aerochamber-abbott-adulto": {
+    "name": "AeroChamber",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Flow-Vu",
+    "laboratory": "Abbott",
+    "dose": "Adulto",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aero-chamber-plus-flow-vu-con-valvula-chica-adulto-1-camara-espaciadora/297002.html"
+      }
+    }
+  },
+  "aerofacidose-laboratorio-chile-adulto": {
+    "name": "Aerofacidose",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Laboratorio Chile",
+    "dose": "Adulto",
+    "format": "Aerocámara",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerofacidose-escolar-adulto-1-aerocamara/1159.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/aerofacidose-aerocamara-ad-escolar?default_sku=430840&queryID=8fbdf4b5848e6d7c7f5aa4ad27812f1b"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/aerofacidose-ae-escolar-adulto-x-1-unidad.html"
+      }
+    }
+  },
+  "aerofacidose-laboratorio-chile-0-5-anos": {
+    "name": "Aerofacidose",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Laboratorio Chile",
+    "dose": "0-5 años",
+    "format": "Aerocámara",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerofacidose-aerocamara-astatica-lactante-/1409.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/aerofacidose-aerocamara-lactante?default_sku=438402&queryID=8fbdf4b5848e6d7c7f5aa4ad27812f1b"
+      }
+    }
+  },
+  "aerolin-glaxo-0.5percent-20-ml": {
+    "name": "Aerolin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Glaxo",
+    "dose": "0.5%",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerolin-salbutamol-05-solucion-para-respirador-20-ml/60008.html"
+      }
+    }
+  },
+  "aerolin-glaxo-100-mcg-200-dosis": {
+    "name": "Aerolin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Glaxo",
+    "dose": "100 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerolin-lf-salbutamol-100-mcg-ds-inhalador-bucal-200-dosis/60150.html"
+      }
+    }
+  },
+  "aerotrop-d-and-m-pharma-20-mcg-250-dosis": {
+    "name": "Aerotrop",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Ipratropio bromuro",
+    "laboratory": "D & M Pharma",
+    "dose": "20 mcg",
+    "netContent": 250,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerotrop-hfa-ipratropio-bromuro-20-mcg-ds-inhalador-bucal-250-dosis-125-ml/263701.html"
+      }
+    }
+  },
+  "aerovial-abbott-200-mcg-200-dosis": {
+    "name": "Aerovial",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "Abbott",
+    "dose": "200 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aerovial-budesonida-200-mcg-inhalador-bucal-200-dosis/4300.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-budesonida-2dd64610-e07c-4aff-b41c-281b9b9ecf64?default_sku=2831183&queryID=aff041c52a167a6539e79dcc8f611dc1"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/aerovial-200-mcg-x-200-dosis-aerosol-para-inhalacion.html"
+      }
+    }
+  },
+  "akan-mintlab-10-mg-30-comprimidos": {
+    "name": "Akan",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Mintlab",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/akan-montelukast-10-mg-30-comprimidos/275702.html"
+      }
+    }
+  },
+  "alenys-etex-27.5-mcg-120-dosis": {
+    "name": "Alenys",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona furoato",
+    "laboratory": "Etex",
+    "dose": "27.5 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alenys-fluticasona-furoato-275-mcgdosis-suspension-nasal-120-dosis/261431.html"
+      }
+    }
+  },
+  "alexia-saval-120-mg-30-comprimidos": {
+    "name": "Alexia",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina",
+    "laboratory": "Saval",
+    "dose": "120 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alexia-fexofenadina-120-mg-30-comprimidos-recubierto/6289.html"
+      }
+    }
+  },
+  "alexia-forte-saval-180-mg-10-comprimidos": {
+    "name": "Alexia Forte",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina",
+    "laboratory": "Saval",
+    "dose": "180 mg",
+    "netContent": 10,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alexia-forte-fexofenadina-180-mg-10-comprimidos/6395.html"
+      }
+    }
+  },
+  "alexia-forte-saval-180-mg-30-comprimidos": {
+    "name": "Alexia Forte",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina",
+    "laboratory": "Saval",
+    "dose": "180 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alexia-forte-fexofenadina-180-mg-30-comprimidos-recubierto/251066.html"
+      }
+    }
+  },
+  "alexia-d-saval-120-mg-20-capsulas": {
+    "name": "Alexia-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina",
+    "laboratory": "Saval",
+    "dose": "120 mg",
+    "netContent": 20,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alexia-d-fexofenadina-120-mg-20-capsulas/6368.html"
+      }
+    }
+  },
+  "alfexa-ascend-180-mg-30-comprimidos": {
+    "name": "Alfexa",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina clorhidrato",
+    "laboratory": "Ascend",
+    "dose": "180 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alfexa-180-fexofenadina-180-mg-30-comprimidos-recubiertos/384064.html"
+      }
+    }
+  },
+  "aliven-10-deutsche-pharma-10-mg-28-comprimidos": {
+    "name": "Aliven 10",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Deutsche pharma",
+    "dose": "10 mg",
+    "netContent": 28,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aliven-10-montelukast-10-mg-28-comprimidos/296087.html"
+      }
+    }
+  },
+  "aliven-4-deutsche-pharma-4-mg-30-comprimidos": {
+    "name": "Aliven 4",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Deutsche pharma",
+    "dose": "4 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aliven-4-montelukast-4-mg-30-comprimidos/296083.html"
+      }
+    }
+  },
+  "aliven-5-deutsche-pharma-5-mg-30-comprimidos": {
+    "name": "Aliven 5",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Deutsche pharma",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aliven-5-montelukast-5-mg-30-comprimidos/296085.html"
+      }
+    }
+  },
+  "allbriefs-healthcare-ninos": {
+    "name": "Allbriefs",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Healthcare",
+    "dose": "Niños",
+    "format": "Camara inhalatoria bivalvulada",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/aerocamara-bivalvulada-pediatrica?default_sku=578509&queryID=85ecca39d076b2ec32eec9098a824717"
+      }
+    }
+  },
+  "allbriefs-healthcare-adultos-y-ninos": {
+    "name": "Allbriefs",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Healthcare",
+    "dose": "Adultos y niños",
+    "format": "Camara inhalatoria universal",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/aerocamara-universal?default_sku=578926&queryID=85ecca39d076b2ec32eec9098a824717"
+      }
+    }
+  },
+  "allbriefs-healthcare-adultos": {
+    "name": "Allbriefs",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Healthcare",
+    "dose": "Adultos",
+    "format": "Camara inhalatoria bivalvulada",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/aerocamara-bivalvulada-adultos?default_sku=578508&queryID=85ecca39d076b2ec32eec9098a824717"
+      }
+    }
+  },
+  "alledryl-prater-5-mg5-ml-60-ml": {
+    "name": "Alledryl",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Prater",
+    "dose": "5 mg/5 mL",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alledryl-loratadina-5-mg-5-ml-jarabe-60-ml/111022.html"
+      }
+    }
+  },
+  "alledryl-d-prater-15-mg5-ml-120-ml": {
+    "name": "Alledryl-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Prater",
+    "dose": "15 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alledryl-d-loratadina-15-mg5ml-jarabe-120-ml/111160.html"
+      }
+    }
+  },
+  "alledryl-d-prater-120-mg-20-capsulas": {
+    "name": "Alledryl-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoeferdrina",
+    "laboratory": "Prater",
+    "dose": "120 mg",
+    "netContent": 20,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alledryl-d-pseudoefedrina-120-mg-20-capsulas/250887.html"
+      }
+    }
+  },
+  "allegra-sanofi-30-mg5-ml-150-ml": {
+    "name": "Allegra",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina clorhidrato",
+    "laboratory": "Sanofi",
+    "dose": "30 mg/5 mL",
+    "netContent": 150,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/alledryl-d-pseudoefedrina-120-mg-20-capsulas/250887.html"
+      }
+    }
+  },
+  "allegra-sanofi-120-mg-30-comprimidos": {
+    "name": "Allegra",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina clorhidrato",
+    "laboratory": "Sanofi",
+    "dose": "120 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/allegra-fexofenadina-120-mg-30-comprimidos-recubiertos/32237.html"
+      }
+    }
+  },
+  "allegra-sanofi-180-mg-30-comprimidos": {
+    "name": "Allegra",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina clorhidrato",
+    "laboratory": "Sanofi",
+    "dose": "180 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/allegra-fexofenadina-180-mg-30-comprimidos-recubiertos/262683.html"
+      }
+    }
+  },
+  "allegra-d-sanofi-120-mg-20-comprimidos": {
+    "name": "Allegra-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina clorhidrato/Pseudoefedrina clorhidrato",
+    "laboratory": "Sanofi",
+    "dose": "120 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/allegra-d-fexofenadina-120-mg-20-comprimidos/32239.html"
+      }
+    }
+  },
+  "anoro-glaxo-5522-30-dosis": {
+    "name": "Anoro",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Ellipta",
+    "laboratory": "Glaxo",
+    "dose": "55/22",
+    "netContent": 30,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/anoro-ellipta-umeclidinio-625-mcg-inhalador-bucal-30-dosis/272016.html"
+      }
+    }
+  },
+  "arrumal-royal-pharma-30-mg-30-comprimidos": {
+    "name": "Arrumal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Deflazacort",
+    "laboratory": "Royal Pharma",
+    "dose": "30 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/arrumal-30-deflazacort-30-mg-30-comprimidos/266807.html"
+      }
+    }
+  },
+  "arrumal-royal-pharma-6-mg-40-comprimidos": {
+    "name": "Arrumal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Deflazacort",
+    "laboratory": "Royal Pharma",
+    "dose": "6 mg",
+    "netContent": 40,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/arrumal-6-deflazacort-6-mg-40-comprimidos/266806.html"
+      }
+    }
+  },
+  "asmavent-mintlab-100-mcg-200-dosis": {
+    "name": "Asmavent",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Mintlab",
+    "dose": "100 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/asmavent-sf-salbutamol-100-mcgdosis-inhalador-bucal-200-dosis/262866.html"
+      }
+    }
+  },
+  "asmavent-b-mintlab-50-mcg-200-dosis": {
+    "name": "Asmavent-B",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Beclometasona",
+    "laboratory": "Mintlab",
+    "dose": "50 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/asmavent-b-beclometasona-50-mcg-inhalador-bucal-200-dosis/193086.html"
+      }
+    }
+  },
+  "asventol-laboratorio-chile-10-mg-30-comprimidos": {
+    "name": "Asventol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Laboratorio Chile",
+    "dose": "10 mg",
+    "format": "Comprimidos masticables",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/asventol-montelukast-10-mg-30-comprimidos-recubiertos/254857.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/asventol-10mg?default_sku=439752&queryID=da70063bcc8bcb02bf1215e2a8779bb9"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/asventol-10-mg-x-30-comprimidos.html"
+      }
+    }
+  },
+  "asventol-laboratorio-chile-4-mg-30-comprimidos": {
+    "name": "Asventol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Laboratorio Chile",
+    "dose": "4 mg",
+    "format": "Comprimidos masticables",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/asventol-montelukast-4-mg-30-comprimidos/259801.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/asventol-4mg-masticables?default_sku=435396&queryID=da70063bcc8bcb02bf1215e2a8779bb9"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/asventol-4-mg-x-30-comprimidos-masticables.html"
+      }
+    }
+  },
+  "asventol-laboratorio-chile-5-mg-30-comprimidos": {
+    "name": "Asventol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Laboratorio Chile",
+    "dose": "5 mg",
+    "format": "Comprimidos masticables",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/asventol-montelukast-5-mg-30-comprimidos-masticables/254856.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/montelukast-5mg-oral-solido-4ab04cab-6d30-4dfd-9511-ccc791f3f78b?default_sku=439736"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/asventol-5-mg-x-30-comprimidos-masticables.html"
+      }
+    }
+  },
+  "asventol-laboratorio-chile-4-mg-30-sobres": {
+    "name": "Asventol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Laboratorio Chile",
+    "dose": "4 mg",
+    "format": "Granulado oral",
+    "netContent": 30,
+    "netContentUnit": "sobres",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-montelukast?default_sku=430293&queryID=da70063bcc8bcb02bf1215e2a8779bb9"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/asventol-4-mg-x-30-sobres-granulado-oral-en-sobres.html"
+      }
+    }
+  },
+  "atrovent-boehringer-0.025percent-20-ml": {
+    "name": "Atrovent",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bromuro de ipratropio",
+    "laboratory": "Boehringer",
+    "dose": "0.025%",
+    "format": "Solución para inhalación",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/atrovent-bromuro-de-ipratropio-0025-solucion-para-inhalacion-20-ml/78014.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/bromuro-de-ipratropio-0-025-neb?default_sku=161065&queryID=97b2b14d7df39e03e86cf09f6dbe00ba"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/atrovent-0-025-x-20-ml-solucion-para-inhalacion.html"
+      }
+    }
+  },
+  "atrovent-boehringer-0.03percent-15-ml": {
+    "name": "Atrovent",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bromuro de ipatropio",
+    "laboratory": "Boehringer",
+    "dose": "0.03%",
+    "format": "Solución para pulverización intranasal",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/bromuro-de-ipratropio-21mcg-nasal-spray?default_sku=161060&queryID=97b2b14d7df39e03e86cf09f6dbe00ba"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/atrovent-0-03-x-15-ml-solucion-nasal-en-spray.html"
+      }
+    }
+  },
+  "atrovent-hfa-boehringer-20-mcg-200-dosis": {
+    "name": "Atrovent HFA",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bromuro de ipratropio",
+    "laboratory": "Boehringer",
+    "dose": "20 mcg",
+    "format": "Solución en aerosol para inhalación",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/atrovent-hfa-bromuro-de-ipratropio-20-mcg-ds-inhalador-bucal-200-dosis/253575.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/atrovent-hfa-20-mcg-dosis-x-200-dosis-solucion-en-aerosol-para-inhalacion.html"
+      }
+    }
+  },
+  "aurituss-abbott-25-mcg-120-dosis": {
+    "name": "Aurituss",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol/Fluticasona propionato",
+    "laboratory": "Abbott",
+    "dose": "25 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/aurituss-salmeterol-25-mcg-inhalador-120-dosis/250752.html"
+      }
+    }
+  },
+  "avamys-glaxo-27.5-mcg-120-dosis": {
+    "name": "Avamys",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona furoato",
+    "laboratory": "Glaxo",
+    "dose": "27.5 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/avamys-fluticasona-furoato-275-mcgdosis/257185.html"
+      }
+    }
+  },
+  "babyhaler-glaxo-ninos": {
+    "name": "Babyhaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Aerocámara",
+    "laboratory": "Glaxo",
+    "dose": "Niños",
+    "format": "Camara inhalatoria",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/babyhaller-spacer-aerocamara?default_sku=1000106&queryID=85ecca39d076b2ec32eec9098a824717"
+      }
+    }
+  },
+  "berodual-boehringer-0.5-mg-20-ml": {
+    "name": "Berodual",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bromuro de ipratropio/Bromhidrato de fenoterol",
+    "laboratory": "Boehringer",
+    "dose": "0.5 mg",
+    "format": "Solución para inhalación",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/berodual-fenoterol-05-mg-solucion-20-ml/78072.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/bromuro-de-ipratropio-0-025-fenoterol-0-05-neb?default_sku=160170&queryID=41b0a2942344b844c18cc36d4f2272ab"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/berodual-solucion-x-20-ml-solucion-para-inhalacion.html"
+      }
+    }
+  },
+  "berodual-hfa-boehringer-50-mcg-200-dosis": {
+    "name": "Berodual HFA",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bromuro de ipratropio/Bromhidrato de fenoterol",
+    "laboratory": "Boehringer",
+    "dose": "50 mcg",
+    "format": "Solución en aerosol para inhalación",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/berodual-hfa-fenoterol-50-mcg-ds-inhalador-bucal-200-dosis/253574.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/bromuro-de-ipratropio-20mcg-fenoterol-50mcg-inh?default_sku=160035&queryID=41b0a2942344b844c18cc36d4f2272ab"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/berodual-hfa-x-200-dosis-solucion-en-aerosol-para-inhalacion.html"
+      }
+    }
+  },
+  "bersen-pasteur-20-mg-20-comprimidos": {
+    "name": "Bersen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Pasteur",
+    "dose": "20 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bersen-prednisona-20-mg-20-comprimidos/41022.html"
+      }
+    }
+  },
+  "bersen-pasteur-5-mg-20-comprimidos": {
+    "name": "Bersen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Pasteur",
+    "dose": "5 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bersen-prednisona-5-mg-20-comprimidos/41019.html"
+      }
+    }
+  },
+  "bersen-pasteur-2-mg-60-ml": {
+    "name": "Bersen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Pasteur",
+    "dose": "2 mg",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bersen-md-prednisona-2-mg-suspension-60-ml/41096.html"
+      }
+    }
+  },
+  "bersen-pasteur-20-mg5-ml-60-ml": {
+    "name": "Bersen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Pasteur",
+    "dose": "20 mg/5 mL",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bersen-prednisona-20-mg5ml-suspension-60-ml/41018.html"
+      }
+    }
+  },
+  "betacort-cassara-d-and-m-pharma-0.5-mg0.5-ml-30-ml": {
+    "name": "Betacort Cassara",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "D & M Pharma",
+    "dose": "0.5 mg/0.5 mL",
+    "format": "Solución oral para gotas",
+    "netContent": 30,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/betacort-cassara-betametasona-05-mg-ml-solucion-oral-para-gotas-30-ml/296197.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/betacort-gts-oral-0-5-mg-ml-30ml.html"
+      }
+    }
+  },
+  "betametasona-laboratorio-chile-0.05percent-15-gr": {
+    "name": "Betametasona",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Laboratorio Chile",
+    "dose": "0.05%",
+    "format": "Crema tópica",
+    "netContent": 15,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/betametasona-5-topico-semisolido-81a0a455-54d8-4b61-b7d9-22caa88e654f?default_sku=434311&queryID=118bf090ae5f46b084050b9c0a15967b"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/betametasona-0-05-x-15-g-unguento-topico.html"
+      }
+    }
+  },
+  "betametasona-+-neomicina-laboratorio-chile-10-gr": {
+    "name": "Betametasona + Neomicina",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Laboratorio Chile",
+    "format": "Unguento dérmico",
+    "netContent": 10,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/betametasona-0-5-mg-g-neomicina-5-mg-g-x-10-g-unguento-dermico.html"
+      }
+    }
+  },
+  "betametasona-dipropionato-opko-0.05percent-15-gr": {
+    "name": "Betametasona Dipropionato",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Opko",
+    "dose": "0.05%",
+    "format": "Crema tópica",
+    "netContent": 15,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/betametasona-0-05-x-15-g-crema-topica.html"
+      }
+    }
+  },
+  "betametasona-sodio-fosfato-biosano-4-mg-5-ampollas": {
+    "name": "Betametasona Sodio Fosfato",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Biosano",
+    "dose": "4 mg",
+    "format": "Solución inyectable",
+    "netContent": 5,
+    "netContentUnit": "ampollas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/betametasona-4-mg-ml-5-ampollas/260574.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/betametasona-4mg-ml-x5amp?default_sku=300865&queryID=118bf090ae5f46b084050b9c0a15967b"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/betametasona-4-mg-ml-x-5-ampollas-solucion-inyectable.html"
+      }
+    }
+  },
+  "betavol-eurofarma-5-mg-1-ampolla": {
+    "name": "Betavol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Eurofarma",
+    "dose": "5 mg",
+    "format": "Suspensión inyectable",
+    "netContent": 1,
+    "netContentUnit": "ampolla",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/betavol-betametasona-5-mg-1-ampolla/272218.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/betavol-susp-iny-1ml-jeringa-1-amp.html"
+      }
+    }
+  },
+  "bilidren-faes-farma-20-mg-30-comprimidos": {
+    "name": "Bilidren",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bilastina",
+    "laboratory": "Faes Farma",
+    "dose": "20 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bilidren-bilastina-20-mg-30-comprimidos/265519.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/bilastina-20mg-oral-solido-62609d20-dd64-4e8a-8ea7-4b6460e6fd6d?default_sku=3346161&queryID=776245d3fa50b184fefb03170e22eb52"
+      }
+    }
+  },
+  "bilidren-faes-farma-10-mg-30-comprimidos": {
+    "name": "Bilidren",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bilastina",
+    "laboratory": "Faes Farma",
+    "dose": "10 mg",
+    "format": "Comprimidos bucodispersables",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-bilastina?default_sku=575514&queryID=776245d3fa50b184fefb03170e22eb52"
+      }
+    }
+  },
+  "bilidren-faes-farma-2.5-mg2.5-ml-120-ml": {
+    "name": "Bilidren",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bilastina",
+    "laboratory": "Faes Farma",
+    "dose": "2.5 mg/2.5 mL",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-bilastina-e52c7334-1ae9-4612-9998-c1b337aaea59?default_sku=575587&queryID=776245d3fa50b184fefb03170e22eb52"
+      }
+    }
+  },
+  "bionette-bionette": {
+    "name": "Bionette",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bionette",
+    "laboratory": "Bionette",
+    "format": "Bionette",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bionette-dispositivo-electronico-para-el-alivio-de-la-alergia/276303.html"
+      }
+    }
+  },
+  "blaxitec-pfizer-20-mg-30-comprimidos": {
+    "name": "Blaxitec",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bilastina",
+    "laboratory": "Pfizer",
+    "dose": "20 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/blaxitec-bilastina-20-mg-30-comprimidos/275587.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/bilastina-20mg-oral-solido?default_sku=2560478&queryID=3465e03f85d3f742d3c15f578271782b"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/blaxitec-20-mg-x-30-comprimidos.html"
+      }
+    }
+  },
+  "brexotide-etex-25025-120-dosis": {
+    "name": "Brexotide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Etex",
+    "dose": "250/25",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brexotide-lf-25025-salmeterol-25-mcgds-inhalador-bucal-120-dosis/104030.html"
+      }
+    }
+  },
+  "brexotide-etex-5025-120-dosis": {
+    "name": "Brexotide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Etex",
+    "dose": "50/25",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brexotide-lf-salmeterol-25-mcg-inhalador-bucal-120-dosis/104028.html"
+      }
+    }
+  },
+  "brexotide-12525-etex-12525-120-dosis": {
+    "name": "Brexotide 125/25",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Etex",
+    "dose": "125/25",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brexotide-lf-12525-salmeterol-25-mcgds-inhalador-bucal-120-dosis/104029.html"
+      }
+    }
+  },
+  "brexovent-etex-125-mcg-120-dosis": {
+    "name": "Brexovent",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona Propionato",
+    "laboratory": "Etex",
+    "dose": "125 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brexovent-lf-fluticasona-propionato-125-mcgds-inhalador-bucal-120-dosis/104025.html"
+      }
+    }
+  },
+  "brexovent-etex-50-mcg-120-dosis": {
+    "name": "Brexovent",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona Propionato",
+    "laboratory": "Etex",
+    "dose": "50 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brexovent-lf-fluticasona-propionato-50-mcg-inhalador-bucal-120-dosis/293727.html"
+      }
+    }
+  },
+  "bromex-sf-laboratorio-chile-25250-120-dosis": {
+    "name": "Bromex SF",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol/Fluticasona",
+    "laboratory": "Laboratorio Chile",
+    "dose": "25/250",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bromex-sf-salmeterol-25-mcg-ds-inhalador-bucal-120-dosis/265618.html"
+      }
+    }
+  },
+  "brondilat-abbott-10-mg-30-comprimidos": {
+    "name": "Brondilat",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Abbott",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brondilat-montelukast-10-mg-30-comprimidos-recubierto/258408.html"
+      }
+    }
+  },
+  "brondilat-abbott-4-mg-30-comprimidos": {
+    "name": "Brondilat",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Abbott",
+    "dose": "4 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brondilat-montelukast-4-mg-30-comprimidos-masticables/269509.html"
+      }
+    }
+  },
+  "brondilat-abbott-5-mg-30-comprimidos": {
+    "name": "Brondilat",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Abbott",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brondilat-montelukast-5-mg-30-comprimidos/272306.html"
+      }
+    }
+  },
+  "brondilat-abbott-4-mg-40-sobres": {
+    "name": "Brondilat",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Abbott",
+    "dose": "4 mg",
+    "netContent": 40,
+    "netContentUnit": "sobres",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/brondilat-montelukast-4-mg-40-sobres/271327.html"
+      }
+    }
+  },
+  "bronlival-saval-1604.5-120-dosis": {
+    "name": "Bronlival",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "Saval",
+    "dose": "160/4.5",
+    "format": "Polvo para inhalación oral",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bronlival-budesonida--160-mcg-inhalador-bucal-120-dosis/290020.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-budesonida-formoterol-3d51959f-a6ab-4ef5-bfed-24aaf16180cd?default_sku=2974443"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/bronlival-eh-160-4-5-mcg-dosis-x-120-dosis-polvo-para-inhalacion.html"
+      }
+    }
+  },
+  "bronlival-saval-3209-60-dosis": {
+    "name": "Bronlival",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "Saval",
+    "dose": "320/9",
+    "format": "Polvo para inhalación oral",
+    "netContent": 60,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bronlival-budesonida--320-mcg-inhalador-bucal-60-dosis/290021.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-budesonida-formoterol-89e0b929-4a66-4274-aefc-b7c43ebff670?default_sku=2974435&queryID=3ea12a04ab963f8e59aabcc25627ea51"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/bronlival-e.html"
+      }
+    }
+  },
+  "bropil-abbott-100-mcg-200-dosis": {
+    "name": "Bropil",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Abbott",
+    "dose": "100 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/bropil-salbutamol-100-mcgdosis-inhalador-bucal-200-dosis/258409.html"
+      }
+    }
+  },
+  "budasmal-sf-laboratorio-chile-200-mcg-200-dosis": {
+    "name": "Budasmal SF",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "Laboratorio Chile",
+    "dose": "200 mcg",
+    "format": "Aerosol para inhalación oral",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/budasmal-sf-budesonida-200-mcgds-inhalador-bucal-200-dosis/259369.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/inhalador-budasmal-sf-200mcg?default_sku=433636&queryID=e88cad24db5d232a504401b07f239145"
+      }
+    }
+  },
+  "butocort-hfa-d-and-m-pharma-50-mcg-250-dosis": {
+    "name": "Butocort HFA",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Beclometasona",
+    "laboratory": "D & M Pharma",
+    "dose": "50 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 250,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/butocort-hfa-beclometasona-50-mcg-inhalador-bucal-250-dosis/258593.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/butocort-x-250-dosis-aerosol-para-inhalacion.html"
+      }
+    }
+  },
+  "butotal-d-and-m-pharma-100-mcg-250-dosis": {
+    "name": "Butotal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "D & M Pharma",
+    "dose": "100 mcg",
+    "netContent": 250,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/butotal-salbutamol-100-mcg-inhalador-bucal-250-dosis/251207.html"
+      }
+    }
+  },
+  "cam-laboratorio-chile-2-mg5-ml-120-ml": {
+    "name": "Cam",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Laboratorio Chile",
+    "dose": "2 mg/5 mL",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cam-betametasona-2-mg-jarabe-120-ml/1122.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cam-jarabe?default_sku=430950&queryID=6cdcfafa42154483b8ce50b8691565be"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cam-x-120-ml-jarabe.html"
+      }
+    }
+  },
+  "cam-laboratorio-chile-2-mg-30-comprimidos": {
+    "name": "Cam",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Laboratorio Chile",
+    "dose": "2 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cam-betametasona-2-mg-30-comprimidos/1121.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cam?default_sku=430954&queryID=6cdcfafa42154483b8ce50b8691565be"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cam-0-25-2-mg-x-30-comprimidos.html"
+      }
+    }
+  },
+  "cariamyl-prater-120-ml": {
+    "name": "Cariamyl",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Antiseptico y anestesico local",
+    "laboratory": "Prater",
+    "format": "Loción",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cariamyl-mentol-02-locion-120-ml/111154.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cariamyl-x-120-ml-locion-dermica.html"
+      }
+    }
+  },
+  "cariamyl-prater-130-ml": {
+    "name": "Cariamyl",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Antiseptico y anestesico local",
+    "laboratory": "Prater",
+    "format": "Loción",
+    "netContent": 130,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cariamyl-mentol-02-spray-130-ml/111131.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cariamyl-spray?default_sku=900301&queryID=0284bc0fe1b8fc6678246e82c3246053"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cariamyl-x-130-ml-solucion-dermica.html"
+      }
+    }
+  },
+  "cariamyl-prater-20-gr": {
+    "name": "Cariamyl",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Antiseptico y anestesico local",
+    "laboratory": "Prater",
+    "format": "Crema tópica",
+    "netContent": 20,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cariamyl-mentol-02-crema-topica-20-gr/111099.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cariamyl-crema-a69d95d1-16fd-49e9-9253-8fd096b83e71?default_sku=900239&queryID=0284bc0fe1b8fc6678246e82c3246053"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cariamyl-x-20-g-crema-topica.html"
+      }
+    }
+  },
+  "cariamyl-prater-40-gr": {
+    "name": "Cariamyl",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Antiseptico y anestesico local",
+    "laboratory": "Prater",
+    "format": "Crema tópica",
+    "netContent": 40,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cariamyl-mentol-02-crema-topica-40-gr/111130.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cariamyl-crema?default_sku=900303&queryID=0284bc0fe1b8fc6678246e82c3246053"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cariamyl-x-40-g-crema-topica.html"
+      }
+    }
+  },
+  "cidoten-merck-0.5-mg0.5-ml-30-ml": {
+    "name": "Cidoten",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Merck",
+    "dose": "0.5 mg/0.5 mL",
+    "format": "Solución oral para gotas",
+    "netContent": 30,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cidoten-betametasona-05-mg-ml-gotas-30-ml/23012.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cidoten-0-5-mg-ml-x-30-ml-solucion-oral-para-gotas.html"
+      }
+    }
+  },
+  "cidoten-merck-4-mg1-ml-1-ampolla": {
+    "name": "Cidoten",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Merck",
+    "dose": "4 mg/1 mL",
+    "format": "Solución inyectable",
+    "netContent": 1,
+    "netContentUnit": "ampolla",
+    "vendors": {
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cidoten-4-mg-1-ml-x-1-ampolla-solucion-inyectable.html"
+      }
+    }
+  },
+  "cidoten-rapi-lento-merck-1-ampolla": {
+    "name": "Cidoten Rapi-Lento",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Merck",
+    "format": "Suspensión inyectable",
+    "netContent": 1,
+    "netContentUnit": "ampolla",
+    "vendors": {
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cidoten-rapi-lento-x-1-vial-suspension-inyectable.html"
+      }
+    }
+  },
+  "clofexan-bago-2-mg-120-ml": {
+    "name": "Clofexan",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Bago",
+    "dose": "2 mg",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/clofexan-betametasona-2-mg-jarabe-120-ml/9098.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/betametasona-0-25mg-5ml-dexclorfenamina-2mg-5ml-oral-liquido?default_sku=2591085&queryID=906c3fc192c3d485059b30d0394d1543"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/clofexan-0-25-2-mg-5-ml-x-120-ml-jarabe.html"
+      }
+    }
+  },
+  "clofexan-bago-2-mg-30-comprimidos": {
+    "name": "Clofexan",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Bago",
+    "dose": "2 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/clofexan-betametasona-2-mg-30-comprimidos/9099.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/clofexan-x-30-comprimidos.html"
+      }
+    }
+  },
+  "clorfenamina-mintlab-4-mg-20-comprimidos": {
+    "name": "Clorfenamina",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Clorfenamina maleato",
+    "laboratory": "Mintlab",
+    "dose": "4 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/clorfenamina-4-mg-20-comprimidos/267919.html"
+      }
+    }
+  },
+  "cobefen-sanitas-2-mg-120-ml": {
+    "name": "Cobefen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Sanitas",
+    "dose": "2 mg",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cobefen-betametasona-2-mg-jarabe-120-ml/12147.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-betametasona-0-25mg-5ml-dexclorfenamina-2mg-5ml-oral-liquido?default_sku=2980402&queryID=ac7722e385b00d679e76b2d7c2cb96c4"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cobefen-x-120-ml-jarabe.html"
+      }
+    }
+  },
+  "cobefen-sanitas-2-mg-30-comprimidos": {
+    "name": "Cobefen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Sanitas",
+    "dose": "2 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cobefen-betametasona-2-mg-30-comprimidos/12146.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-betametasona-dexclorfenamina-378a89d1-f580-48aa-8096-1a4b3c65d8e8?default_sku=2980401"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/cobefen-x-30-comprimidos.html"
+      }
+    }
+  },
+  "coolips-mintlab-10-mg-10-comprimidos": {
+    "name": "Coolips",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Mintlab",
+    "dose": "10 mg",
+    "format": "Comprimidos recubiertos",
+    "netContent": 10,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/coolips-cetirizina-10-mg-10-comprimidos-recubiertos/193088.html"
+      }
+    }
+  },
+  "coolips-mintlab-10-mg-30-comprimidos": {
+    "name": "Coolips",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Mintlab",
+    "dose": "10 mg",
+    "format": "Comprimidos recubiertos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/coolips-cetirizina-10-mg-30-comprimidos/193089.html"
+      }
+    }
+  },
+  "coritex-bago-0.5-mg0.5-ml-30-ml": {
+    "name": "Coritex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona",
+    "laboratory": "Bago",
+    "dose": "0.5 mg/0.5 mL",
+    "format": "Solución oral para gotas",
+    "netContent": 30,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/coritex-betametasona-05-mg-ml-gotas-30-ml/9209.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/coritex-0-5-mg-ml-x-30-ml-solucion-oral-para-gotas.html"
+      }
+    }
+  },
+  "cortiprex-laboratorio-chile-1-mg1-ml-100-ml": {
+    "name": "Cortiprex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Laboratorio Chile",
+    "dose": "1 mg/1 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cortiprex-prednisona-1-mg-suspension-100-ml/1407.html"
+      }
+    }
+  },
+  "cortiprex-laboratorio-chile-20-mg-20-comprimidos": {
+    "name": "Cortiprex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Laboratorio Chile",
+    "dose": "20 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cortiprex-prednisona-20-mg-20-comprimidos-recubierto/1147.html"
+      }
+    }
+  },
+  "cortiprex-laboratorio-chile-20-mg5-ml-60-ml": {
+    "name": "Cortiprex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Laboratorio Chile",
+    "dose": "20 mg/5 mL",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/cortiprex-prednisona-20-mg5ml-suspension-60-ml/1443.html"
+      }
+    }
+  },
+  "d-histaplus-pasteur-2.5-mg5-ml-100-ml": {
+    "name": "D-Histaplus",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Pasteur",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/d-histaplus-desloratadina-25-mg-5-ml-solucion-oral-100-ml/256269.html"
+      }
+    }
+  },
+  "d-histaplus-pasteur-5-mg-30-comprimidos": {
+    "name": "D-Histaplus",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Pasteur",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/d-histaplus-desloratadina-5-mg-30-comprimidos/253853.html"
+      }
+    }
+  },
+  "dacam-laboratorio-chile-3-mg3-ml-1-ampolla": {
+    "name": "Dacam",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Rapi-Lento",
+    "laboratory": "Laboratorio Chile",
+    "dose": "3 mg/3 mL",
+    "format": "Inyectable",
+    "netContent": 1,
+    "netContentUnit": "ampolla",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/dacam-inyectable-rapi-lento-betametasona-6-mg-1-ampolla/1264.html"
+      }
+    }
+  },
+  "dalun-medipharm-10-mg5-ml-120-ml": {
+    "name": "Dalun",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Hidroxizina",
+    "laboratory": "Medipharm",
+    "dose": "10 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/dalun-hidroxizina-10-mg-5-ml-jarabe-120-ml/254678.html"
+      }
+    }
+  },
+  "dalun-medipharm-20-mg-20-comprimidos": {
+    "name": "Dalun",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Hidroxizina",
+    "laboratory": "Medipharm",
+    "dose": "20 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/dalun-hidroxizina-20-mg-20-comprimidos/27180.html"
+      }
+    }
+  },
+  "degraler-bago-2.5-mg-5-ml-100-ml": {
+    "name": "Degraler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "2.5 mg/ 5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/degraler-levocetirizina-25-mg-5-ml-jarabe-100-ml/253729.html"
+      }
+    }
+  },
+  "degraler-bago-5-mg5-ml-15-ml": {
+    "name": "Degraler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "5 mg/5 mL",
+    "format": "Gotas orales",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/degraler-levocetirizina-5-mgml-gotas-15-ml/253730.html"
+      }
+    }
+  },
+  "degraler-bago-5-mg-40-comprimidos": {
+    "name": "Degraler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "5 mg",
+    "netContent": 40,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/degraler-levocetirizina-5-mg-40-comprimidos-recubiertos/9218.html"
+      }
+    }
+  },
+  "degraler-forte-bago-5-mg5-ml-100-ml": {
+    "name": "Degraler Forte",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "5 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/degraler-forte-levocetirizina-5-mg-5-ml-jarabe-100-ml/262316.html"
+      }
+    }
+  },
+  "degraler-plus-bago-5-mg-40-comprimidos": {
+    "name": "Degraler plus",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "5 mg",
+    "netContent": 40,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/degraler-plus-levocetirizina-5-mg-40-comprimidos/268565.html"
+      }
+    }
+  },
+  "depo-medrol-pfizer-40-mg-1-ampolla": {
+    "name": "Depo-Medrol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Metilprednisolona",
+    "laboratory": "Pfizer",
+    "dose": "40 mg",
+    "netContent": 1,
+    "netContentUnit": "ampolla",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/depo-medrol-metilprednisolona-40-mg-1-ampolla/18015.html"
+      }
+    }
+  },
+  "depo-medrol-pfizer-40-mg1-ml-1-ampolla": {
+    "name": "Depo-Medrol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Metilprednisolona",
+    "laboratory": "Pfizer",
+    "dose": "40 mg/1 mL",
+    "format": "Suspención inyectable",
+    "netContent": 1,
+    "netContentUnit": "ampolla",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/depo-medrol-metilprednisolona-40-mg-1-ml-ampolla/18013.html"
+      }
+    }
+  },
+  "depo-medrol-pfizer-40-mg1-ml-1-jeringa": {
+    "name": "Depo-Medrol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Metilprednisolona",
+    "laboratory": "Pfizer",
+    "dose": "40 mg/1 mL",
+    "format": "Suspención inyectable",
+    "netContent": 1,
+    "netContentUnit": "jeringa",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/depo-medrol-jp-metilprednisolona-40-mg-1-jeringa/18163.html"
+      }
+    }
+  },
+  "despeval-saval-2.5-mg5-ml-100-ml": {
+    "name": "Despeval",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Saval",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/despeval-desloratadina-25-mg-5-ml-jarabe-100-ml/254224.html"
+      }
+    }
+  },
+  "despex-laboratorio-chile-2.5-mg5-ml-120-ml": {
+    "name": "Despex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Laboratorio Chile",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/despex-desloratadina-25-mg-5-ml-jarabe-120-ml/257742.html"
+      }
+    }
+  },
+  "despex-laboratorio-chile-5-mg-30-comprimidos": {
+    "name": "Despex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Laboratorio Chile",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/despex-desloratadina-5-mg-30-comprimidos-recubierto/253954.html"
+      }
+    }
+  },
+  "dezartal-andromaco-30-mg-20-comprimidos": {
+    "name": "Dezartal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Deflazacort",
+    "laboratory": "Andromaco",
+    "dose": "30 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/dezartal-deflazacort-30-mg-20-comprimidos/15451.html"
+      }
+    }
+  },
+  "dimuxon-raffo-0.05percent-18-ml": {
+    "name": "Dimuxon",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "Raffo",
+    "dose": "0.05%",
+    "netContent": 18,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/dimuxon-mometasona-furoato-005-suspension-nasal-18-ml/287000.html"
+      }
+    }
+  },
+  "disflax-faes-farma-30-mg-10-comprimidos": {
+    "name": "Disflax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Deflazacort",
+    "laboratory": "Faes Farma",
+    "dose": "30 mg",
+    "netContent": 10,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/disflax-deflazacort-30-mg-10-comprimidos/299197.html"
+      }
+    }
+  },
+  "disflax-faes-farma-6-mg-20-comprimidos": {
+    "name": "Disflax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Deflazacort",
+    "laboratory": "Faes Farma",
+    "dose": "6 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/disflax-deflazacort-6-mg-20-comprimidos/299196.html"
+      }
+    }
+  },
+  "duo-val-saval-30-mg5-ml-120-ml": {
+    "name": "Duo Val",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina clorhidrato/Clorfenamina maleato",
+    "laboratory": "Saval",
+    "dose": "30 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/duo-val-pseudoefedrina-30-mg-5-ml-jarabe-120-ml/6247.html"
+      }
+    }
+  },
+  "duo-val-saval-30-mg-15-ml": {
+    "name": "Duo Val",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina clorhidrato/Clorfenamina maleato",
+    "laboratory": "Saval",
+    "dose": "30 mg",
+    "format": "Solución oral para gotas",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/duo-val-pseudoefedrina-30-mg-gotas-15-ml/6246.html"
+      }
+    }
+  },
+  "elixine-saval-250-mg-20-capsulas": {
+    "name": "Elixine",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Lentocaps",
+    "laboratory": "Saval",
+    "dose": "250 mg",
+    "format": "Cápsulas",
+    "netContent": 20,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/elixine-lentocap.-teofilina-250-mg-20-capsulas/6114.html"
+      }
+    }
+  },
+  "elixine-lentocaps-125-mg-20-capsulas": {
+    "name": "Elixine",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Teofilina",
+    "laboratory": "Lentocaps",
+    "dose": "125 mg",
+    "netContent": 20,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/elixine-lentocap.-teofilina-125-mg-20-capsulas/6115.html"
+      }
+    }
+  },
+  "elixine-saval-80-mg-250-ml": {
+    "name": "Elixine",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Teofilina",
+    "laboratory": "Saval",
+    "dose": "80 mg",
+    "netContent": 250,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/elixine-teofilina-80-mg-jarabe-250-ml/6031.html"
+      }
+    }
+  },
+  "euphorbium-heel-20-ml": {
+    "name": "Euphorbium",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Euphorbium",
+    "laboratory": "Heel",
+    "format": "Solución para inhalación nasal",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/euphorbium-d4-solucion-para-inhalacion-nasal-spray-20-ml/257629.html"
+      }
+    }
+  },
+  "facimin-mintlab-0.5-mg0.5-ml-10-ml": {
+    "name": "Facimin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Oximetazolina clorhidrato",
+    "laboratory": "Mintlab",
+    "dose": "0.5 mg/0.5 mL",
+    "netContent": 10,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/facimin-oximetazolina-05-mgml-spray-nasal-10-ml/193108.html"
+      }
+    }
+  },
+  "fasarax-prater-10-mg5-ml-120-ml": {
+    "name": "Fasarax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Hidroxizina",
+    "laboratory": "Prater",
+    "dose": "10 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/fasarax-hidroxicina-10-mg5ml-jarabe-120-ml/111021.html"
+      }
+    }
+  },
+  "fasarax-prater-20-mg-20-comprimidos": {
+    "name": "Fasarax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Hidroxizina",
+    "laboratory": "Prater",
+    "dose": "20 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/fasarax-hidroxizina-20-mg-20-comprimidos/111020.html"
+      }
+    }
+  },
+  "fesema-etex-100-mcg-200-dosis": {
+    "name": "Fesema",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Etex",
+    "dose": "100 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/fesema-lf-salbutamol-100-mcgds-inhalador-bucal-200-dosis/104023.html"
+      }
+    }
+  },
+  "findaler-medipharm-10-mg10-ml-15-ml": {
+    "name": "Findaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Medipharm",
+    "dose": "10 mg/10 mL",
+    "format": "Solución para gotas orales",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-ml-oral-gtas?default_sku=2100086"
+      }
+    }
+  },
+  "findaler-medipharm-10-mg-30-comprimidos": {
+    "name": "Findaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetrizina diclorhidrato",
+    "laboratory": "Medipharm",
+    "dose": "10 mg",
+    "format": "Comprimidos recubiertos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-oral-solido-374ace23-0bfc-467f-be4c-eb123eb516ab?default_sku=2100656&queryID=a9e11a4d163efa59cf7e10627e7f80f7"
+      }
+    }
+  },
+  "findaler-medipharm-5-mg5-ml-100-ml": {
+    "name": "Findaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Medipharm",
+    "dose": "5 mg/5 mL",
+    "format": "Jarabe",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/findaler-cetirizina-5-mg-5-ml-jarabe-100-ml/27185.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-5ml-oral-liquido-0888071d-427e-4fef-b111-4a87f34bdf8d?default_sku=2100004&queryID=a9e11a4d163efa59cf7e10627e7f80f7"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/findaler-5-mg-5-ml-x-100-jarabe.html"
+      }
+    }
+  },
+  "findaler-d-medipharm-120-mg-20-capsulas": {
+    "name": "Findaler-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina",
+    "laboratory": "Medipharm",
+    "dose": "120 mg",
+    "format": "Cápsulas con gránulos de liberación prolongada",
+    "netContent": 20,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/findaler-d-cetirizina-120-mg-20-comprimidos/27191.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-pseudoefedrina-120mg-oral-solido-e52bb2f9-9e91-4cae-9692-f48202d3a4d9?default_sku=2100008&queryID=a9e11a4d163efa59cf7e10627e7f80f7"
+      }
+    }
+  },
+  "flixonase-glaxo-50-mcg-120-dosis": {
+    "name": "Flixonase",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona Propionato",
+    "laboratory": "Glaxo",
+    "dose": "50 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/flixonase-fluticasona-propionato-50-mcg-suspension-nasal-120-dosis/60033.html"
+      }
+    }
+  },
+  "flixotide-glaxo-125-mcg-120-dosis": {
+    "name": "Flixotide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona propionato",
+    "laboratory": "Glaxo",
+    "dose": "125 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/flixotide-lf-fluticasona-propionato-125-mcgds-inhalador-bucal-120-dosis/60159.html"
+      }
+    }
+  },
+  "flixotide-glaxo-250-mcg-120-dosis": {
+    "name": "Flixotide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona propionato",
+    "laboratory": "Glaxo",
+    "dose": "250 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/flixotide-lf-fluticasona-propionato-250-mcg-inhalador-bucal-120-dosis/60161.html"
+      }
+    }
+  },
+  "flixotide-glaxo-50-mcg-120-dosis": {
+    "name": "Flixotide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona propionato",
+    "laboratory": "Glaxo",
+    "dose": "50 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/flixotide-lf-fluticasona-propionato-50-mcg-inhalador-bucal-120-dosis/60157.html"
+      }
+    }
+  },
+  "flixotide-glaxo-125-mcg-60-dosis": {
+    "name": "Flixotide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona Propionato",
+    "laboratory": "Glaxo",
+    "dose": "125 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 60,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/flixotide-lf-fluticasona-propionato-125-mcgds-inhalador-bucal-60-dosis/60158.html"
+      }
+    }
+  },
+  "flusona-abbott-125-mcg-120-dosis": {
+    "name": "Flusona",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona propionato",
+    "laboratory": "Abbott",
+    "dose": "125 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/flusona-fluticasona-propionato-125-mcgds-inhalador-bucal-120-dosis/4597.html"
+      }
+    }
+  },
+  "fluticort-d-and-m-pharma-125-mcg-120-dosis": {
+    "name": "Fluticort",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona Propionato",
+    "laboratory": "D & M Pharma",
+    "dose": "125 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/fluticort-fluticasona-propionato-125-mcgds-inhalador-bucal-120-dosis/266925.html"
+      }
+    }
+  },
+  "forbuden-labomed-1604.5-60-capsulas": {
+    "name": "Forbuden",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "Labomed",
+    "dose": "160/4.5",
+    "format": "Polvo para inhalación en cápsulas",
+    "netContent": 60,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/forbuden-budesonida--160-mcg-60-capsulas-inhalada/289527.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/forbuden-160-4-5-mcg-x-60-capsulas-polvo-para-inhalacion.html"
+      }
+    }
+  },
+  "frenaler-d-laboratorio-chile-15-mg5-ml-100-ml": {
+    "name": "Frenaler-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Laboratorio Chile",
+    "dose": "15 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/frenaler-d-loratadina-15-mg5ml-jarabe-100-ml/1367.html"
+      }
+    }
+  },
+  "frenaler-d-laboratorio-chile-5-mg-60-ml": {
+    "name": "Frenaler-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Laboratorio Chile",
+    "dose": "5 mg",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/frenaler-pediatrico-loratadina-5-mg-jarabe-60-ml/1097.html"
+      }
+    }
+  },
+  "herolan-sf-laboratorio-chile-50-mcg-200-dosis": {
+    "name": "Herolan SF",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol/Beclometasona Dipropionato",
+    "laboratory": "Laboratorio Chile",
+    "dose": "50 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/herolan-sf-beclometasona-50-mcg-inhalador-bucal-200-dosis/263287.html"
+      }
+    }
+  },
+  "hidrocortisona-laboratorio-chile-20-mg-20-comprimidos": {
+    "name": "Hidrocortisona",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Hidrocortisona",
+    "laboratory": "Laboratorio Chile",
+    "dose": "20 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/hidrocortisona-20-mg-20-comprimidos/2047.html"
+      }
+    }
+  },
+  "hysticlar-mintlab-5-mg-100-ml": {
+    "name": "Hysticlar",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Mintlab",
+    "dose": "5 mg",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/hysticlar-loratadina-5-mg-jarabe-100-ml/268733.html"
+      }
+    }
+  },
+  "iliadin-pandg-0.05percent-10-ml": {
+    "name": "Iliadin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Oximetazolina clorhidrato",
+    "laboratory": "P&G",
+    "dose": "0.05%",
+    "netContent": 10,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/iliadin-adulto-oximetazolina-005-inhalador-spray-nasal-10-ml/11020.html"
+      }
+    }
+  },
+  "ipratropio-bromuro-bestpharma-0.025percent-2-ml": {
+    "name": "Ipratropio Bromuro",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Ipratropio bromuro",
+    "laboratory": "Bestpharma",
+    "dose": "0.025%",
+    "netContent": 2,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/ipratropio-bromuro-0025-solucion-para-inhalacion-20-ml/264185.html"
+      }
+    }
+  },
+  "ivarest-proquifar-2-gr-35-gr": {
+    "name": "Ivarest",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Calamina",
+    "laboratory": "Proquifar",
+    "dose": "2 gr",
+    "format": "Crema tópica",
+    "netContent": 35,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/ivarest--calamina-2-gr-crema-topica-35-gr/33025.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/ivarest-crema-de-35gr?default_sku=2600605&queryID=75c0bbca9469684c32482130cabb8d8e"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/ivarest-x-35-g-crema-topica.html"
+      }
+    }
+  },
+  "koide-d-eurofarma-2-mg-120-ml": {
+    "name": "Koide D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Eurofarma",
+    "dose": "2 mg",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/koide-d-dexclorfeniramina-maleato-2-mg-jarabe-120-ml/297954.html"
+      }
+    }
+  },
+  "lalergic-mintlab-5-mg-20-ml": {
+    "name": "Lalergic",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Mintlab",
+    "dose": "5 mg",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lalergic-levocetirizina-5-mg-solucion-oral-20-ml/275408.html"
+      }
+    }
+  },
+  "lalergic-mintlab-5-mg-30-comprimidos": {
+    "name": "Lalergic",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Mintlab",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lalergic-levocetirizina-5-mg-30-comprimidos/275404.html"
+      }
+    }
+  },
+  "levorigotax-prater-2.5mg5-ml-100-ml": {
+    "name": "Levorigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "2.5mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/levorigotax-levocetirizina-25-mg-5-ml-jarabe-100-ml/264327.html"
+      }
+    }
+  },
+  "levorigotax-prater-5-mg5-ml-20-ml": {
+    "name": "Levorigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "5 mg/5 mL",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/levorigotax-levocetirizina-5-mgml-solucion-oral-20-ml/264328.html"
+      }
+    }
+  },
+  "levorigotax-prater-5-mg-30-comprimidos": {
+    "name": "Levorigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/levorigotax-levocetirizina-5-mg-30-comprimidos-recubierto/258116.html"
+      }
+    }
+  },
+  "levorigotax-prater-5-mg-60-comprimidos": {
+    "name": "Levorigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "5 mg",
+    "netContent": 60,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/levorigotax-levocetirizina-5-mg-60-comprimidos/287255.html"
+      }
+    }
+  },
+  "levorigotax-forte-prater-5-mg5-ml-120-ml": {
+    "name": "Levorigotax Forte",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "5 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/levorigotax-forte-levocetirizina-5-mg5ml-jarabe-120-ml/270074.html"
+      }
+    }
+  },
+  "loratadina-mintlab-5-mg5-ml-100-ml": {
+    "name": "Loratadina",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Mintlab",
+    "dose": "5 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/loratadina-5-mg-jarabe-100-ml/270021.html"
+      }
+    }
+  },
+  "loratadina-opko-10-mg-30-comprimidos": {
+    "name": "Loratadina",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Opko",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/loratadina-10-mg-30-comprimidos/273015.html"
+      }
+    }
+  },
+  "lucaste-eurofarma-10-mg-30-comprimidos": {
+    "name": "Lucaste",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Eurofarma",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lucaste-montelukast-10-mg-30-comprimidos-recubiertos/297617.html"
+      }
+    }
+  },
+  "lucaste-eurofarma-4-mg-30-comprimidos": {
+    "name": "Lucaste",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Eurofarma",
+    "dose": "4 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lucaste-montelukast-4-mg-30-comprimidos-masticable/274290.html"
+      }
+    }
+  },
+  "lucaste-eurofarma-5-mg-30-comprimidos": {
+    "name": "Lucaste",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Eurofarma",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lucaste-montelukast-5-mg-30-comprimidos-masticable/274291.html"
+      }
+    }
+  },
+  "luffeel-heel-20-ml": {
+    "name": "Luffeel",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Luffeel",
+    "laboratory": "Heel",
+    "format": "Solución para inhalación nasal",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/luffeel-solucion-para-inhalacion-nasal-spray-20-ml/257637.html"
+      }
+    }
+  },
+  "lukanex-saval-10-mg-40-comprimidos": {
+    "name": "Lukanex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Saval",
+    "dose": "10 mg",
+    "netContent": 40,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lukanex-montelukast-10-mg-40-comprimidos-recubierto/266318.html"
+      }
+    }
+  },
+  "lukanex-saval-5-mg-40-comprimidos": {
+    "name": "Lukanex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Saval",
+    "dose": "5 mg",
+    "netContent": 40,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lukanex-montelukast-5-mg-40-comprimidos-masticables/266317.html"
+      }
+    }
+  },
+  "lukanex-saval-4-mg-40-sobres": {
+    "name": "Lukanex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Saval",
+    "dose": "4 mg",
+    "netContent": 40,
+    "netContentUnit": "sobres",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/lukanex-pediatrico-montelukast-4-mg-40-sobres/266315.html"
+      }
+    }
+  },
+  "matinor-farmoquimica-20-mg5-ml-60-ml": {
+    "name": "Matinor",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fenilpropanolamina clorhidrato",
+    "laboratory": "Farmoquimica",
+    "dose": "20 mg/5 mL",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/matinor-fenilpropanolamina-clorhidrato-20-mg-5-ml-jarabe-60-ml/59093.html"
+      }
+    }
+  },
+  "medrol-pfizer-16-mg-14-comprimidos": {
+    "name": "Medrol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Metilprednisolona",
+    "laboratory": "Pfizer",
+    "dose": "16 mg",
+    "format": "Vía oral",
+    "netContent": 14,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/medrol-metilprednisolona-16-mg-14-comprimidos/18176.html"
+      }
+    }
+  },
+  "medrol-pfizer-4-mg-20-comprimidos": {
+    "name": "Medrol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Metilprednisolona",
+    "laboratory": "Pfizer",
+    "dose": "4 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/medrol-metilprednisolona-4-mg-20-comprimidos/18031.html"
+      }
+    }
+  },
+  "monez-laboratorio-chile-50-mcg-140-dosis": {
+    "name": "Monez",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "Laboratorio Chile",
+    "dose": "50 mcg",
+    "netContent": 140,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/monez-spray-mometasona-furoato-50-mcgds-spray-nasal-140-dosis/270887.html"
+      }
+    }
+  },
+  "monkast-pasteur-10-mg-28-comprimidos": {
+    "name": "Monkast",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Pasteur",
+    "dose": "10 mg",
+    "netContent": 28,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/monkast-montelukast-10-mg-28-comprimidos-recubiertos/291171.html"
+      }
+    }
+  },
+  "monkast-pasteur-4-mg-28-comprimidos": {
+    "name": "Monkast",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Pasteur",
+    "dose": "4 mg",
+    "netContent": 28,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/monkast-montelukast-4-mg-28-comprimidos/291173.html"
+      }
+    }
+  },
+  "monkast-pasteur-5-mg-28-comprimidos": {
+    "name": "Monkast",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Pasteur",
+    "dose": "5 mg",
+    "netContent": 28,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/monkast-montelukast-5-mg-28-comprimidos-masticables/291172.html"
+      }
+    }
+  },
+  "nasomin-medipharm-10-gr": {
+    "name": "Nasomin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bacitracina",
+    "laboratory": "Medipharm",
+    "format": "Unguento endonasal",
+    "netContent": 10,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nasomin-bacitracina-500-ui-unguento-endonasal-10-gr/27178.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-bacitracina-zinc-neomicina-xilometazolina-antazolina?default_sku=2100653&queryID=e8f40aa00c54b11c4423b8db0b51e8ab"
+      },
+      "farmacias-ahumada": {
+        "url": "https://salcobrand.cl/products/principio-activo-bacitracina-zinc-neomicina-xilometazolina-antazolina?default_sku=2100653&queryID=e8f40aa00c54b11c4423b8db0b51e8ab"
+      }
+    }
+  },
+  "nasonex-merck-50-mcg-280-dosis": {
+    "name": "Nasonex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "Merck",
+    "dose": "50 mcg",
+    "netContent": 280,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nasonex--mometasona-furoato-50-mcgds-suspension-nasal-280-dosis/268644.html"
+      }
+    }
+  },
+  "nastizol-bago-30-mg5-ml-120-ml": {
+    "name": "Nastizol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Bago",
+    "dose": "30 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nastizol-pseudoefedrina-30-mg-5-ml-jarabe-120-ml/9043.html"
+      }
+    }
+  },
+  "nastizol-bago-60-mg-14-comprimidos": {
+    "name": "Nastizol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Bago",
+    "dose": "60 mg",
+    "netContent": 14,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nastizol-pseudoefedrina-60-mg-14-comprimidos-recubiertos/9153.html"
+      }
+    }
+  },
+  "nastizol-bago-30-mg-15-ml": {
+    "name": "Nastizol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Bago",
+    "dose": "30 mg",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nastizol-pseudoefedrina-30-mg-ml-gotas-15-ml/9042.html"
+      }
+    }
+  },
+  "nastizol-bago-60-mg-28-comprimidos": {
+    "name": "Nastizol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Bago",
+    "dose": "60 mg",
+    "netContent": 28,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nastizol-pseudoefedrina-60-mg-28-comprimidos/9041.html"
+      }
+    }
+  },
+  "nastul-sanitas-30-mg30-ml-15-ml": {
+    "name": "Nastul",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Sanitas",
+    "dose": "30 mg/30 mL",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nastul-oral-pseudoefedrina-30-mg-ml-gotas-15-ml/12135.html"
+      }
+    }
+  },
+  "nebulex-laboratorio-chile-50-mcg-120-dosis": {
+    "name": "Nebulex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fluticasona Propionato",
+    "laboratory": "Laboratorio Chile",
+    "dose": "50 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nebulex-fluticasona-propionato-50-mcg-suspension-nasal-120-dosis/253956.html"
+      }
+    }
+  },
+  "neo-alertop-laboratorio-chile-5-mg-30-comprimidos": {
+    "name": "Neo-Alertop",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Laboratorio Chile",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neo-alertop-levocetirizina-5-mg-30-comprimidos-recubiertos/250774.html"
+      }
+    }
+  },
+  "neoaleport-laboratorio-chile-2.5-mg5-ml-120-ml": {
+    "name": "Neoaleport",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Laboratorio Chile",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neo-alertop-levocetirizina-25-mg5ml-jarabe-120-ml/255987.html"
+      }
+    }
+  },
+  "neoalledryl-prater-5-mg-60-comprimidos": {
+    "name": "NeoAlledryl",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Prater",
+    "dose": "5 mg",
+    "netContent": 60,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neo-alledryl-desloratadina-5-mg-60-comprimidos/287253.html"
+      }
+    }
+  },
+  "neoalledryl-d-prater-25-mg-30-comprimidos": {
+    "name": "NeoAlledryl D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Prater",
+    "dose": "25 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neo-alledryl-d-desloratadina-25-mg-30-comprimidos/290311.html"
+      }
+    }
+  },
+  "neohysticlar-mintlab-5-mg-30-comprimidos": {
+    "name": "Neohysticlar",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Mintlab",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neohysticlar-desloratadina-5-mg-30-comprimidos-recubierto/251267.html"
+      }
+    }
+  },
+  "neohysticlar-mintlab-5-mg-60-comprimidos": {
+    "name": "Neohysticlar",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Mintlab",
+    "dose": "5 mg",
+    "netContent": 60,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neohysticlar-desloratadina-5-mg-60-comprimidos-recubierto/265019.html"
+      }
+    }
+  },
+  "neohysticlar-mintlab-2.5-mg5-ml-90-ml": {
+    "name": "Neohysticlar",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Mintlab",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 90,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neohysticlar-desloratadina-25-mg-5-ml-jarabe-90-ml/268735.html"
+      }
+    }
+  },
+  "neumocort-d-and-m-pharma-200-mcg-200-dosis": {
+    "name": "Neumocort",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "D & M Pharma",
+    "dose": "200 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neumocort-hfa-budesonida-200-mcgds-inhalador-bucal-200-dosis/262635.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-budesonida?default_sku=851229&queryID=0c9c9aa5bfc783352156c51eec2fc0bd"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/neumocort-hfa-200-mcg-dosis-x-200-dosis-aerosol-para-inhalacion.html"
+      }
+    }
+  },
+  "neumocortplus-d-and-m-pharma-1604.5-150-dosis": {
+    "name": "NeumocortPlus",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida/Formeterol",
+    "laboratory": "D & M Pharma",
+    "dose": "160/4.5",
+    "format": "Aerosol para inhalación",
+    "netContent": 150,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/neumocortplus-10045-budesonida--160-mcg-inhalador-bucal-150-dosis/290671.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/neumocortplus-160-mg-4-5-mg-x-150-dosis-aerosol-para-inhalacion.html"
+      }
+    }
+  },
+  "nipolen-mintlab-2-mg5-ml-100-ml": {
+    "name": "Nipolen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Clorfenamina maleato",
+    "laboratory": "Mintlab",
+    "dose": "2 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nipolen-clorfenamina-2-mg5ml-jarabe-100-ml/268736.html"
+      }
+    }
+  },
+  "nipolen-mintlab-4-mg-20-comprimidos": {
+    "name": "Nipolen",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Clorfenamina maleato",
+    "laboratory": "Mintlab",
+    "dose": "4 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/nipolen-clorfenamina-4-mg-20-comprimidos/31070.html"
+      }
+    }
+  },
+  "oxilin-pasteur-0.05percent-15-ml": {
+    "name": "Oxilin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Oximetazolina clorhidrato",
+    "laboratory": "Pasteur",
+    "dose": "0.05%",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/oxilin-oximetazolina-005-solucion-nasal-15-ml/253642.html"
+      }
+    }
+  },
+  "plexus-abbott-2-mg-120-ml": {
+    "name": "Plexus",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Abbott",
+    "dose": "2 mg",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/plexus-betametasona-2-mg-jarabe-120-ml/4059.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-betametasona-dexclorfenamina?default_sku=2839315&queryID=6ef1d993206a9af8db837126ed4334b8"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/plexus-x-120-ml-jarabe.html"
+      }
+    }
+  },
+  "plexus-abbott-2-mg-30-comprimidos": {
+    "name": "Plexus",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Dexclorfenamina",
+    "laboratory": "Abbott",
+    "dose": "2 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/plexus-betametasona-2-mg-30-comprimidos/4061.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-betametasona-dexclorfenamina-f942a53e-3843-459a-a2fd-10cc46a6042a?default_sku=2839317&queryID=6ef1d993206a9af8db837126ed4334b8"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/plexus-x-30-comprimidos.html"
+      }
+    }
+  },
+  "pluster-deutsche-pharma-50-mcg-120-dosis": {
+    "name": "Pluster",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "Deutsche Pharma",
+    "dose": "50 mcg",
+    "format": "Spray nasal",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/pluster-mometasona-furoato-50-mcgds-suspension-nasal-120-dosis/268574.html"
+      }
+    }
+  },
+  "prednisona-mintlab-5-mg-20-comprimidos": {
+    "name": "Prednisona",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Mintlab",
+    "dose": "5 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/prednisona-5-mg-20-comprimidos/267931.html"
+      }
+    }
+  },
+  "procion-madipharm-20-mg-20-comprimidos": {
+    "name": "Procion",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Madipharm",
+    "dose": "20 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/procion-prednisona-20-mg-20-comprimidos/252180.html"
+      }
+    }
+  },
+  "procion-medipharm-5-mg-60-ml": {
+    "name": "Procion",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Prednisona",
+    "laboratory": "Medipharm",
+    "dose": "5 mg",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/procion-prednisona-5-mg-suspension-oral-60-ml/273518.html"
+      }
+    }
+  },
+  "prodel-pasteur-2-mg5-ml-120-ml": {
+    "name": "Prodel",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Clorfenamina maleato",
+    "laboratory": "Pasteur",
+    "dose": "2 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/prodel-clorfenamina-2-mg5ml-jarabe-120-ml/41009.html"
+      }
+    }
+  },
+  "prodel-pasteur-4-mg-20-comprimidos": {
+    "name": "Prodel",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Clorfenamina maleato",
+    "laboratory": "Pasteur",
+    "dose": "4 mg",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/prodel-clorfenamina-maleato-4-mg-20-comprimidos/41036.html"
+      }
+    }
+  },
+  "prodel-b-pasteur-2-mg-10-comprimidos": {
+    "name": "Prodel-B",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Clorfenamina",
+    "laboratory": "Pasteur",
+    "dose": "2 mg",
+    "format": "Comprimidos",
+    "netContent": 10,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/prodel-b-betametasona-2-mg-10-comprimidos/41031.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-betametasona-clorfenamina?default_sku=2500909&queryID=3a381fc8d0f22aa84b080be9c91f35a1"
+      }
+    }
+  },
+  "prodel-b-pasteur-2-mg-120-ml": {
+    "name": "Prodel-B",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Clorfenamina",
+    "laboratory": "Pasteur",
+    "dose": "2 mg",
+    "format": "Jarabe",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/prodel-b-betametasona-2-mg-jarabe-120-ml/41032.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-betametasona-0-25mg-5ml-clorfenamina-2mg-5ml?default_sku=2500907&queryID=3a381fc8d0f22aa84b080be9c91f35a1"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/prodel-b-x-120-ml-jarabe.html"
+      }
+    }
+  },
+  "prodel-b-pasteur-2-mg-30-comprimidos": {
+    "name": "Prodel-B",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Betametasona/Clorfenamina",
+    "laboratory": "Pasteur",
+    "dose": "2 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/prodel-b-betametasona-2-mg-30-comprimidos/41084.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/prodel-b-x-30-comprimidos.html"
+      }
+    }
+  },
+  "relsed-prater-30-mg5-ml-120-ml": {
+    "name": "Relsed",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Fexofenadina clorhidrato",
+    "laboratory": "Prater",
+    "dose": "30 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/relsed-fexofenadina-30-mg-5-ml-suspension-oral-120-ml/300755.html"
+      }
+    }
+  },
+  "relvar-glaxo-18422-30-dosis": {
+    "name": "Relvar",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Ellipta",
+    "laboratory": "Glaxo",
+    "dose": "184/22",
+    "netContent": 30,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/relvar-ellipta-fluticasona-furoato-200-mcg-inhalador-bucal-30-dosis/265570.html"
+      }
+    }
+  },
+  "relvar-glaxo-9222-30-dosis": {
+    "name": "Relvar",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Ellipta",
+    "laboratory": "Glaxo",
+    "dose": "92/22",
+    "netContent": 30,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/relvar-ellipta-fluticasona-furoato-100-mcg-inhalador-bucal-30-dosis/263970.html"
+      }
+    }
+  },
+  "remitex-bago-5-mg5-ml-100-ml": {
+    "name": "Remitex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "5 mg/5 mL",
+    "format": "Jarabe",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/remitex-cetirizina-5-mg5ml-jarabe-100-ml/252055.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-5ml-oral-liquido-5562b8b8-1d4a-4e05-aa81-12b6e36ada90?default_sku=2592308&queryID=0e4c88dfa3dda667d9fa13b00d286b72"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/remitex-5-mg-5-ml-x-100-ml-jarabe.html"
+      }
+    }
+  },
+  "remitex-bago-10-mg10-ml-15-ml": {
+    "name": "Remitex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "10 mg/10 mL",
+    "format": "Solución para gotas orales",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/remitex-cetirizina-10-mgml-gotas-15-ml/9141.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-ml-oral-gtas-2afa6dda-c444-459d-8b4b-d88cd63bf4ae?default_sku=2592346&queryID=0e4c88dfa3dda667d9fa13b00d286b72"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/remitex-10-mg-ml-x-15-ml-solucion-oral-para-gotas.html"
+      }
+    }
+  },
+  "remitex-bago-10-mg-30-comprimidos": {
+    "name": "Remitex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Bago",
+    "dose": "10 mg",
+    "format": "Comprimidos recubiertos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/remitex-cetirizina-10-mg-30-comprimidos-recubierto/9118.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-oral-solido?default_sku=2591805&queryID=0e4c88dfa3dda667d9fa13b00d286b72"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/remitex-10-mg-x-30-comprimidos-recubiertos.html"
+      }
+    }
+  },
+  "remitex-d-bago-120-mg-20-comprimidos": {
+    "name": "Remitex-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Bago",
+    "dose": "120 mg",
+    "format": "Comprimidos de liberación prolongada",
+    "netContent": 20,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/remitex-d-pseudoefedrina-120-mg-20-comprimidos-liberacion-prolongada/267737.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-pseudoefedrina-120mg-oral-solido?default_sku=2590271&queryID=0e4c88dfa3dda667d9fa13b00d286b72"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/remitex-d-x-20-comprimidos-de-liberacion-prolongada.html"
+      }
+    }
+  },
+  "rexanel-prater-10-mg-30-comprimidos": {
+    "name": "Rexanel",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Rupatadina",
+    "laboratory": "Prater",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rexanel-rupatadina-10-mg-30-comprimidos/289529.html"
+      }
+    }
+  },
+  "rigotax-prater-10-mg-10-capsulas": {
+    "name": "Rigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "10 mg",
+    "format": "Cápsulas blandas",
+    "netContent": 10,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-cetirizina-10-mg-10-capsulas-blandas/111128.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-oral-solido-c9e47904-66da-4592-aab2-c83a02d936bb?default_sku=900269&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-10-mg-x-10-capsulas-blandas.html"
+      }
+    }
+  },
+  "rigotax-prater-10-mg-30-capsulas": {
+    "name": "Rigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "10 mg",
+    "format": "Cápsulas blandas",
+    "netContent": 30,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-oral-solido-2cfd3441-6b44-49ed-b5ce-e76fa86777c5?default_sku=900270&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-10-mg-x-30-capsulas-blandas.html"
+      }
+    }
+  },
+  "rigotax-prater-10-mg-10-comprimidos": {
+    "name": "Rigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "10 mg",
+    "format": "Comprimidos",
+    "netContent": 10,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-cetirizina-diclorhidrato-10-mg-10-comprimidos/386486.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-cetirizina?default_sku=576852&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-10mg-10comp.html"
+      }
+    }
+  },
+  "rigotax-prater-10-mg-30-comprimidos": {
+    "name": "Rigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "10 mg",
+    "format": "Comprimidos",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-cetirizina-diclorhidrato-10-mg-30-comprimidos/386487.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/principio-activo-cetirizina-a96d4866-e4f2-48db-ada0-57e2150404db?default_sku=576712&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-10mg-30comp.html"
+      }
+    }
+  },
+  "rigotax-prater-10-mg10-ml-15-ml": {
+    "name": "Rigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "10 mg/10 mL",
+    "format": "Solución oral para gotas",
+    "netContent": 15,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-cetirizina-10-mgml-gotas-15-ml/111125.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-10mg-ml-oral-gtas-792396a5-9cfe-4a28-acbf-3e2198e4092c?default_sku=900948&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-10-mg-ml-x-15-ml-solucion-oral-para-gotas.html"
+      }
+    }
+  },
+  "rigotax-prater-5-mg5-ml-60-ml": {
+    "name": "Rigotax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Prater",
+    "dose": "5 mg/5 mL",
+    "format": "Solución oral",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-cetirizina-5-mg5ml-solucion-oral-60-ml/111126.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-5ml-oral-liquido-f68a8877-ec2e-4e36-8108-237dcbfb037b?default_sku=900931&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-5-mg-5-ml-x-60-ml-solucion-oral.html"
+      }
+    }
+  },
+  "rigotax-d-prater-120-mg-10-capsulas": {
+    "name": "Rigotax-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Prater",
+    "dose": "120 mg",
+    "format": "Cápsulas con gránulos de liberación prolongada",
+    "netContent": 10,
+    "netContentUnit": "capsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-d-cetirizina-120-mg-10-capsulas/111152.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-pseudoefedrina-120mg-oral-solido-7e0215b3-4143-413a-9519-e1e6740d78e6?default_sku=900368&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-d-x-10-capsulas-con-granulos-de-liberacion-prolongada.html"
+      }
+    }
+  },
+  "rigotax-d-prater-120-mg-30-capsulas": {
+    "name": "Rigotax-D",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Prater",
+    "dose": "120 mg",
+    "format": "Cápsulas con gránulos de liberación prolongada",
+    "netContent": 30,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rigotax-d--pseudoefedrina-120-mg-30-capsulas-liberacion-prolongada/111153.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/cetirizina-5mg-pseudoefedrina-120mg-oral-solido-ff9eaab1-b6a3-49ab-9bcb-7ae13e9eb0d0?default_sku=900367&queryID=97c9419b2f5017e735a6f59fb7eb2540"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rigotax-d-x-30-capsulas-con-granulos-de-liberacion-prolongada.html"
+      }
+    }
+  },
+  "rino-b-aqua-d-and-m-pharma-100-mcg-100-dosis": {
+    "name": "Rino-B Aqua",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida",
+    "laboratory": "D & M Pharma",
+    "dose": "100 mcg",
+    "format": "Suspensión nasal para nebulización",
+    "netContent": 100,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rino-b--aqua-budesonida-100-mcgds-suspension-nasal-100-dosis/255458.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rino-b-aqua-100-mcg-dosis-x-100-dosis-suspension-nasal-para-nebulizacion.html"
+      }
+    }
+  },
+  "rinobanedif-bago-10-gr": {
+    "name": "Rinobanedif",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Bacitracina",
+    "laboratory": "Bago",
+    "format": "Unguento nasal",
+    "netContent": 10,
+    "netContentUnit": "gr",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rinobanedif-bacitracina-5.000-ui-unguento-nasal-10-gr/9036.html"
+      },
+      "farmacias-salcobrand": {
+        "url": "https://salcobrand.cl/products/rinobanedif-unguento-nasal?default_sku=2590400&queryID=6752eb597d1fd517255e363449294708"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/rinobanedif-x-10-g-unguento-nasal.html"
+      }
+    }
+  },
+  "rinofilax-abbott-2.5-mg5-ml-100-ml": {
+    "name": "Rinofilax",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Desloratadina",
+    "laboratory": "Abbott",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rinofilax-desloratadina-25-mg-5-ml-jarabe-100-ml/253542.html"
+      }
+    }
+  },
+  "rinomex-abbott-2.5-mg-100-ml": {
+    "name": "Rinomex",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Loratadina",
+    "laboratory": "Abbott",
+    "dose": "2.5 mg",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rinomex-loratadina-25-mg-jarabe-100-ml/4607.html"
+      }
+    }
+  },
+  "rinoval-saval-50-mcg-120-dosis": {
+    "name": "Rinoval",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "Saval",
+    "dose": "50 mcg",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rinoval-mometasona-50-mcg-dosis-suspension-nasal-para-nebulizacion-120-dosis/6321.html"
+      }
+    }
+  },
+  "rinoven-medipharm-60-mg-28-comprimidos": {
+    "name": "Rinoven",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Pseudoefedrina",
+    "laboratory": "Medipharm",
+    "dose": "60 mg",
+    "netContent": 28,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rinoven-pseudoefedrina-60-mg-28-comprimidos/27164.html"
+      }
+    }
+  },
+  "rupafin-labomed-1-mg1-ml-120-ml": {
+    "name": "Rupafin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Rupatadina",
+    "laboratory": "Labomed",
+    "dose": "1 mg/1 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rupafin-rupatadina-1-mg-ml-solucion-oral-120-ml/291148.html"
+      }
+    }
+  },
+  "rupafin-labomed-10-mg-30-comprimidos": {
+    "name": "Rupafin",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Rupatadina",
+    "laboratory": "Labomed",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/rupafin-rupatadina-10-mg-30-comprimidos/267241.html"
+      }
+    }
+  },
+  "salbutamol-mintlab-2-mg5-ml-100-ml": {
+    "name": "Salbutamol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Mintlab",
+    "dose": "2 mg/5 mL",
+    "netContent": 100,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/salbutamol-2-mg5ml-jarabe-100-ml/268738.html"
+      }
+    }
+  },
+  "salbutamol-ethon-0.5percent-20-ml": {
+    "name": "Salbutamol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Ethon",
+    "dose": "0.5%",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/salbutamol-05-solucion-para-nebulizacion-20-ml/268913.html"
+      }
+    }
+  },
+  "salbutamol-mintlab-100-mcg-200-dosis": {
+    "name": "Salbutamol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Mintlab",
+    "dose": "100 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/salbutamol-lf-100-mcg-dosis-inhalador-bucal-200-dosis/225472.html"
+      }
+    }
+  },
+  "salbutamol-sanitas-10050-200-dosis": {
+    "name": "Salbutamol",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol Beclometasona Dipropionato",
+    "laboratory": "Sanitas",
+    "dose": "100/50",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/salbutamol-con-beclometasona-salbutamol-100-mcg-inhalador-bucal-200-dosis/199454.html"
+      }
+    }
+  },
+  "salbutral-ac-d-and-m-pharma-10020-250-dosis": {
+    "name": "Salbutral AC",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol Ipratropio Bromuro",
+    "laboratory": "D & M Pharma",
+    "dose": "100/20",
+    "netContent": 250,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/salbutral-salbutamol-100-mcgds-inhalador-bucal-250-dosis/272083.html"
+      }
+    }
+  },
+  "salflutop-itf-labomed-25050-60-capsulas": {
+    "name": "Salflutop",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Itf Labomed",
+    "dose": "250/50",
+    "format": "Polvo para inhalación",
+    "netContent": 60,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/salflutop-25050-salmeterol-50-mcg-60-capsulas-inhalada/273915.html"
+      }
+    }
+  },
+  "seretide-glaxo-12525-120-dosis": {
+    "name": "Seretide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Glaxo",
+    "dose": "125/25",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/seretide-salmeterol-25-mcg-inhalador-120-dosis/255791.html"
+      }
+    }
+  },
+  "seretide-glaxo-25025-120-dosis": {
+    "name": "Seretide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Glaxo",
+    "dose": "250/25",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/seretide-salmeterol-25-mcgds-inhalador-bucal-120-dosis/255792.html"
+      }
+    }
+  },
+  "seretide-glaxo-5025-120-dosis": {
+    "name": "Seretide",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Glaxo",
+    "dose": "50/25",
+    "format": "Aerosol para inhalación",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/seretide-salmeterol-25-mcg-inhalador-bucal-120-dosis/255790.html"
+      }
+    }
+  },
+  "serevent-lf-glaxo-25-mcg-120-dosis": {
+    "name": "Serevent LF",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salmeterol",
+    "laboratory": "Glaxo",
+    "dose": "25 mcg",
+    "format": "Aerosol para inhalación",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/serevent-lf-salmeterol-25-mcg-inhalador-bucal-120-dosis/262263.html"
+      }
+    }
+  },
+  "sinasmal-sf-laboratorio-chile-100-mcg-200-dosis": {
+    "name": "Sinasmal SF",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Salbutamol",
+    "laboratory": "Laboratorio Chile",
+    "dose": "100 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/sinasmal-sf-salbutamol-100-mcg-ds-inhalador-bucal-200-dosis/263288.html"
+      }
+    }
+  },
+  "singulair-merck-10-mg-30-comprimidos": {
+    "name": "Singulair",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Merck",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/singulair-montelukast-10-mg-30-comprimidos-recubierto/197025.html"
+      }
+    }
+  },
+  "singulair-organon-4-mg-30-sobres": {
+    "name": "Singulair",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Montelukast",
+    "laboratory": "Organon",
+    "dose": "4 mg",
+    "format": "Vía oral",
+    "netContent": 30,
+    "netContentUnit": "sobres",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/singulair--montelukast-4-mg-granulado-30-sobres/197055.html"
+      }
+    }
+  },
+  "spiolto-respimat-boehringer-2.5-mcg-30-dosis": {
+    "name": "Spiolto Respimat",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Tiotropio/Olodaterol",
+    "laboratory": "Boehringer",
+    "dose": "2.5 mcg",
+    "netContent": 30,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/spiolto-respimat-olodaterol-25-mcg-solucion-para-inhalacion-30-dosis/275038.html"
+      }
+    }
+  },
+  "spiriva-boehringer-2.5-mcg-30-dosis": {
+    "name": "Spiriva",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Tiotropio",
+    "laboratory": "Boehringer",
+    "dose": "2.5 mcg",
+    "netContent": 30,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/spiriva-tiotropio-25-mcgds-inhalador-bucal-4-ml-30-dosis/263598.html"
+      }
+    }
+  },
+  "suavicort-d-and-m-pharma-50-mcg-150-dosis": {
+    "name": "Suavicort",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "D & M Pharma",
+    "dose": "50 mcg",
+    "netContent": 150,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/suavicort-mometasona-furoato-50-mcg-suspension-nasal-150-dosis/272006.html"
+      }
+    }
+  },
+  "symbicort-turbuhaler-astrazeneca-1604.5-120-dosis": {
+    "name": "Symbicort Turbuhaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida/Formeterol",
+    "laboratory": "Astrazeneca",
+    "dose": "160/4.5",
+    "format": "Polvo para inhalación bucal",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/symbicort-turbuhaler-budesonida-160-mcg-dosis-polvo-para-inhalacion-bucal-120-dosis/16076.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/symbicort-turbuhaler-160-mcg-4-5-mcg-dosis-x-120-dosis-polvo-para-inhalacion-bucal.html"
+      }
+    }
+  },
+  "symbicort-turbuhaler-astrazeneca-3209-60-dosis": {
+    "name": "Symbicort Turbuhaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida/Formeterol",
+    "laboratory": "Astrazeneca",
+    "dose": "320/9",
+    "format": "Polvo para inhalación bucal",
+    "netContent": 60,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/symbicort-turbuhaler-budesonida--320-mcg-inhalador-bucal-60-dosis/253080.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/symbicort-turbohaler-320-mcg-9-mcg-x-60-dosis-polvo-para-inhalacion.html"
+      }
+    }
+  },
+  "synaller-pasteur-50-mcg-200-dosis": {
+    "name": "SynAller",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Mometasona furoato",
+    "laboratory": "Pasteur",
+    "dose": "50 mcg",
+    "netContent": 200,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/synaller-mometasona-50-mcg-spray-nasal-200-dosis/271504.html"
+      }
+    }
+  },
+  "tiriz-eurofarma-5-mg-30-comprimidos": {
+    "name": "Tiriz",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Eurofarma",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/tiriz-levocetirizina-5-mg-30-comprimidos-recubiertos/268910.html"
+      }
+    }
+  },
+  "trelegy-glaxo-925522-30-dosis": {
+    "name": "Trelegy",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Ellipta",
+    "laboratory": "Glaxo",
+    "dose": "92/55/22",
+    "netContent": 30,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/trelegy-ellipta-92-mcg-polvo-para-inhalacion-oral-30-dosis/295825.html"
+      }
+    }
+  },
+  "ultibro-breezhaler-novartis-110-mcg-30-capsulas": {
+    "name": "Ultibro Breezhaler",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Indacaterol/Glicopirronio",
+    "laboratory": "Novartis",
+    "dose": "110 mcg",
+    "netContent": 30,
+    "netContentUnit": "cápsulas",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/ultibro-breezhaler-indacaterol-110-mcg-glicopirronio-50-mcg-30-capsulas-inhalada/266163.html"
+      }
+    }
+  },
+  "vannair-astrazeneca-1604.5-120-dosis": {
+    "name": "Vannair",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida/Formeterol",
+    "laboratory": "Astrazeneca",
+    "dose": "160/4.5",
+    "format": "Suspensión para inhalación oral",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/vannair-budesonida--160-mcg-inhalador-bucal-120-dosis/259375.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/vannair-pmdi-160-4-5-mcg-x-120-dosis-suspension-para-inhalacion-oral.html"
+      }
+    }
+  },
+  "vannair-astrazeneca-804.5-120-dosis": {
+    "name": "Vannair",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Budesonida/Formeterol",
+    "laboratory": "Astrazeneca",
+    "dose": "80/4.5",
+    "format": "Suspensión para Inhalación oral",
+    "netContent": 120,
+    "netContentUnit": "dosis",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/vannair-8045-budesonida--45-mcg-inhalador-bucal-120-dosis/259374.html"
+      },
+      "farmacias-ahumada": {
+        "url": "https://www.farmaciasahumada.cl/vannair-pmdi-80-4-5-mcg-x-120-dosis-suspension-para-inhalacion-oral.html"
+      }
+    }
+  },
+  "xuzal-glaxo-5-mg5-ml-20-ml": {
+    "name": "Xuzal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Glaxo",
+    "dose": "5 mg/5 mL",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/xuzal-levocetirizina-5-mgml-solucion-oral-20-ml/268141.html"
+      }
+    }
+  },
+  "xuzal-glaxo-5-mg-30-comprimidos": {
+    "name": "Xuzal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Glaxo",
+    "dose": "5 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/xuzal-levocetirizina-5-mg-30-comprimidos-recubierto/259748.html"
+      }
+    }
+  },
+  "xuzal-glaxo-2.5-mg5-ml-5-ml": {
+    "name": "Xuzal",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Glaxo",
+    "dose": "2.5 mg/5 mL",
+    "netContent": 5,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/xuzal-levocetirizina-25-mg5ml-solucion-oral-5-ml/268132.html"
+      }
+    }
+  },
+  "xylisol-cassara-d-and-m-pharma-25-ml": {
+    "name": "Xylisol Cassara",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "D-Xylitol",
+    "laboratory": "D & M Pharma",
+    "netContent": 25,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/xylisol-d-xylitol-7-spray-nasal-25-ml/262527.html"
+      }
+    }
+  },
+  "zival-saval-2.5mg5-ml-120-ml": {
+    "name": "Zival",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Saval",
+    "dose": "2.5mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/zival-levocetirizina-25-mg5ml-solucion-oral-120-ml/262142.html"
+      }
+    }
+  },
+  "zival-saval-5-mg5-ml-20-ml": {
+    "name": "Zival",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Saval",
+    "dose": "5 mg/5 mL",
+    "netContent": 20,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/zival-levocetirizina-5-mg-ml-solucion-oral-gotas-20-ml/262143.html"
+      }
+    }
+  },
+  "zival-saval-5-mg-40-comprimidos": {
+    "name": "Zival",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Saval",
+    "dose": "5 mg",
+    "netContent": 40,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/zival-levocetirizina-5-mg-40-comprimidos-recubierto/262144.html"
+      }
+    }
+  },
+  "zival-forte-saval-5-mg5-ml-120-ml": {
+    "name": "Zival Forte",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Levocetirizina diclorhidrato",
+    "laboratory": "Saval",
+    "dose": "5 mg/5 mL",
+    "netContent": 120,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/zival-forte-levocetirizina-5-mg5ml-solucion-oral-120-ml/271725.html"
+      }
+    }
+  },
+  "zyrtec-glaxo-10-mg-30-comprimidos": {
+    "name": "Zyrtec",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Glaxo",
+    "dose": "10 mg",
+    "netContent": 30,
+    "netContentUnit": "comprimidos",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/zyrtec-cetirizina-10-mg-30-comprimidos-recubiertos/60112.html"
+      }
+    }
+  },
+  "zyrtec-glaxo-1-mg1-ml-60-ml": {
+    "name": "Zyrtec",
+    "category": "sistema-respiratorio-y-alergias",
+    "activePrinciple": "Cetirizina diclorhidrato",
+    "laboratory": "Glaxo",
+    "dose": "1 mg/1 mL",
+    "netContent": 60,
+    "netContentUnit": "mL",
+    "vendors": {
+      "farmacias-cruz-verde": {
+        "url": "https://www.cruzverde.cl/zyrtec-cetirizina--1mgml-jarabe-60-ml/60086.html"
       }
     }
   }

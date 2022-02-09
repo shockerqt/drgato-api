@@ -6,6 +6,7 @@ import {
   AddVendorInput,
   Remedy,
   RemedyCategory,
+  RemedySheetInput,
   UpdateRemedyInput,
   Vendor,
 } from '../api';
@@ -89,6 +90,12 @@ export default {
   },
 
   Mutation: {
+
+    remedySheet: (
+      _: never,
+      { input }: { input: RemedySheetInput },
+      { dataSources }: { dataSources: DataSources },
+    ) => dataSources.remedyAPI.sheet(input),
 
     addRemedy: (
       _: never,

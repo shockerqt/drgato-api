@@ -1,5 +1,6 @@
-import { writeFileSync } from 'fs';
 import RemedyStore from './remedyStore';
+import ConstraintsStore from './constraintsStore';
+import StoreDevAPI from './storeDevAPI';
 
 export interface RemediesModel {
   [slug: string]: RemedyModel;
@@ -35,9 +36,8 @@ export interface RemedyCategoryModel {
   remedies: string[];
 }
 
-export interface RemediesData {
+export interface ProductsData {
   remedies: RemediesModel;
-  remedyCategories: RemedyCategoriesModel;
 }
 
 export interface CommitResponse {
@@ -53,61 +53,60 @@ export interface PharmacyModel {
   name: string;
 }
 
-export interface ConstraintsData {
-  pharmacies: PharmaciesModel;
+export interface SectionsModel {
+  remedies: { name: string, categories: RemedyCategoriesModel };
 }
 
+export interface ConstraintsData {
+  pharmacies: PharmaciesModel;
+  sections: SectionsModel;
+}
+
+export interface StoreData {
+  constraints: ConstraintsData;
+  remedies: RemediesModel;
+}
+
+export type StoreTarget = 'remedies' | 'constraints';
+
 export default class Store {
-  public data!: ConstraintsData;
-  public remedyStore: RemedyStore;
+  private data!: StoreData;
+  public remedyStore!: RemedyStore;
+  public constraintsStore!: ConstraintsStore;
+  public storeAPI: StoreDevAPI;
+  // public s3Client: S3Client;
 
   constructor() {
-    this.remedyStore = new RemedyStore();
+    this.storeAPI = new StoreDevAPI();
+    // this.s3Client = new S3Client({ region: 'us-east-1' });
+    // this.initS3();
   }
+
+  // public async initS3() {
+  //   try {
+  //     const data = await this.s3Client.send(new ListBucketsCommand({}));
+  //     console.log('Success', data.Buckets);
+  //   } catch (error) {
+  //     console.log('Error', error);
+  //   }
+  // }
 
   public async init(): Promise<void> {
-    this.data = await this.loadData();
-    await this.remedyStore.init();
+    this.data = await this.storeAPI.loadData();
+    this.constraintsStore = new ConstraintsStore(this, this.data.constraints);
+    this.remedyStore = new RemedyStore(this, this.data.remedies);
   }
-
-  /**
-   * Load data from external storage if not in memory
-   * @returns  a promise that resolves to the data
-   */
-  private async loadData(): Promise<ConstraintsData> {
-    const data = await import('../data/constraints.json');
-    return data.default;
-  }
-
-  /**
-   * @returns All remedy categories on memory
-   */
-  get pharmacies(): PharmaciesModel {
-    return this.data.pharmacies;
-  }
-
   /**
    * Save all data to external storage.
    * @returns a promise with a status response
    */
-  public commit(): CommitResponse {
+  public async commit(targets: StoreTarget[] = ['remedies', 'constraints']): Promise<CommitResponse> {
 
     if (!this.data) return {
       ok: false,
       message: 'Nothing to commit.',
     };
 
-    try {
-      writeFileSync('./src/data/constraints.json', JSON.stringify(this.data, null, '  '));
-      return {
-        ok: true,
-        message: 'Succesfully commited to storage.',
-      };
-    } catch (error) {
-      return {
-        ok: false,
-        message: 'Failed to commit to storage.',
-      };
-    }
+    return await this.storeAPI.commit(this.data, targets);
   }
 }

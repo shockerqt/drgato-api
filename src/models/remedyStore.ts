@@ -1,7 +1,5 @@
-import { writeFileSync } from 'fs';
-import {
+import Store, {
   CommitResponse,
-  RemediesData,
   RemediesModel,
   RemedyCategoriesModel,
   RemedyCategoryModel,
@@ -9,33 +7,30 @@ import {
 } from '.';
 
 export default class RemedyStore {
-  private data!: RemediesData;
+  private data: RemediesModel;
+  private store: Store;
 
-  public async init(): Promise<void> {
-    this.data = await this.loadData();
+  constructor(store: Store, data: RemediesModel) {
+    this.store = store;
+    this.data = data;
   }
 
-  /**
-   * Load data from external storage if not in memory
-   * @returns  a promise that resolves to the data
-   */
-  private async loadData(): Promise<RemediesData> {
-    const data = await import('../data/remedies.json');
-    return data.default;
+  public async commit(): Promise<CommitResponse> {
+    return await this.store.commit(['remedies']);
   }
 
   /**
    * @returns All remedies on memory
    */
   get remedies(): RemediesModel {
-    return this.data.remedies;
+    return this.data;
   }
 
   /**
    * @returns All remedy categories on memory
    */
   get categories(): RemedyCategoriesModel {
-    return this.data.remedyCategories;
+    return this.store.constraintsStore.sections.remedies.categories;
   }
 
   /**
@@ -49,7 +44,7 @@ export default class RemedyStore {
     if (!this.categories[remedy.category]) throw new Error('Category doesn\'t exists in storage');
     this.remedies[slug] = remedy;
     const index = this.categories[remedy.category].remedies.findIndex((remedy) => remedy === slug);
-    if (index !== -1) this.categories[remedy.category].remedies.splice(index, 1, remedy.category);
+    if (index !== -1) this.categories[remedy.category].remedies.splice(index, 1, slug);
     else this.categories[remedy.category].remedies.push(slug);
   }
 
@@ -79,31 +74,6 @@ export default class RemedyStore {
       if (remedy.category === slug) throw new Error('Can\'t remove category, there are still remedies with it.');
     }
     delete this.categories[slug];
-  }
-
-  /**
-   * Save all data to external storage.
-   * @returns a promise with a status response
-   */
-  public commit(): CommitResponse {
-
-    if (!this.data) return {
-      ok: false,
-      message: 'Nothing to commit.',
-    };
-
-    try {
-      writeFileSync('./src/data/remedies.json', JSON.stringify(this.data, null, '  '));
-      return {
-        ok: true,
-        message: 'Succesfully commited to storage.',
-      };
-    } catch (error) {
-      return {
-        ok: false,
-        message: 'Failed to commit to storage.',
-      };
-    }
   }
 
 }

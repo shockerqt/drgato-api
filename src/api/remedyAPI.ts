@@ -12,24 +12,29 @@ import {
   Pharmacy,
   Remedy,
   RemedyCategory,
+  RemedySheetInput,
+  RemedySheetPayload,
   UpdateRemedyInput,
   UpdateRemedyPayload,
   Vendor,
 } from '.';
 
 import Store, {
-  RemedyModel,
+  RemedyModel, VendorsModel,
 } from '../models';
+import ConstraintsStore from '../models/constraintsStore';
 import RemedyStore from '../models/remedyStore';
 
 export default class RemedyAPI extends DataSource {
   private store: Store;
   private remedyStore: RemedyStore;
+  private constraintsStore: ConstraintsStore;
 
   constructor({ store }: { store: Store }) {
     super();
     this.store = store;
     this.remedyStore = store.remedyStore;
+    this.constraintsStore = store.constraintsStore;
   }
 
   /**
@@ -77,15 +82,19 @@ export default class RemedyAPI extends DataSource {
     const slug = this.generateRemedySlug(remedy);
     const categorySlug = this.generateSlug(remedy.category);
 
+    const vendors: VendorsModel = {};
+
+    remedy.vendors?.forEach(({ pharmacy, url }) => vendors[this.generateSlug(pharmacy)] = { url });
+
     const remedyToAdd: RemedyModel = {
       name: remedy.name,
-      category: remedy.category,
+      category: categorySlug,
       activePrinciple: remedy.activePrinciple,
       laboratory: remedy.laboratory,
-      vendors: {},
       ...(remedy.dose && { dose: remedy.dose }),
       ...(remedy.format && { format: remedy.format }),
       ...((remedy.netContent && remedy.netContentUnit) && { netContent: remedy.netContent, netContentUnit: remedy.netContentUnit }),
+      vendors,
     };
 
 
@@ -103,7 +112,7 @@ export default class RemedyAPI extends DataSource {
 
     this.remedyStore.addOrUpdateRemedy(slug, remedyToAdd);
 
-    const response = this.remedyStore.commit();
+    const response = await this.store.commit();
 
     const addedRemedy = {
       ...remedyToAdd,
@@ -173,7 +182,7 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to all pharmacies
    */
   public async getPharmacies(): Promise<Pharmacy[]> {
-    return Object.entries(this.store.pharmacies).map(([slug, pharmacy]) => ({ ...pharmacy, slug }));
+    return Object.entries(this.constraintsStore.pharmacies).map(([slug, pharmacy]) => ({ ...pharmacy, slug }));
   }
 
   /**
@@ -203,9 +212,9 @@ export default class RemedyAPI extends DataSource {
       ...(input.category && { category: this.generateSlug(input.category) }),
       ...(input.activePrinciple && { name: input.activePrinciple }),
       ...(input.laboratory && { name: input.laboratory }),
-      ...(input.dose && { dose: input.dose }),
-      ...(input.format && { format: input.format }),
-      ...((input.netContent && input.netContentUnit) && { netContent: input.netContent, netContentUnit: input.netContentUnit }),
+      ...(input.dose !== undefined && { dose: input.dose || undefined }),
+      ...(input.format !== undefined && { format: input.format || undefined }),
+      ...((input.netContent !== undefined && input.netContentUnit !== undefined) && { netContent: input.netContent || undefined, netContentUnit: input.netContentUnit || undefined }),
     };
 
     const newSlug = this.generateRemedySlug(remedyToUpdate);
@@ -216,7 +225,7 @@ export default class RemedyAPI extends DataSource {
     // Add new remedy to storage
     this.remedyStore.addOrUpdateRemedy(newSlug, remedyToUpdate);
 
-    const response = this.remedyStore.commit();
+    const response = await this.store.commit(['constraints', 'remedies']);
 
     return {
       success: response.ok,
@@ -247,7 +256,7 @@ export default class RemedyAPI extends DataSource {
 
     this.remedyStore.addCategory(slug, categoryToAdd);
 
-    const response = this.remedyStore.commit();
+    const response = await this.store.commit();
 
     return {
       success: response.ok,
@@ -262,7 +271,7 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to a payload
    */
   public async addPharmacy(input: AddPharmacyInput): Promise<AddPharmacyPayload> {
-    const { pharmacies } = this.store;
+    const { pharmacies } = this.constraintsStore;
     const slug = this.generateSlug(input.name);
 
     if (pharmacies[slug]) return {
@@ -276,7 +285,7 @@ export default class RemedyAPI extends DataSource {
 
     pharmacies[slug] = pharmacyToAdd;
 
-    const response = this.store.commit();
+    const response = await this.store.commit();
 
     return {
       success: response.ok,
@@ -287,7 +296,7 @@ export default class RemedyAPI extends DataSource {
   }
 
   public async addVendor(input: AddVendorInput): Promise<AddVendorPayload> {
-    const { pharmacies } = this.store;
+    const { pharmacies } = this.constraintsStore;
     const { remedies } = this.remedyStore;
 
     const { remedySlug, pharmacySlug } = input;
@@ -315,7 +324,7 @@ export default class RemedyAPI extends DataSource {
 
     remedies[remedySlug].vendors[pharmacySlug] = vendorToAdd;
 
-    const response = this.remedyStore.commit();
+    const response = await this.store.commit();
 
     return {
       success: response.ok,
@@ -337,7 +346,97 @@ export default class RemedyAPI extends DataSource {
    * @returns a promise that resolves to all remedies
    */
   public async getPharmacy(pharmacySlug: string): Promise<Pharmacy> {
-    return { ...this.store.pharmacies[pharmacySlug], slug: pharmacySlug };
+    return { ...this.constraintsStore.pharmacies[pharmacySlug], slug: pharmacySlug };
+  }
+
+  public async sheet({ category, sheet }: RemedySheetInput): Promise<RemedySheetPayload> {
+    const { pharmacies } = this.constraintsStore;
+
+    pharmacies['farmacias-cruz-verde'] = { name: 'Farmacias Cruz Verde' };
+    pharmacies['farmacias-salcobrand'] = { name: 'Farmacias Salcobrand' };
+    pharmacies['farmacias-ahumada'] = { name: 'Farmacias Ahumada' };
+
+    const categorySlug = this.generateSlug(category);
+
+    const { categories, remedies } = this.remedyStore;
+
+    if (!categories[categorySlug]) return {
+      success: false,
+      message: `Category '${category}' doesn't exists in storage. Please add it first.`,
+    };
+
+    const lines = sheet.split('\r\n').map(line => line.split('\t'));
+    lines.shift();
+
+    lines.forEach(line => {
+      const remedy: AddRemedyInput = {
+        name: line[0],
+        category: categorySlug,
+        dose: line[1] || undefined,
+        activePrinciple: line[2],
+        laboratory: line[3],
+        netContent: Number(line[4]) || undefined,
+        netContentUnit: line[5] || undefined,
+        format: line[6] || undefined,
+        vendors: [
+          {
+            pharmacy: 'farmacias-cruz-verde',
+            url: line[7],
+          },
+          {
+            pharmacy: 'farmacias-salcobrand',
+            url: line[8],
+          },
+          {
+            pharmacy: 'farmacias-ahumada',
+            url: line[9],
+          },
+        ],
+      };
+
+      const slug = this.generateRemedySlug(remedy);
+
+      const vendors: VendorsModel = {};
+
+      remedy.vendors?.forEach(({ pharmacy, url }) => {
+        const newUrl = url.replaceAll(' ', '');
+        if (newUrl) vendors[this.generateSlug(pharmacy)] = { url: newUrl };
+      });
+
+      const remedyToAdd: RemedyModel = {
+        name: remedy.name,
+        category: categorySlug,
+        activePrinciple: remedy.activePrinciple,
+        laboratory: remedy.laboratory,
+        ...(remedy.dose && { dose: remedy.dose }),
+        ...(remedy.format && { format: remedy.format }),
+        ...((remedy.netContent && remedy.netContentUnit) && { netContent: remedy.netContent, netContentUnit: remedy.netContentUnit }),
+        vendors,
+      };
+
+      if (remedies[slug]) return {
+        success: false,
+        message: `A product with the slug '${slug}' is already in storage.`,
+      };
+
+      if (!categories[categorySlug]) return {
+        success: false,
+        message: `Category '${remedy.category}' doesn't exists in storage. Please add it first.`,
+      };
+
+      this.remedyStore.addOrUpdateRemedy(slug, remedyToAdd);
+
+    });
+
+
+
+    const response = await this.store.commit();
+
+    return {
+      success: response.ok,
+      message: response.message,
+      remedies: Object.entries(remedies).map(([slug, remedy]) => ({ ...remedy, slug })),
+    };
   }
 
 }
